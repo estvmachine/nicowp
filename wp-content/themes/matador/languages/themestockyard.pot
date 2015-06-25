@@ -1,0 +1,5252 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Matador (v1.1.2)\n"
+"POT-Creation-Date: 2015-06-21 11:55-0500\n"
+"PO-Revision-Date: 2015-06-21 11:55-0500\n"
+"Last-Translator: \n"
+"Language-Team: ThemeStockyard <support@themestockyard.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;_n\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: style_selector.php:6
+#: ts-essentials/admin/functions/functions.options.php:1345
+#: ts-essentials/includes/shortcodes/tinymce/config.php:65
+msgid "Coral"
+msgstr ""
+
+#: style_selector.php:7
+#: ts-essentials/admin/functions/functions.options.php:1346
+#: ts-essentials/includes/shortcodes/tinymce/config.php:64
+msgid "Faded Rose"
+msgstr ""
+
+#: style_selector.php:8
+#: ts-essentials/admin/functions/functions.options.php:1347
+#: ts-essentials/includes/shortcodes/tinymce/config.php:66
+msgid "Peach"
+msgstr ""
+
+#: style_selector.php:9
+#: ts-essentials/admin/functions/functions.options.php:1348
+#: ts-essentials/includes/shortcodes/tinymce/config.php:67
+msgid "Purple"
+msgstr ""
+
+#: style_selector.php:10
+#: ts-essentials/admin/functions/functions.options.php:1349
+#: ts-essentials/includes/shortcodes/tinymce/config.php:68
+msgid "Navy"
+msgstr ""
+
+#: style_selector.php:11
+#: ts-essentials/admin/functions/functions.options.php:1350
+#: ts-essentials/includes/shortcodes/tinymce/config.php:69
+msgid "Blue"
+msgstr ""
+
+#: style_selector.php:12
+#: ts-essentials/admin/functions/functions.options.php:1351
+#: ts-essentials/includes/shortcodes/tinymce/config.php:70
+msgid "Teal"
+msgstr ""
+
+#: style_selector.php:13
+#: ts-essentials/admin/functions/functions.options.php:1352
+#: ts-essentials/includes/shortcodes/tinymce/config.php:71
+msgid "Sea Green"
+msgstr ""
+
+#: style_selector.php:14
+#: ts-essentials/admin/functions/functions.options.php:1353
+#: ts-essentials/includes/shortcodes/tinymce/config.php:72
+msgid "Sage"
+msgstr ""
+
+#: style_selector.php:15
+#: ts-essentials/admin/functions/functions.options.php:1354
+#: ts-essentials/includes/shortcodes/tinymce/config.php:73
+msgid "Green"
+msgstr ""
+
+#: style_selector.php:16
+#: ts-essentials/includes/shortcodes/tinymce/config.php:74
+msgid "Mustard Yellow"
+msgstr ""
+
+#: style_selector.php:17
+#: ts-essentials/admin/functions/functions.options.php:1356
+#: ts-essentials/includes/shortcodes/tinymce/config.php:75
+msgid "Orange"
+msgstr ""
+
+#: style_selector.php:18
+#: ts-essentials/admin/functions/functions.options.php:1357
+#: ts-essentials/includes/shortcodes/tinymce/config.php:76
+msgid "Brown"
+msgstr ""
+
+#: style_selector.php:19
+#: ts-essentials/admin/functions/functions.options.php:1358
+#: ts-essentials/includes/shortcodes/tinymce/config.php:77
+msgid "Gold"
+msgstr ""
+
+#: style_selector.php:20
+#: ts-essentials/admin/functions/functions.options.php:1359
+#: ts-essentials/includes/shortcodes/tinymce/config.php:78
+msgid "Gray"
+msgstr ""
+
+#: style_selector.php:24
+msgid "Grunge Wall"
+msgstr ""
+
+#: style_selector.php:25
+msgid "Bright Squares"
+msgstr ""
+
+#: style_selector.php:26
+msgid "Retina Wood"
+msgstr ""
+
+#: style_selector.php:27
+msgid "Sneaker Mesh"
+msgstr ""
+
+#: style_selector.php:28
+msgid "Arches"
+msgstr ""
+
+#: style_selector.php:30
+msgid "Dark Wood"
+msgstr ""
+
+#: style_selector.php:32
+msgid "Escheresque 1"
+msgstr ""
+
+#: style_selector.php:33
+msgid "Escheresque 2"
+msgstr ""
+
+#: style_selector.php:34
+msgid "Google Play pattern"
+msgstr ""
+
+#: style_selector.php:35
+msgid "Graphy"
+msgstr ""
+
+#: style_selector.php:36
+msgid "3 pixel squares"
+msgstr ""
+
+#: style_selector.php:38
+msgid "Stresses Linen"
+msgstr ""
+
+#: style_selector.php:39
+msgid "Tileable Wood"
+msgstr ""
+
+#: style_selector.php:40
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1390
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2604
+msgid "Type"
+msgstr ""
+
+#: style_selector.php:41
+msgid "Food"
+msgstr ""
+
+#: style_selector.php:42
+msgid "Green Cup"
+msgstr ""
+
+#: style_selector.php:43
+msgid "School"
+msgstr ""
+
+#: style_selector.php:44
+msgid "Skulls"
+msgstr ""
+
+#: style_selector.php:45
+msgid "Swirl Pattern"
+msgstr ""
+
+#: style_selector.php:46
+msgid "Symphony"
+msgstr ""
+
+#: style_selector.php:100
+msgid "Style Switcher"
+msgstr ""
+
+#: style_selector.php:102
+msgid "Skin:"
+msgstr ""
+
+#: style_selector.php:106
+msgid "Highlight Color:"
+msgstr ""
+
+#: style_selector.php:108
+#, php-format
+msgid "Best viewed within <a href=\"%s\"><u>the shop</u></a>."
+msgstr ""
+
+#: style_selector.php:109
+msgid "You can also create your own highlight color from the Admin Panel."
+msgstr ""
+
+#: style_selector.php:112
+msgid "Backgrounds:"
+msgstr ""
+
+#: style_selector.php:114
+msgid "You can also upload your own background from the Admin Panel."
+msgstr ""
+
+#: style_selector.php:117
+msgid "You can also set your own colors or background from the Admin Panel."
+msgstr ""
+
+#: style_selector.php:120
+msgid "Reset Styles"
+msgstr ""
+
+#: author.php:11 archive.php:31
+msgid "Posts by:"
+msgstr ""
+
+#: archive.php:23
+msgid "Posts Tagged"
+msgstr ""
+
+#: archive.php:25 archive.php:27 archive.php:29
+msgid "Archive for:"
+msgstr ""
+
+#: archive.php:33
+msgid "Archives"
+msgstr ""
+
+#: page.php:53 sitemap.php:39 single.php:91 attachment.php:38
+msgid "Pages: "
+msgstr ""
+
+#: page.php:102 single.php:166 attachment.php:71
+msgid "Sorry, the post you are looking for does not exist."
+msgstr ""
+
+#: top.php:29
+msgid "Menu"
+msgstr ""
+
+#: sitemap.php:50 404.php:34
+msgid "Pages"
+msgstr ""
+
+#: sitemap.php:54 404.php:38
+#: ts-essentials/includes/shortcodes/tinymce/config.php:383
+#: ts-essentials/includes/shortcodes/tinymce/config.php:544
+#: ts-essentials/includes/shortcodes/tinymce/config.php:613
+#: ts-essentials/includes/shortcodes/tinymce/config.php:731
+msgid "Categories"
+msgstr ""
+
+#: sitemap.php:58 404.php:42
+msgid "Authors"
+msgstr ""
+
+#: 404.php:4
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help..."
+msgstr ""
+
+#: index.php:22
+msgid "Recent Posts"
+msgstr ""
+
+#: title-post.php:75 title-page.php:88
+msgid "Review"
+msgstr ""
+
+#: title-post.php:75 title-page.php:88
+#: woocommerce/single-product-reviews.php:29
+msgid "Reviews"
+msgstr ""
+
+#: title-post.php:82
+msgid "Comment"
+msgstr ""
+
+#: title-post.php:82
+msgid "Comments"
+msgstr ""
+
+#: title-post.php:88 title-page.php:103 includes/theme-functions.php:4610
+msgid "1 view"
+msgstr ""
+
+#: search.php:7
+msgid "undefined"
+msgstr ""
+
+#: search.php:8
+msgid "Search results..."
+msgstr ""
+
+#: search.php:27
+msgid "Showing search results for:"
+msgstr ""
+
+#: single.php:75
+#, php-format
+msgid "%s comment"
+msgstr ""
+
+#: single.php:94
+msgid "Tags:"
+msgstr ""
+
+#: single.php:110
+msgid "About the Author"
+msgstr ""
+
+#: comments.php:5
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:38
+msgid "No Comment"
+msgstr ""
+
+#: comments.php:38
+msgid "One Comment"
+msgstr ""
+
+#: comments.php:38
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:48
+msgid "<i class=\"icon-chevron-left\"></i> Older Comments"
+msgstr ""
+
+#: comments.php:49
+msgid "Newer Comments <i class=\"icon-chevron-right\"></i>"
+msgstr ""
+
+#: comments.php:55
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:67
+msgid "Name *"
+msgstr ""
+
+#: comments.php:72
+msgid "Email *"
+msgstr ""
+
+#: comments.php:77
+msgid "Website"
+msgstr ""
+
+#: comments.php:85
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:86
+msgid "Leave a reply to:"
+msgstr ""
+
+#: comments.php:87
+msgid "Cancel Reply"
+msgstr ""
+
+#: comments.php:88
+msgid "Post Comment"
+msgstr ""
+
+#: title-page.php:94 includes/_loop/loop-2-column-banner.php:63
+#: includes/_loop/loop.php:69 includes/_loop/loop-2-column.php:68
+#: includes/_loop/loop-banner.php:63 includes/_loop/loop-3-column.php:60
+msgid "By"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:27
+#, php-format
+msgid "%s review for %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:51
+msgid "There are no reviews yet."
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:64
+msgid "Add a review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:64
+msgid "Be the first to review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:65
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:69
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1973
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2706
+msgid "Name"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:71 includes/theme-functions.php:3672
+#: ts-essentials/admin/functions/functions.options.php:849
+msgid "Email"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:74
+msgid "Submit"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Your Rating"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:81
+msgid "Rate&hellip;"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:82
+msgid "Perfect"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:83
+msgid "Good"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:84
+msgid "Average"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:85
+msgid "Not that bad"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:86
+msgid "Very Poor"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:90
+msgid "Your Review"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:99
+msgid ""
+"Only logged in customers who have purchased this product may leave a review."
+msgstr ""
+
+#: woocommerce/shop/form-login.php:20
+msgid "Username or email"
+msgstr ""
+
+#: woocommerce/shop/form-login.php:24
+msgid "Password"
+msgstr ""
+
+#: woocommerce/shop/form-login.php:31
+msgid "Login"
+msgstr ""
+
+#: woocommerce/shop/form-login.php:33
+msgid "Lost Password?"
+msgstr ""
+
+#: woocommerce/single-product/product-attributes.php:28
+msgid "Weight"
+msgstr ""
+
+#: woocommerce/single-product/product-attributes.php:35
+msgid "Dimensions"
+msgstr ""
+
+#: woocommerce/single-product/related.php:40
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/review.php:26
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:27
+msgid "out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:34
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:43
+msgid "verified owner"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:19
+msgid "SKU:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:24
+msgid "Category:"
+msgstr ""
+
+#: woocommerce/single-product/meta.php:29 includes/theme-functions.php:2092
+msgid "Tag:"
+msgstr ""
+
+#: woocommerce/single-product/sale-flash.php:16
+#: woocommerce/loop/sale-flash.php:16
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:43
+msgid "You may also like&hellip;"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:27
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:29
+#, php-format
+msgid "out of %s5%s"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:30
+#, php-format
+msgid "based on %s customer rating"
+msgstr ""
+
+#: woocommerce/single-product/rating.php:33
+#, php-format
+msgid "%s customer review"
+msgstr ""
+
+#: woocommerce/single-product/tabs/additional-information.php:18
+msgid "Additional Information"
+msgstr ""
+
+#: woocommerce/single-product/tabs/tabs.php:25
+msgid "Overview"
+msgstr ""
+
+#: woocommerce/single-product/tabs/tabs.php:35
+msgid "Details"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:27
+msgid "Choose an option"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:63
+msgid "Clear selection"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:93
+msgid "This product is currently out of stock and unavailable."
+msgstr ""
+
+#: woocommerce/loop/no-products-found.php:14
+msgid "No products found which match your selection."
+msgstr ""
+
+#: woocommerce/loop/result-count.php:28
+msgid "Showing the single result"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:30
+#, php-format
+msgid "Showing all %d results"
+msgstr ""
+
+#: woocommerce/loop/result-count.php:38
+msgid " in "
+msgstr ""
+
+#: woocommerce/loop/result-count.php:41
+msgid " for "
+msgstr ""
+
+#: includes/theme-sidebars.php:9
+msgid "Primary Sidebar"
+msgstr ""
+
+#: includes/theme-sidebars.php:10
+msgid "Default content sidebar on pages/posts."
+msgstr ""
+
+#: includes/theme-sidebars.php:24 includes/theme-sidebars.php:64
+#: includes/theme-sidebars.php:95 includes/theme-sidebars.php:116
+msgid "Footer Area 1"
+msgstr ""
+
+#: includes/theme-sidebars.php:33 includes/theme-sidebars.php:73
+#: includes/theme-sidebars.php:104
+msgid "Footer Area 2"
+msgstr ""
+
+#: includes/theme-sidebars.php:42 includes/theme-sidebars.php:82
+msgid "Footer Area 3"
+msgstr ""
+
+#: includes/theme-sidebars.php:51
+msgid "Footer Area 4"
+msgstr ""
+
+#: includes/theme-functions.php:56
+msgid "Top Bar: Small Navigation"
+msgstr ""
+
+#: includes/theme-functions.php:57
+#: ts-essentials/admin/functions/functions.options.php:1297
+msgid "Main Navigation"
+msgstr ""
+
+#: includes/theme-functions.php:58
+msgid "Footer Navigation"
+msgstr ""
+
+#: includes/theme-functions.php:258
+msgid "Sorry, checkout is currently disabled."
+msgstr ""
+
+#: includes/theme-functions.php:1401
+msgid "All"
+msgstr ""
+
+#: includes/theme-functions.php:1490
+msgid "Older"
+msgstr ""
+
+#: includes/theme-functions.php:1491
+msgid "Newer"
+msgstr ""
+
+#: includes/theme-functions.php:1528 includes/theme-functions.php:1547
+msgid "Uncategorized"
+msgstr ""
+
+#: includes/theme-functions.php:1701
+msgid "Load more posts"
+msgstr ""
+
+#: includes/theme-functions.php:1837 includes/theme-functions.php:2022
+msgid "Home"
+msgstr ""
+
+#: includes/theme-functions.php:1839
+msgid "Category Archives"
+msgstr ""
+
+#: includes/theme-functions.php:1840
+msgid "Search Results"
+msgstr ""
+
+#: includes/theme-functions.php:1841
+msgid "Tagged Posts"
+msgstr ""
+
+#: includes/theme-functions.php:1842
+#, php-format
+msgid "By %s"
+msgstr ""
+
+#: includes/theme-functions.php:1843
+msgid "Error 404"
+msgstr ""
+
+#: includes/theme-functions.php:2002
+msgid "Page"
+msgstr ""
+
+#: includes/theme-functions.php:2050
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:37
+msgid "Blog"
+msgstr ""
+
+#: includes/theme-functions.php:2093
+msgid "404 - Page not Found"
+msgstr ""
+
+#: includes/theme-functions.php:2094
+msgid "Search"
+msgstr ""
+
+#: includes/theme-functions.php:2465
+msgid "Search for:"
+msgstr ""
+
+#: includes/theme-functions.php:2514
+msgid "No location found for the entered address."
+msgstr ""
+
+#: includes/theme-functions.php:2516
+msgid "Invalid request. Did you enter an address?"
+msgstr ""
+
+#: includes/theme-functions.php:2518
+msgid ""
+"Something went wrong while retrieving your map, please ensure you have "
+"entered the shortcode correctly."
+msgstr ""
+
+#: includes/theme-functions.php:2522
+msgid "Unable to contact Google API service."
+msgstr ""
+
+#: includes/theme-functions.php:3245
+msgid "Pingback:"
+msgstr ""
+
+#: includes/theme-functions.php:3247
+msgid "(Edit)"
+msgstr ""
+
+#: includes/theme-functions.php:3267
+msgid "at"
+msgstr ""
+
+#: includes/theme-functions.php:3279
+msgid "Edit"
+msgstr ""
+
+#: includes/theme-functions.php:3557
+msgid "Could not read image size"
+msgstr ""
+
+#: includes/theme-functions.php:3621
+msgid "Share:"
+msgstr ""
+
+#: includes/theme-functions.php:3674
+#: ts-essentials/admin/functions/functions.options.php:850
+msgid "Print"
+msgstr ""
+
+#: includes/theme-functions.php:3695
+msgid "Featured"
+msgstr ""
+
+#: includes/theme-functions.php:4658
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:96
+msgid "Install Recommended Plugins"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:97
+msgid "Helpful Plugins"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:98
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:163
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:99
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:110
+msgid "Return to Recommeded Plugins Installer"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:111
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:177
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1956
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/activate-plugins.php:112
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:162
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:175
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:178
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1644
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:532
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2173
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1167
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1348
+msgid "Private Repository"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1170
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1351
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1175
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1178
+msgid "Required"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1178
+msgid "Recommended"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1181
+msgid "Not Installed"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1183
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1288
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1409
+msgid "Install"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1312
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1410
+msgid "Activate"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1372
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1388
+msgid "Plugin"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1389
+msgid "Source"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1391
+msgid "Status"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1939
+msgid "Install package not available."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1940
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1941
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1942
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1943
+msgid "Plugin install failed."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1944
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:1955
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2069
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2070
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2070
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2079
+msgid "Show Details"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2070
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2079
+msgid "Hide Details"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2071
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2072
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2076
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2077
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2078
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2079
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2080
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/plugins/tgm-plugin-activation/class-tgm-plugin-activation.php:2081
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/_loop/loop-2-column-banner.php:82 includes/_loop/loop.php:140
+#: includes/_loop/loop-2-column.php:142
+#: includes/_loop/loop-medium-image.php:125
+#: includes/_loop/loop-masonry.php:125 includes/_loop/loop-4-column.php:132
+#: includes/_loop/loop-banner.php:80 includes/_loop/loop-legacy.php:125
+#: includes/_loop/loop-3-column.php:134
+#: includes/_loop-portfolio/loop-2-column.php:39
+#: includes/_loop-portfolio/loop-masonry.php:39
+#: includes/_loop-portfolio/loop-mini.php:37
+#: includes/_loop-portfolio/loop-4-column.php:39
+#: includes/_loop-portfolio/loop-3-column.php:39
+#: includes/_loop-portfolio/loop-masonry-cards.php:44
+msgid "Sorry, nothing here!"
+msgstr ""
+
+#: includes/_loop/loop-slider.php:109
+#: includes/_sliders/carousel-flex-slider.php:354
+msgid "Pause"
+msgstr ""
+
+#: includes/_loop/loop-slider.php:110
+#: includes/_sliders/carousel-flex-slider.php:355
+msgid "Resume"
+msgstr ""
+
+#: includes/_loop/loop.php:62 includes/_loop/loop-2-column.php:61
+#: includes/_loop/loop-4-column.php:61 includes/_loop/loop-legacy.php:50
+msgid "Page last modified:"
+msgstr ""
+
+#: includes/_loop/loop.php:120 includes/_loop/loop-2-column.php:119
+#: includes/_loop/loop-masonry.php:106 includes/_loop/loop-4-column.php:109
+#: includes/_loop/loop-legacy.php:98 includes/_loop/loop-3-column.php:111
+msgid "Read more"
+msgstr ""
+
+#: includes/_loop/loop-medium-image.php:109
+#: includes/_sliders/carousel-flex-slider.php:221
+#: includes/_sliders/carousel-flex-slider.php:247
+msgid "Read More"
+msgstr ""
+
+#: includes/_loop/loop-legacy.php:118
+msgid "Older Entries"
+msgstr ""
+
+#: includes/_loop/loop-legacy.php:119
+msgid "Newer Entries"
+msgstr ""
+
+#: includes/_loop-portfolio/loop-masonry-cards.php:35
+msgid "More Details"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:30
+msgid "Select a category:"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:38
+msgid "Select a page:"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:108
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:21
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:22
+msgid "General Settings"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:112
+msgid "Enable \"Smooth Page Scrolling\""
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:113
+msgid "Makes scrolling a bit smoother.<br/><strong>Default:</strong> Off"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:118
+msgid "Enable Inline CSS"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:119
+msgid ""
+"Only enable this setting as a last resort if styling options (typography, "
+"colors, backgrounds, etc) are not updating correctly."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:125
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:211
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:311
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:345
+msgid "Custom CSS"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:126
+msgid "Paste any custom CSS you have right here."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:132
+msgid "Custom Favicon"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:133
+msgid ""
+"Upload a 16px x 16px Png/Gif image that will represent your website's "
+"favicon."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:139
+msgid "Apple iPhone Icon Upload"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:140
+msgid "Icon for Apple iPhone (57px x 57px)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:145
+msgid "Apple iPhone Retina Icon Upload"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:146
+msgid "Icon for Apple iPhone Retina Version (114px x 114px)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:151
+msgid "Apple iPad Icon Upload"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:152
+msgid "Icon for Apple iPhone (72px x 72px)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:157
+msgid "Apple iPad Retina Icon Upload"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:158
+msgid "Icon for Apple iPad Retina Version (144px x 144px)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:163
+msgid "Custom RSS URL"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:164
+msgid "Paste your FeedBurner (or other) URL here."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:171
+#: ts-essentials/admin/functions/functions.options.php:175
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:59
+msgid "Social Links"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:176
+msgid ""
+"These social links/icons are used in the header and as the defaults for the "
+"<strong>(TS) Social Links</strong> widget."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:184
+msgid "<strong>Facebook</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:191
+msgid "<strong>Twitter</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:198
+msgid "<strong>Pinterest</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:205
+msgid "<strong>Google+</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:212
+msgid "<strong>Github</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:219
+msgid "<strong>LinkedIn</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:226
+msgid "<strong>Instagram</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:233
+msgid "<strong>Flickr</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:240
+msgid "<strong>Youtube</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:247
+msgid "<strong>Vimeo</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:254
+msgid "<strong>VK</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:261
+msgid "<strong>Tumblr</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:268
+msgid "<strong>Behance</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:275
+msgid "<strong>Dribbble</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:282
+msgid "<strong>Soundcloud</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:289
+msgid ""
+"<strong>RSS</strong> (use the <strong>[rss_url]</strong> shortcode for the "
+"default RSS url)."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:296
+msgid "Header and Nav"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:301
+msgid "Logo Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:310
+msgid "Logo"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:311
+msgid "Upload your brand/company logo here."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:316
+msgid "Retina Logo"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:317
+msgid "Upload your retina logo here."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:323
+msgid "Retina logo width. Example: 120px"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:330
+msgid "Retina logo height. Example: 40px"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:337
+msgid "Alternate Logo Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:338
+msgid ""
+"This text only shows up if you choose not to use an image logo above. "
+"<strong>Note:</strong> This text can be styled in the \"Typography\" section."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:345
+msgid "Logo Tagline Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:346
+msgid "HTML allowed"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:356
+msgid "Main Navigation Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:365
+msgid "Enable &#8220;Sticky&#8221; Navigation"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:366
+msgid "Turn on sticky navigation. <strong>Default:</strong> Off"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:372
+msgid "Main Navigation Alignment"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:378
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:45
+#: ts-essentials/includes/shortcodes/tinymce/config.php:841
+msgid "Standard"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:379
+msgid "Centered"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:383
+msgid "Show \"Shop\" Icon in Main Navigation"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:384
+msgid "Will only show if WooCommerce is installed."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:391
+msgid "Top Bar Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:400
+msgid "Top Bar: Middle Area"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:401
+msgid ""
+"Choose whether to show the \"Top Bar: Small Navigation\" menu or the "
+"\"Alternate text\" (below)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:406
+msgid "Top Bar: Small Navigation menu"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:407
+msgid "Alternate text (below)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:411
+msgid "Top Bar: Middle Area - Alternate text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:412
+msgid ""
+"HTML and shortcodes are allowed. Remember, space is somewhat limited in this "
+"area."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:419
+msgid "Title Bar Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:427
+msgid "Show Title Bar on pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:435
+msgid "Footer Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:439
+msgid "Show Bottom Ad"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:446
+msgid "Bottom Ad Content"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:447
+msgid "Paste your Google Adwords or other ad code here"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:453
+msgid "Show Footer Widget Area"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:460
+msgid "Footer Widget Area Layout"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:476
+msgid "Show Copyright &amp; Bottom Navigation Area"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:482
+msgid "Copyright Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:483
+msgid ""
+"<strong>Note:</strong> Use the [year] shortcode to always show the current "
+"year."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:492
+msgid "Show \"Back to top\" button in footer"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:493
+#: ts-essentials/admin/functions/functions.options.php:500
+msgid "Toggle ON or OFF any time"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:499
+msgid "Show \"Back to top\" button on mobile devices"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:500
+msgid "Not recommended"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:508
+msgid "Sidebar Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:520
+msgid "Default Sidebar Visibility"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:521
+msgid ""
+"<strong>Show sidebar on Pages</strong><br/>(Can be changed for individual "
+"pages)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:528
+msgid ""
+"<strong>Show sidebar on Archive pages</strong><br/>(category, tags, custom "
+"taxonomies, etc)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:535
+msgid "<strong>Show sidebar on Search page</strong>"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:542
+msgid ""
+"<strong>Show sidebar on Blog posts</strong><br/>(Can be changed for "
+"individual posts)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:548
+msgid "Default Sidebar Position: Pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:549
+msgid "Can be changed for individual pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:554
+#: ts-essentials/admin/functions/functions.options.php:565
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:114
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:59
+#: ts-essentials/includes/shortcodes/tinymce/config.php:94
+#: ts-essentials/includes/shortcodes/tinymce/config.php:286
+#: ts-essentials/includes/shortcodes/tinymce/config.php:297
+#: ts-essentials/includes/shortcodes/tinymce/config.php:913
+#: ts-essentials/includes/shortcodes/tinymce/config.php:948
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1247
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1276
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1369
+msgid "Right"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:555
+#: ts-essentials/admin/functions/functions.options.php:566
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:115
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:60
+#: ts-essentials/includes/shortcodes/tinymce/config.php:92
+#: ts-essentials/includes/shortcodes/tinymce/config.php:285
+#: ts-essentials/includes/shortcodes/tinymce/config.php:296
+#: ts-essentials/includes/shortcodes/tinymce/config.php:912
+#: ts-essentials/includes/shortcodes/tinymce/config.php:949
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1245
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1274
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1368
+msgid "Left"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:559
+msgid "Default Sidebar Position: Posts"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:560
+msgid "Can be changed for individual posts"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:567
+msgid "Right (under fullwidth featured media)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:568
+msgid "Left (under fullwidth featured media)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:569
+msgid "Right (under content, next to comments)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:570
+msgid "Left (under content, next to comments)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:574
+msgid "Sidebar Placement on Tablets"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:575
+msgid ""
+"For devices with a viewport smaller than 768 pixels (like tablets), decide "
+"where the sidebar should appear."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:580
+msgid "Beside Content (default)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:581
+msgid "Below Content"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:586
+msgid "Blog Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:590
+msgid "Turn on \"Infinite Scrolling\" for the \"Blog\"?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:591
+msgid ""
+"This option is only for the main blog page and pages that use the \"Blog "
+"Template\". The blog shortcode has its own infinite scroll method."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:596
+#: ts-essentials/admin/functions/functions.options.php:785
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:65
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:76
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:89
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:102
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:251
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:277
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:33
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:47
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:95
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:133
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:164
+#: ts-essentials/includes/shortcodes/tinymce/config.php:348
+#: ts-essentials/includes/shortcodes/tinymce/config.php:530
+#: ts-essentials/includes/shortcodes/tinymce/config.php:800
+msgid "No"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:597
+#: ts-essentials/includes/shortcodes/tinymce/config.php:349
+#: ts-essentials/includes/shortcodes/tinymce/config.php:531
+msgid "Yes (load more on scroll)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:598
+#: ts-essentials/includes/shortcodes/tinymce/config.php:350
+#: ts-essentials/includes/shortcodes/tinymce/config.php:532
+msgid "Yes (load more on button click)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:602
+msgid "\"Infinite Scrolling\" button text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:603
+msgid ""
+"Only works when previous setting is \"Yes (load more on button click)\"."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:609
+msgid "Crop Featured Images on \"Blog\" page?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:610
+msgid ""
+"<strong>Note:</strong> This option is only used with \"1 Column\" and "
+"\"Traditional\" blog layouts."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:616
+msgid "Default posts layout on \"Blog\" page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:622
+#: ts-essentials/admin/functions/functions.options.php:640
+#: ts-essentials/admin/functions/functions.options.php:658
+#: ts-essentials/includes/shortcodes/tinymce/config.php:320
+msgid "Classic"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:623
+#: ts-essentials/admin/functions/functions.options.php:641
+#: ts-essentials/admin/functions/functions.options.php:659
+#: ts-essentials/includes/shortcodes/tinymce/config.php:321
+msgid "2 Column Grid"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:624
+#: ts-essentials/admin/functions/functions.options.php:642
+#: ts-essentials/admin/functions/functions.options.php:660
+#: ts-essentials/includes/shortcodes/tinymce/config.php:322
+msgid "3 Column Grid"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:625
+#: ts-essentials/admin/functions/functions.options.php:643
+#: ts-essentials/admin/functions/functions.options.php:661
+#: ts-essentials/includes/shortcodes/tinymce/config.php:323
+msgid "4 Column Grid"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:626
+#: ts-essentials/admin/functions/functions.options.php:644
+#: ts-essentials/admin/functions/functions.options.php:662
+#: ts-essentials/includes/shortcodes/tinymce/config.php:324
+msgid "Masonry"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:628
+#: ts-essentials/admin/functions/functions.options.php:646
+#: ts-essentials/admin/functions/functions.options.php:664
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:55
+#: ts-essentials/includes/shortcodes/tinymce/config.php:326
+msgid "List"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:629
+#: ts-essentials/admin/functions/functions.options.php:647
+#: ts-essentials/admin/functions/functions.options.php:665
+msgid "Banners"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:630
+#: ts-essentials/admin/functions/functions.options.php:648
+#: ts-essentials/admin/functions/functions.options.php:666
+msgid "Legacy"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:634
+msgid "Default posts layout on \"Search\" page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:652
+msgid "Default posts layout on \"Archives\" page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:670
+msgid "Default excerpt length within loop"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:671
+msgid "\"Classic\" layout. <strong>Default:</strong> 320"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:679
+msgid "\"2 Column Grid\" and \"List\" layouts. <strong>Default:</strong> 160"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:687
+msgid ""
+"\"3 column\", \"4 column\", and \"Masonry\" layouts. <strong>Default:</"
+"strong> 100"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:701
+msgid "Get featured image \"alt text\" within loop?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:702
+msgid ""
+"<strong>Default:</strong> Off<br/>Good for SEO, but may decrease performance "
+"as it requires an additional database query for each featured image."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:708
+msgid "Exclude Categories from Loop"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:709
+msgid ""
+"Optionally select one or more categories. Posts within these categories will "
+"not appear in blog results."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:716
+msgid "Single Post Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:724
+msgid "Crop Featured Images on \"Single\" post?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:731
+msgid "Cropped Featured Image Dimensions (with sidebar)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:732
+#: ts-essentials/admin/functions/functions.options.php:748
+msgid "<strong>Width</strong> (leave blank for default)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:740
+#: ts-essentials/admin/functions/functions.options.php:756
+msgid "<strong>Height</strong> (leave blank for default)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:747
+msgid "Cropped Featured Image Dimensions (NO sidebar)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:763
+msgid "Show Featured Images/Videos on \"Single\" post?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:764
+msgid ""
+"Use this option if you only want featured images to appear within the \"loop"
+"\", but not on individual post pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:770
+msgid "Show \"About the Author\" on \"Single\" post pages?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:777
+msgid "Show related posts on \"Single\" post pages?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:783
+msgid "Yes (filter by category)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:784
+msgid "Yes (filter by tags)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:790
+msgid "Related Posts Title Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:822
+msgid "Available Sharing Options..."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:823
+msgid "Select the Sharing Options you want your website visitors to use."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:856
+msgid "Comment Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:860
+msgid "Show Comments on pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:867
+msgid "Show user avatars next to comments"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:868
+msgid "Not available for Disqus comments"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:874
+msgid "Use Disqus"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:875
+msgid ""
+"Enable <a href=\"http://disqus\" target=\"_blank\">Disqus</a> comments "
+"(instead of standard comments)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:881
+msgid "Disqus Shortname"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:882
+msgid ""
+"Type the \"shortname\" that belongs to the Disqus account you created for "
+"this website."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:889
+msgid "Shop Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:893
+msgid "WooCommerce Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:894
+msgid ""
+"The following settings will are only useful if the <a href=\"http://www."
+"woothemes.com/woocommerce/\" target=\"_blank\">WooCommerce plugin</a> is "
+"installed and activated."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:901
+msgid "Ajax Load Shopping Cart Total on Each Page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:902
+msgid ""
+"Enable ajax loading of the shopping cart total (in the header or main "
+"navigation area) on each page load. This setting should be enabled if WP "
+"Cache or another caching plugin is in use."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:908
+msgid "Show \"Add to Cart\" Buttons on Results Page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:909
+#: ts-essentials/admin/functions/functions.options.php:916
+#: ts-essentials/admin/functions/functions.options.php:923
+#: ts-essentials/admin/functions/functions.options.php:930
+#: ts-essentials/admin/functions/functions.options.php:937
+msgid "Default: On"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:915
+msgid "Show \"Add to Cart\" Buttons on Single Product Page(s)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:922
+msgid "Show \"Price(s)\" on Results Page"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:929
+msgid "Show \"Price(s)\" on Single Product Page(s)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:936
+msgid "Show \"Reviews\" on Single Product Page(s)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:943
+msgid "Catalog Mode"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:951
+msgid "Disable Cart and Checkout Pages"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:952
+msgid "Default: Off"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:958
+msgid "Disable Checkout Button/Form"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:959
+msgid "Use this option to only disable the checkout form. Default: Off"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:966
+msgid "Other Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:970
+msgid "Date and Time Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:978
+msgid "Enable \"Smart Date/Time Conversion\""
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:979
+msgid ""
+"Use this option to automatically convert dates/times for posts into a more "
+"localized format (using the options below)."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:985
+msgid "Which date looks correct?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:991
+msgid "June 12th, 2020"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:992
+msgid "12 June 2020"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:996
+msgid "Which time looks correct?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1002
+msgid "5:30 pm"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1003
+msgid "17:30"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1007
+msgid "Search Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1015
+msgid "Search Input Placeholder Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1016
+msgid "This text will be used in sidebar search inputs as well."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1022
+msgid "Breadcrumb Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1030
+msgid "\"Breadcrumb\" Home Link Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1031
+msgid ""
+"This text will be used to represent the homepage link in the \"breadcrumbs\"."
+"<br/><strong>Note:</strong> Leave blank for default."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1037
+msgid "Image Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1045
+msgid "Sharpen Resized Images?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1046
+#: ts-essentials/admin/functions/functions.options.php:1053
+msgid "<strong>Default:</strong> On"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1052
+msgid "Use Custom JPEG Compression?"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1059
+msgid "JPEG Compression"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1060
+msgid ""
+"Set your desired JPEG compression for resized images. <strong>Note:</strong> "
+"While a higher setting will result in clearer images, it can also  result in "
+"larger file sizes and slower page loads."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1069
+msgid "Developer Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1077
+msgid "Enable Style Selector"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1078
+msgid "Should probably only be used by developers"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1093
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:73
+msgid "Typography"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1100
+#: ts-essentials/admin/functions/functions.options.php:1461
+msgid "Alternate Logo"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1101
+msgid ""
+"Choose a font<br/><strong>Note:</strong> only useful if you haven't uploaded "
+"a logo"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1110
+msgid "Alternate logo size &amp; style"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1117
+msgid "General Typography Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1126
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:74
+msgid "Small Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1127
+#: ts-essentials/admin/functions/functions.options.php:1136
+#: ts-essentials/admin/functions/functions.options.php:1153
+#: ts-essentials/admin/functions/functions.options.php:1170
+#: ts-essentials/admin/functions/functions.options.php:1187
+#: ts-essentials/admin/functions/functions.options.php:1204
+#: ts-essentials/admin/functions/functions.options.php:1221
+#: ts-essentials/admin/functions/functions.options.php:1238
+#: ts-essentials/admin/functions/functions.options.php:1272
+#: ts-essentials/admin/functions/functions.options.php:1298
+#: ts-essentials/admin/functions/functions.options.php:1315
+msgid "Choose a font"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1135
+msgid "Plain Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1145
+msgid "Font size &amp; style"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1152
+msgid "&lt;H1&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1162
+#: ts-essentials/admin/functions/functions.options.php:1179
+#: ts-essentials/admin/functions/functions.options.php:1196
+#: ts-essentials/admin/functions/functions.options.php:1213
+#: ts-essentials/admin/functions/functions.options.php:1230
+#: ts-essentials/admin/functions/functions.options.php:1247
+#: ts-essentials/admin/functions/functions.options.php:1264
+#: ts-essentials/admin/functions/functions.options.php:1281
+msgid "Font style"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1169
+msgid "&lt;H2&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1186
+msgid "&lt;H3&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1203
+msgid "&lt;H4&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1220
+msgid "&lt;H5&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1237
+msgid "&lt;H6&gt; heading"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1254
+msgid "Stylized Meta"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1255
+msgid "Used mostly for post authors within blog results"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1271
+msgid "Form text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1288
+msgid "Main Navigation Typography"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1307
+#: ts-essentials/admin/functions/functions.options.php:1324
+msgid "Font size"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1314
+#: ts-essentials/admin/functions/functions.options.php:1503
+msgid "Main Navigation: Sub-menu"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1335
+msgid "Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1339
+msgid "Choose a color scheme"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1340
+msgid ""
+"Note: Choosing a color scheme will automatically change some of the colors "
+"below."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1355
+msgid "Mustard Yellow (default)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1374
+msgid "Check this box to create your own color scheme."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1382
+msgid ""
+"<button id=\"custom_color_scheme_button\" type=\"button\" class=\"button-"
+"primary\">Select Color</button> &nbsp; Choose any color you like, then click "
+"the button."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1389
+msgid "General Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1397
+msgid "Primary/Highlight Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1418
+msgid "Standard Border Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1425
+msgid "Subtle Text Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1432
+msgid "Subtle Background Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1439
+msgid "Top area colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1448
+#: ts-essentials/admin/functions/functions.options.php:1469
+#: ts-essentials/admin/functions/functions.options.php:1598
+#: ts-essentials/admin/functions/functions.options.php:1676
+msgid "Text color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1455
+#: ts-essentials/admin/functions/functions.options.php:1476
+#: ts-essentials/admin/functions/functions.options.php:1504
+#: ts-essentials/admin/functions/functions.options.php:1547
+#: ts-essentials/admin/functions/functions.options.php:1554
+#: ts-essentials/admin/functions/functions.options.php:1627
+msgid "Link color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1462
+msgid ""
+"Alternate logo color<br/><strong>Note:</strong> only useful if you haven't "
+"uploaded a logo."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1468
+msgid "Logo Tagline"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1475
+msgid "Main Navigation Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1483
+msgid "Hover/active color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1490
+msgid "\"Has sub-menu\" indicator color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1511
+msgid "Hover/Active Link Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1518
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1103
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1314
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1536
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1613
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2192
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2693
+msgid "Text Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1538
+msgid "Body/Content Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1546
+msgid "Body: General Links"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1553
+msgid "Body: Title Links"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1560
+msgid "Body: Plain Text"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1561
+msgid "Body text color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1567
+msgid "Body: &lt;H1-6&gt; Headings"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1568
+msgid "Body heading colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1574
+msgid "WooCommerce Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1583
+msgid "Price Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1589
+msgid "Form Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1597
+msgid "Form Element Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1605
+#: ts-essentials/admin/functions/functions.options.php:1683
+msgid "Form field background color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1611
+msgid "Footer Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1619
+msgid "Footer Area"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1620
+msgid "Background color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1634
+msgid "Plain text color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1641
+msgid "Headings"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1648
+msgid "Widget border colors (some widgets use borders, set those colors here)"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1654
+msgid "Copyright Area Colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1655
+msgid "Copyright link colors"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1662
+msgid "Copyright link color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1669
+msgid "Copyright text color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1675
+msgid "Footer Form Elements"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1692
+msgid "Background"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1696
+msgid "Enable Fullwidth Layout"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1697
+msgid ""
+"Turn <strong>off</strong> to use a background image.<br/><strong>Default:</"
+"strong> On"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1708
+msgid "Body background color."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1715
+msgid "Body content background color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1716
+msgid "<strong>Note:</strong> not useful with fullwidth layout"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1723
+msgid "Body: Background Pattern/Color"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1724
+msgid ""
+"Choose a background pattern and color for your website.<br/><br/>Visit <a "
+"href=\"http://subtlepatterns.com\" target=\"_blank\">SubtlePatterns.com</a> "
+"for more."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1757
+msgid ""
+"<strong>Alternatively, you can upload your own.</strong> Check the box to "
+"get started."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1764
+msgid "Body: Custom Background Image"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1765
+msgid ""
+"Upload a custom background image or pattern here.<br/><strong>Note:</strong> "
+"only useful in &#8220;Boxed&#8221; layout"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1773
+msgid "Custom background image properties: Repeat, Position, Attachment"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1792
+msgid "Backup Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1797
+msgid "Backup and Restore Options"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1801
+msgid ""
+"You can use the two buttons below to backup your current options, and then "
+"restore it back at a later time. This is useful if you want to experiment on "
+"the options but would like to keep the old settings in case you need it back."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1804
+msgid "Transfer Theme Options Data"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1808
+msgid ""
+"You can tranfer the saved options data between different installs by copying "
+"the text inside the text box. To import data from another install, replace "
+"the data in the text box with the one from another install and click "
+"\"Import Options\"."
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1812
+msgid "Documentation"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1817
+msgid "Documentation Info"
+msgstr ""
+
+#: ts-essentials/admin/functions/functions.options.php:1818
+msgid ""
+"A copy of the documentation for the Matador theme can always be found online "
+"at: <a href=\"http://themestockyard.com/matador/documentation\" target="
+"\"_blank\">http://themestockyard.com/matador/documentation</a><br/><br/"
+">Additionally, a copy should have been included with your Themeforest "
+"download."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:13
+msgid "Portfolio Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:28
+msgid "Page Layout:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:33
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:63
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:74
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:87
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:100
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:113
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:31
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:45
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:58
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:93
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:128
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:162
+msgid "Use default"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:34
+msgid "2/3 media (left)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:35
+msgid "2/3 media (right)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:36
+msgid "1/2 media (left)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:37
+msgid "1/2 media (right)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:40
+msgid "Fullwidth media"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:45
+msgid "Project Content Type:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:50
+msgid "Single Image"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:51
+msgid "Gallery"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:54
+msgid "Self-hosted video"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:59
+msgid "Show \"Previous/Next\" links"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:64
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:75
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:88
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:101
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:250
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:278
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:32
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:46
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:94
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:163
+#: ts-essentials/includes/shortcodes/tinymce/config.php:798
+msgid "Yes"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:70
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:124
+msgid "Show Related Posts"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:81
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:178
+msgid "Gallery Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:88
+msgid "Display gallery as:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:93
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:55
+msgid "Flexslider"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:100
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:185
+msgid "Image 1"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:108
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:194
+msgid "Image 2"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:116
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:203
+msgid "Image 3"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:124
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:212
+msgid "Image 4"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:132
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:221
+msgid "Image 5"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:140
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:230
+msgid "Image 6"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:148
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:239
+msgid "Image 7"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:156
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:248
+msgid "Image 8"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:164
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:257
+msgid "Image 9"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:172
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:266
+msgid "Image 10"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:180
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:277
+msgid "Video Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:187
+msgid "Youtube URL/ID:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:194
+msgid "Vimeo URL/ID:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:201
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:298
+msgid "Self-hosted Video"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-portfolio.php:219
+msgid "Type or paste your portfolio post specific CSS here."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:43
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:54
+#: ts-essentials/includes/shortcodes/tinymce/config.php:295
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1273
+msgid "[none]"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:59
+msgid "Slider Revolution"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:68
+msgid "General Page Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:76
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:20
+msgid "Title Bar Caption"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:83
+msgid "Show Page Title Bar"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:95
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:40
+msgid "Show the sidebar?"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:108
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:53
+msgid "Sidebar Position"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:121
+msgid "Content Padding"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:122
+msgid "Top/bottom content padding is automatically removed in some cases."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:126
+msgid "Normal"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:127
+msgid "Remove Top Padding"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:128
+msgid "Remove Bottom Padding"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:129
+msgid "Remove Top & Bottom Padding"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:134
+msgid "Slider Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:135
+msgid ""
+"These slider settings work on all pages except blog, archive, and search "
+"pages."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:141
+msgid "Slider Type"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:149
+msgid "Slider Revolution: Select a slider"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:151
+msgid ""
+"This setting is only useful when the <a href=\"http://codecanyon.net/item/"
+"slider-revolution-responsive-wordpress-plugin/2751380?ref=themestockyard\" "
+"target=\"_blank\">Slider Revolution</a> plugin is installed and activated."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:163
+msgid "The following slider settings are not used with the Slider Revolution."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:171
+msgid "Slider Source"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:177
+msgid "Blog posts"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:178
+msgid "Specific blog posts"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:186
+msgid "Input Blog Post IDs"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:187
+msgid ""
+"Separate with commas. <strong>Note:</strong> To easily see blog post IDs, "
+"navigate to Dashboard > Posts to see the column displaying IDs."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:196
+msgid "Blog Categories"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:198
+msgid "Leave all unchecked to show posts from <strong>all</strong> categories."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:222
+msgid "Text Alignment"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:224
+msgid "Title, description, etc"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:227
+msgid "left"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:228
+msgid "center"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:229
+msgid "right"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:235
+msgid "# of Slides"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:237
+msgid "Choose the number of items to show in the slider."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:245
+msgid "Allow videos?"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:260
+msgid "Slider Width"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:264
+msgid "Full width"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:265
+msgid "Content Width"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:272
+msgid "Enable Parallax Effect?"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:273
+msgid "Only works with \"Full width\" slider"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:285
+msgid "Slider Height"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:286
+msgid "Leave blank for default (450px)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-page.php:319
+msgid "Type or paste your page-specific CSS here."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:12
+msgid "General Post Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:27
+msgid "Show Title Bar"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:61
+msgid "Right (under featured image)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:62
+msgid "Left (under featured image)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:63
+msgid "Right (next to comments)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:64
+msgid "Left (next to comments)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:88
+msgid "Show featured media on single post"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:89
+msgid ""
+"Show or hide the featured media (image, video, audio) when viewing this "
+"individual post page"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:102
+msgid "Preview Image"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:103
+msgid ""
+"Preview Images can be used as alternatives to Featured Images within the "
+"&#8220;posts loop&#8221; (archives, blog, search, recent posts, etc) &ndash; "
+"they are <strong>not</strong> shown within sliders or on single post pages."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:129
+msgid "Yes - filter by category"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:130
+msgid "Yes - use a specific category..."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:131
+msgid "Yes - filter by tags"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:132
+msgid "Yes - use a specific tag..."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:138
+msgid "Related Posts: Enter a Category"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:139
+msgid "Please enter one category only!"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:148
+msgid "Related Posts: Enter a Tag"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:149
+msgid "Please enter one tag only!"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:158
+msgid "Crop featured image(s)?"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:169
+msgid "Alternate Category Text (within Slider)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:170
+msgid ""
+"If this post appears in a slider, the text entered here will be shown "
+"instead of the category name. <strong>Note:</strong> best to keep it short - "
+"one or two words."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:186
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:195
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:204
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:213
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:222
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:231
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:240
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:249
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:258
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:267
+msgid "Upload an image or enter an URL."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:278
+msgid "To enable a featured video, paste a video ID or URL below."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:284
+msgid "Vimeo Video URL"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:291
+msgid "YouTube Video URL"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:299
+msgid ""
+"Upload your own video.<br/><strong>Note:</strong> Self-hosted video is only "
+"supported on single post pages &mdash; not within the loop."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:305
+msgid "Video Embed Code"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:305
+msgid "(iframes only)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:306
+msgid ""
+"For all other videos, you can paste a video embed code.<br/><strong>Note:</"
+"strong> not supported within sliders.<br/> Please only use iframes here "
+"(example: &lt;iframe src=\"http://...\"&gt;)"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:314
+msgid "Featured Audio Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:315
+msgid ""
+"To enable featured audio, paste a SoundCloud or Spotify URL or embed code "
+"below.<br/><strong>Note:</strong> Featured Audio is only supported on single "
+"post pages &mdash; not within the loop."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:321
+msgid "SoundCloud URL"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:328
+msgid "Spotify URL"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:335
+msgid "Self-hosted Audio"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:336
+msgid "Upload your own audio."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-post.php:353
+msgid "Type or paste your post-specific CSS here."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:14
+msgid "Mega Menu Settings"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:29
+msgid "Mega Menu link"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:30
+msgid ""
+"If you want the title/label of this Mega Menu to have a link, put it here."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:37
+msgid "Mega Menu Layout:"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:38
+msgid "Choose a layout type (width) for this mega menu."
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:42
+msgid "Wide"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:43
+msgid "Standard &times; 3"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:44
+msgid "Standard &times; 2"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:104
+msgid "Need help?"
+msgstr ""
+
+#: ts-essentials/includes/metaboxes/metaboxes-megamenu.php:105
+msgid ""
+"For tips and instructions on creating Mega Menus, please see our <a href="
+"\"http://themestockyard.com/matador/documentation/#!/mega_menus\" target="
+"\"_blank\">documentation</a>."
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:11
+msgid "This widget shows how many followers you have on Facebook and Twitter."
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:13
+msgid "Facebook & Twitter Followers"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:120
+msgid "We're Social!"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:131
+msgid "Label (optional):"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:135
+msgid "Facebook Page Username/ID:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:139
+msgid "Twitter Username:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:142
+msgid "Find or Create your Twitter App"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:144
+msgid "Consumer Key:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:149
+msgid "Consumer Secret:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:154
+msgid "Access Token:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:159
+msgid "Access Token Secret:"
+msgstr ""
+
+#: ts-essentials/includes/widgets/facebook-twitter.php:162
+msgid "<strong>Note:</strong> Twitter followers are cached for 10 minutes."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:35
+msgid "Choose a Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:36
+msgid "Blog &amp; Blog Widget(s)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:38
+msgid "Blog Banner"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:39
+msgid "Blog Slider"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:40
+msgid "Blog Widget"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:43
+#: ts-essentials/includes/shortcodes/tinymce/config.php:499
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1203
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1743
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1805
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1933
+msgid "Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:44
+msgid "Add Column(s)..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:45
+msgid "Elements"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:46
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:62
+msgid "Accordion"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:47
+msgid "Alert"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:48
+msgid "Blockquote"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:49
+msgid "Button"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:50
+msgid "Callout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:51
+msgid "Code"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:52
+msgid "Custom Menu"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:53
+msgid "Google Map"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:54
+msgid "Iconboxes"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:56
+msgid "People"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:57
+msgid "Pricing Table"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:58
+msgid "Progress Bar"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:60
+#: ts-essentials/includes/shortcodes/tinymce/config.php:200
+#: ts-essentials/includes/shortcodes/tinymce/config.php:898
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1670
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2121
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2653
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2761
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2854
+msgid "Title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:61
+msgid "Tabs &amp; Toggles"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:63
+msgid "Tabs"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:64
+msgid "Toggles"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:65
+msgid "Dividers"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:66
+msgid "Add a Divider..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:67
+msgid "Galleries &amp; Slideshows"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:68
+msgid "Lightbox Gallery"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:69
+msgid "Slider Gallery"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:70
+msgid "Sections"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:71
+msgid "Full Width Section"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:72
+msgid "Parallax Section"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:75
+msgid "Dropcap"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:76
+msgid "Highlight"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:77
+msgid "Animations"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:78
+msgid "Fade In"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:79
+msgid "Audio &amp; Video"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:80
+msgid "Youtube"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:81
+msgid "Vimeo"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:82
+msgid "SoundCloud"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:83
+msgid "Show/Hide"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:84
+msgid "Show if..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:85
+msgid "Hide if..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:86
+msgid "Other"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:87
+msgid "Clear Floats"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:88
+msgid "Email Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:89
+msgid "FontAwesome"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:95
+msgid "Choose Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/ts-sc.php:152
+msgid "Insert Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:31
+msgid "Choose a menu..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:79
+msgid "Dark Gray"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:80
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1608
+msgid "Black"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:81
+msgid "White"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:85
+#: ts-essentials/includes/shortcodes/tinymce/config.php:91
+#: ts-essentials/includes/shortcodes/tinymce/config.php:319
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1427
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2024
+msgid "Default"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:93
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1246
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1275
+msgid "Center"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:98
+msgid "Use default (from Theme Options)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:164
+#, php-format
+msgid ""
+"Hi there, %s! <br/><br/>To get started, choose a shortcode from the drop-"
+"down list above."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:180
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2834
+msgid "Open Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:181
+#: ts-essentials/includes/shortcodes/tinymce/config.php:188
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1395
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1680
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1794
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1837
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2835
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2842
+msgid "Click an icon to select, click again to unselect"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:187
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2841
+msgid "Closed Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:195
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2849
+msgid "Insert Accordion Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:202
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2856
+msgid "Toggle Title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:203
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2857
+msgid "Title of the toggle"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:206
+#: ts-essentials/includes/shortcodes/tinymce/config.php:208
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2862
+msgid "Toggle Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:209
+msgid "Add the accordion toggle content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:214
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2868
+msgid "Initially Open?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:219
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2873
+msgid "Add Toggle Option"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:233
+msgid "Alert Type"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:234
+msgid "Select the type of alert message"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:236
+msgid "General"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:237
+msgid "Error"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:238
+msgid "Success"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:239
+msgid "Notice"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:243
+#: ts-essentials/includes/shortcodes/tinymce/config.php:263
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2347
+msgid "Text Goes Here"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:245
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2349
+msgid "Alert Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:246
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2350
+msgid "Insert the alert text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:251
+msgid "Alert Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:265
+msgid "Blockquote Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:271
+#: ts-essentials/includes/shortcodes/tinymce/config.php:849
+msgid "Button URL"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:272
+msgid "Example: Ernest Hemingway"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:277
+msgid "&#8220;Attributed To&#8221; URL"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:278
+#: ts-essentials/includes/shortcodes/tinymce/config.php:850
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1699
+msgid "http://example.com"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:282
+#: ts-essentials/includes/shortcodes/tinymce/config.php:418
+#: ts-essentials/includes/shortcodes/tinymce/config.php:648
+#: ts-essentials/includes/shortcodes/tinymce/config.php:773
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1952
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2778
+msgid "Align Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:292
+msgid "Pull Direction"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:302
+msgid "Blockquote Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:316
+msgid "Blog Layout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:317
+msgid "Select the layout for the blog shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:331
+#: ts-essentials/includes/shortcodes/tinymce/config.php:506
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2034
+msgid "Posts Per Page"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:332
+#: ts-essentials/includes/shortcodes/tinymce/config.php:507
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2035
+msgid "Select number of posts per page"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:338
+#: ts-essentials/includes/shortcodes/tinymce/config.php:520
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2041
+msgid "Show Pagination?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:339
+#: ts-essentials/includes/shortcodes/tinymce/config.php:521
+msgid ""
+"Not recommended for pages that have more than one instance of a blog "
+"shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:345
+#: ts-essentials/includes/shortcodes/tinymce/config.php:527
+msgid "Turn on Infinite Scrolling?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:346
+#: ts-essentials/includes/shortcodes/tinymce/config.php:528
+msgid ""
+"Set to &#8220;Yes&#8221; to automatically hide pagination and load more "
+"posts via ajax when scrolling the page"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:356
+#: ts-essentials/includes/shortcodes/tinymce/config.php:538
+msgid "Infinite Scrolling button text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:357
+#: ts-essentials/includes/shortcodes/tinymce/config.php:539
+msgid ""
+"Only works if the previous setting is \"Yes (load more on button click)\"."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:384
+#: ts-essentials/includes/shortcodes/tinymce/config.php:545
+#: ts-essentials/includes/shortcodes/tinymce/config.php:614
+#: ts-essentials/includes/shortcodes/tinymce/config.php:732
+msgid "Select a category or leave blank for all"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:389
+#: ts-essentials/includes/shortcodes/tinymce/config.php:550
+#: ts-essentials/includes/shortcodes/tinymce/config.php:619
+#: ts-essentials/includes/shortcodes/tinymce/config.php:744
+msgid "Post \"IDs\" to include..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:390
+#: ts-essentials/includes/shortcodes/tinymce/config.php:551
+#: ts-essentials/includes/shortcodes/tinymce/config.php:620
+#: ts-essentials/includes/shortcodes/tinymce/config.php:745
+msgid ""
+"Display only certain posts by listing their IDs here (separated by commas)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:394
+#: ts-essentials/includes/shortcodes/tinymce/config.php:555
+#: ts-essentials/includes/shortcodes/tinymce/config.php:624
+#: ts-essentials/includes/shortcodes/tinymce/config.php:749
+msgid "Post \"IDs\" to <em>exclude</em>..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:395
+#: ts-essentials/includes/shortcodes/tinymce/config.php:556
+#: ts-essentials/includes/shortcodes/tinymce/config.php:625
+#: ts-essentials/includes/shortcodes/tinymce/config.php:750
+msgid ""
+"Prevent certain posts from displaying by listing their IDs here (separated "
+"by commas)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:399
+#: ts-essentials/includes/shortcodes/tinymce/config.php:560
+#: ts-essentials/includes/shortcodes/tinymce/config.php:629
+#: ts-essentials/includes/shortcodes/tinymce/config.php:754
+msgid "Exclude previous posts?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:400
+#: ts-essentials/includes/shortcodes/tinymce/config.php:561
+#: ts-essentials/includes/shortcodes/tinymce/config.php:630
+#: ts-essentials/includes/shortcodes/tinymce/config.php:755
+msgid ""
+"This option can prevent posts from the slider or other instances of blog "
+"shortcodes from appearing."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:406
+#: ts-essentials/includes/shortcodes/tinymce/config.php:567
+#: ts-essentials/includes/shortcodes/tinymce/config.php:636
+#: ts-essentials/includes/shortcodes/tinymce/config.php:761
+msgid "Exclude these posts later?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:407
+#: ts-essentials/includes/shortcodes/tinymce/config.php:568
+#: ts-essentials/includes/shortcodes/tinymce/config.php:637
+#: ts-essentials/includes/shortcodes/tinymce/config.php:762
+msgid ""
+"This option can prevent *these* posts from appearing in other instances of "
+"blog shortcodes."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:413
+#: ts-essentials/includes/shortcodes/tinymce/config.php:643
+#: ts-essentials/includes/shortcodes/tinymce/config.php:768
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2767
+msgid "Title Size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:414
+#: ts-essentials/includes/shortcodes/tinymce/config.php:644
+#: ts-essentials/includes/shortcodes/tinymce/config.php:769
+msgid ""
+"Examples: H1, H2, H3, H4, H5, H6... or enter any font size (ex: 16px). Leave "
+"blank for default."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:424
+#: ts-essentials/includes/shortcodes/tinymce/config.php:582
+#: ts-essentials/includes/shortcodes/tinymce/config.php:779
+msgid "Excerpt Length (leave blank for default)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:425
+#: ts-essentials/includes/shortcodes/tinymce/config.php:583
+#: ts-essentials/includes/shortcodes/tinymce/config.php:780
+msgid "Maximum number of characters to show in the excerpt. Example: 100"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:435
+#: ts-essentials/includes/shortcodes/tinymce/config.php:784
+msgid "Show Excerpt?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:441
+#: ts-essentials/includes/shortcodes/tinymce/config.php:790
+msgid "Show Meta? (category, author, etc)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:447
+msgid "Show &#8220;Read More&#8221; text?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:459
+#: ts-essentials/includes/shortcodes/tinymce/config.php:654
+#: ts-essentials/includes/shortcodes/tinymce/config.php:806
+msgid "Allow Videos?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:460
+msgid ""
+"If set to &#8220;No&#8221, only featured images will be shown. (Videos are "
+"not compatible with \"2 Column Grid\" and \"3 Column Grid\" layouts)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:466
+#: ts-essentials/includes/shortcodes/tinymce/config.php:813
+msgid "Allow Galleries?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:467
+#: ts-essentials/includes/shortcodes/tinymce/config.php:814
+msgid ""
+"If set to &#8220;No&#8221, only featured images (but not galleries) will be "
+"shown."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:480
+#: ts-essentials/includes/shortcodes/tinymce/config.php:587
+#: ts-essentials/includes/shortcodes/tinymce/config.php:686
+#: ts-essentials/includes/shortcodes/tinymce/config.php:820
+msgid "Ignore Sticky Posts?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:485
+msgid "Blog Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:500
+msgid "Select the column number"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:513
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1434
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1862
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2048
+msgid "Fullwidth?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:514
+msgid "Only works when no sidebar is present"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:592
+msgid "Blog Banner Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:606
+msgid "Post count"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:607
+msgid "Select number of posts to show in the slider"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:655
+#: ts-essentials/includes/shortcodes/tinymce/config.php:807
+msgid "If set to &#8220;No&#8221, only featured images will be shown."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:661
+msgid "Image size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:662
+msgid ""
+"If using this shortcode within a small column or within the sidebar, select "
+"a smaller size to save bandwith."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:664
+#: ts-essentials/includes/shortcodes/tinymce/config.php:864
+msgid "Large"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:665
+#: ts-essentials/includes/shortcodes/tinymce/config.php:863
+msgid "Medium"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:666
+#: ts-essentials/includes/shortcodes/tinymce/config.php:862
+msgid "Small"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:691
+msgid "Blog Slider Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:705
+msgid "Widget Heading"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:706
+msgid "Leave blank for no heading."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:715
+msgid "Widget Layout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:716
+msgid ""
+"This shortcode is best for columns less than 480 pixels. However, the &#8220;"
+"horizontal&#8221; layout will also work well in wider columns."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:718
+msgid "Vertical"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:719
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2640
+msgid "Horizontal"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:724
+msgid "Limit"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:725
+msgid "Select number of posts to show"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:737
+msgid "Override Widget Heading?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:738
+msgid ""
+"If set to &#8220;Yes&#8221 and a single Category is chosen above, the "
+"category name will be linked and used as the Widget Heading."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:796
+msgid "Show Featured Images/Video?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:799
+msgid "Only for the first post"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:825
+msgid "Blog Widget Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:839
+msgid "Button Style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:842
+msgid "Outline"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:843
+msgid "Outline Thin"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:855
+#: ts-essentials/includes/shortcodes/tinymce/config.php:940
+msgid "Button Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:860
+msgid "Button Size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:870
+#: ts-essentials/includes/shortcodes/tinymce/config.php:926
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2142
+msgid "Button Link Target"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:872
+#: ts-essentials/includes/shortcodes/tinymce/config.php:928
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1042
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1713
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2000
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2144
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2403
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2437
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2734
+msgid "Same window/tab"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:873
+#: ts-essentials/includes/shortcodes/tinymce/config.php:929
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1043
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1714
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2001
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2145
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2404
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2438
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2735
+msgid "New window/tab"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:877
+#: ts-essentials/includes/shortcodes/tinymce/config.php:935
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2132
+msgid "Button Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:879
+msgid "Button's Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:884
+msgid "Button Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:896
+msgid "Title goes here"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:901
+msgid "Description goes here"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:903
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1983
+msgid "Description"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:910
+msgid "Align"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:914
+#: ts-essentials/includes/shortcodes/tinymce/config.php:950
+msgid "Bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:920
+msgid "Button Link URL"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:933
+msgid "Button text here"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:946
+msgid "Button Position"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:955
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1490
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1882
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2235
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2804
+msgid "Border Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:960
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1319
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1440
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1618
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1893
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2240
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2687
+msgid "Background Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:965
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1674
+msgid "Title Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:970
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1725
+msgid "Description Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:976
+msgid "Add Drop Shadow"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:996
+msgid "Callout Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1008
+msgid "Height (optional)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1009
+msgid ""
+"&#8220;Clear floats&#8221; should be used after a full row of columns to "
+"make sure content is displayed correctly. You can add a height as well to "
+"divide content."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1014
+msgid "Clear Floats Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1026
+msgid "Client Slider Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1035
+msgid "Client Website Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1036
+msgid "Add the url to client's website <br />ex: http://example.com"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1040
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1998
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2401
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2435
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2732
+msgid "Link Target"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1048
+msgid "Client Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1049
+msgid "Upload the client image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1054
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1776
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2410
+msgid "Image Alt Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1055
+msgid ""
+"The alt attribute provides alternative information if an image cannot be "
+"viewed"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1059
+msgid "Add New Client Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1074
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1424
+msgid "Style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1076
+msgid "Inline"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1077
+msgid "Block"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1081
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1083
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1108
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1373
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1524
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1911
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1913
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2258
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2260
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2294
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2329
+msgid "Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1089
+msgid "Code Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1106
+msgid "Text content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1113
+msgid "Color Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1125
+msgid "Row Top Margin"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1126
+msgid "The top margin for this row of columns. (In Pixels)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1131
+msgid "Row Bottom Margin"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1132
+msgid "The bottom margin for this row of columns. (In Pixels)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1137
+msgid "Insert Columns Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1146
+msgid "Column Type"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1147
+msgid "Select the width of the column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1149
+msgid "One Half (1/2)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1150
+msgid "One Third (1/3)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1151
+msgid "One Fourth (1/4)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1152
+msgid "One Fifth (1/5)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1153
+msgid "One Sixth (1/6)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1154
+msgid "Two Third (2/3)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1155
+msgid "Two Fifth (2/5)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1156
+msgid "Three Fourth (3/4)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1157
+msgid "Three Fifth (3/5)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1158
+msgid "Four Fifth (4/5)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1159
+msgid "Five Sixth (5/6)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1164
+msgid "Last Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1165
+msgid ""
+"This should be set to \"Yes\" for the last column in a set. (not absolutely "
+"necessary in most cases)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1169
+msgid "Add column content here..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1171
+msgid "Column Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1172
+msgid "Insert the column content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1177
+msgid "Add Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1192
+msgid "List Style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1194
+msgid "Plain"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1195
+msgid "Angles"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1196
+msgid "Small Triangles"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1197
+msgid "Borders"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1209
+msgid "Select a menu..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1215
+msgid "Custom Menu Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1228
+msgid "Divider Style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1229
+msgid "Select a divider style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1231
+msgid "Invisible"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1232
+msgid "Single Border"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1233
+msgid "Dashed Border"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1234
+msgid "Double Border"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1235
+msgid "Double-Dashed Border"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1236
+msgid "Circle"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1237
+msgid "Square"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1242
+msgid "Align Shape"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1243
+msgid ""
+"Note: Only useful for &#8220;Circle&#8221; and &#8220;Square&#8221; dividers"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1254
+msgid "Divider Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1259
+msgid "Divider Opacity"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1265
+msgid "Maximum Width"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1266
+msgid "Example: 300px. Note: Leave blank for 100%"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1270
+msgid "Pull Divider"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1271
+msgid ""
+"Which direction to pull to divider. Note: Only useful when &#8220;"
+"Width&#8221; has been added."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1282
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1496
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1869
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2218
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2811
+msgid "Padding Top"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1283
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1289
+msgid "In Pixels"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1288
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1503
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1876
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2224
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2817
+msgid "Padding Bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1294
+msgid "Divider Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1306
+msgid "A"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1308
+msgid "Featured letter..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1309
+msgid "Dropcap letter goes here."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1324
+msgid "Dropcap Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1336
+msgid "Email Address"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1337
+msgid ""
+"Example: you@yourcompany.com<br/>Will print via JavaScript to avoid spam."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1342
+msgid "Display Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1343
+msgid "Leave blank to simply use the email address as display text."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1348
+msgid "Email Link Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1362
+msgid "Fade in from..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1365
+msgid "Current location"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1366
+msgid "Above"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1367
+msgid "Below"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1375
+msgid "Fade-in Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1376
+msgid "Insert the content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1381
+msgid "Fade In Animation Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1394
+msgid "Select Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1400
+msgid "Size of Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1401
+msgid "Example: 16px"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1406
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1685
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1799
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1842
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2444
+msgid "Icon Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1412
+msgid "FontAwesome Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1425
+msgid "Choose &#8220;Default&#8221; or &#8220;Parallax&#8221;"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1428
+msgid "Parallax"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1435
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1863
+msgid ""
+"Stretch parallax section to full width of browser? (Only works on pages "
+"without a sidebar)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1444
+msgid "Backgrond Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1445
+msgid "Upload an image to display in the background"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1449
+msgid "Background Repeat"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1450
+msgid "Choose how the background image repeats."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1452
+msgid "No Repeat"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1453
+msgid "Repeat Vertically and Horizontally"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1454
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1455
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1460
+msgid "Background Position"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1461
+msgid "Choose the postion of the background image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1463
+msgid "Left Top"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1464
+msgid "Left Center"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1465
+msgid "Left Bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1466
+msgid "Right Top"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1467
+msgid "Right Center"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1468
+msgid "Right Bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1469
+msgid "Center Top"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1470
+msgid "Center Center"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1471
+msgid "Center Bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1477
+msgid "Mesh overlay?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1478
+msgid "Cover background color/image with mesh overlay?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1484
+msgid "Border Size/Width"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1485
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1497
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1504
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1511
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1518
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1870
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1877
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1888
+msgid "In pixels"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1491
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1537
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2236
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2688
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2694
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2785
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2805
+msgid "Leave blank for default"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1510
+msgid "Padding Left"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1517
+msgid "Padding Right"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1522
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1630
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1718
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1829
+msgid "Your content here..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1525
+msgid "Add content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1530
+msgid "Align Content Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1541
+msgid "Fullwidth Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1556
+msgid "Address"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1557
+msgid "Add address to the location which will show up on map."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1573
+msgid "Map Height"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1574
+msgid "Map Height in Percentage or Pixels"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1579
+msgid "Zoom Level"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1580
+msgid "Higher number will be more zoomed in."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1586
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1587
+msgid "Enable zooming using a mouse's scroll wheel"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1592
+msgid "Google Map Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1605
+msgid "Highlight Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1607
+msgid "Yellow"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1619
+msgid "This will override the &#8220;Highlight Color&#8221; option above"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1624
+msgid "Background Color Opacity"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1625
+msgid "Note: This only works with a hex background color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1632
+msgid "Content to Higlight"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1633
+msgid "Add your content to be highlighted"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1639
+msgid "Highlight Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1651
+msgid "Iconbox Layout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1652
+msgid "Select the layout for the iconboxes"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1654
+msgid "Icon next to title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1655
+msgid "Icon above title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1656
+msgid "Icon beside title and content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1661
+msgid "Iconboxes Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1679
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2661
+msgid "Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1691
+msgid "Icon Circle Background Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1692
+msgid "Default is none"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1698
+msgid "&#8220;Read More&#8221; Link Url"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1705
+msgid "&#8220;Read More&#8221; Link Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1706
+msgid "Insert the text to display as the link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1711
+msgid "&#8220;Read More&#8221; Link Target"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1720
+msgid "Description / Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1721
+msgid "Add content for infobox"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1731
+msgid "Add New Iconbox"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1750
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2430
+msgid "Size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1751
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1940
+msgid "Leave blank for default, or enter [width],[height] (example: 220,300)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1756
+msgid "Zoom On Hover"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1757
+msgid "Enable zoom effect when hovering over images"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1762
+msgid "Lightbox Gallery Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1770
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1968
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2390
+msgid "Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1771
+msgid "Upload an image to display"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1777
+msgid ""
+"The alt attribute provides alternative information if an image cannot be "
+"loaded"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1781
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2415
+msgid "Add New Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1793
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1836
+msgid "Default Icon"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1812
+msgid "Arrange Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1813
+msgid "Only works with 2+ columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1815
+msgid "Top to bottom"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1816
+msgid "Left to Right"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1822
+msgid "List Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1831
+msgid "List Item Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1832
+msgid "Add list item content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1847
+msgid "Add New List Item"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1887
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2230
+msgid "Border Width"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1897
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2244
+msgid "Background Image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1902
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2249
+msgid "Background Image Repeat"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1904
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2251
+msgid "No repeat"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1905
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2252
+msgid "Repeat"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1906
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2253
+msgid "Repeat on X-axis (repeat-x)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1907
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2254
+msgid "Repeat on Y-axis (repeat-y)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1919
+msgid "Parallax Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1939
+msgid "Image Size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1946
+msgid "Rounded Images?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1947
+msgid "May not work with custom image size"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1960
+msgid "People Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1978
+msgid "Subtitle"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1988
+msgid "Link URL"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:1993
+msgid "Link Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2006
+msgid "Add New Person"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2021
+msgid "Portfolio Layout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2022
+msgid "Select the layout for the portfolio shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2025
+msgid "2 Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2026
+msgid "3 Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2027
+msgid "4 Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2028
+msgid "Masonry Cards"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2029
+msgid "Masonry Grid"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2042
+msgid ""
+"Set to &#8220;No&#8221; if you only want to show a recent posts, with no "
+"page links"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2049
+msgid "Does not work with Masonry Cards layout."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2088
+msgid "Portfolio Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2102
+msgid "Separate Columns?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2103
+msgid "Select whether columns should be joined or separated"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2108
+msgid "Pricing Table Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2114
+msgid "Featured Column?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2122
+msgid "Insert the Pricing Column title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2127
+msgid "Sub-title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2128
+msgid "Insert the Pricing Column sub-title (optional)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2137
+msgid "Button Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2150
+msgid "Add Pricing Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2164
+msgid "Filled Area Percentage"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2165
+msgid "From 1% to 100%"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2171
+msgid "Progress Bar Unit"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2172
+msgid "Insert a unit for the progress bar. ex %"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2176
+msgid "Filled Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2181
+msgid "Unfilled Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2187
+msgid "Progess Bar Text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2188
+msgid "Text will appear within the progess bar"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2198
+msgid "Hide all text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2199
+msgid "Only show the progress bar (will be thinner, since no text is present)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2203
+msgid "Progress Bar Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2265
+msgid "Section Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2278
+msgid "Show if: user is..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2281
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2316
+msgid "logged in OR logged out"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2282
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2317
+msgid "logged in"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2283
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2318
+msgid "logged out"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2288
+msgid "Show if: pagination page is..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2289
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2324
+msgid "Example(s): 1, 3, 5-7, 10+, -14"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2292
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2327
+msgid "Content goes here"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2295
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2330
+msgid "Content to show/hide"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2300
+msgid "&#8220;Show if&#8221; Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2313
+msgid "Hide if: user is..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2323
+msgid "Hide if: pagination page is..."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2335
+msgid "&#8220;Hide if&#8221; Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2355
+msgid "Small Text Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2367
+msgid "Crop Images"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2368
+msgid "Crop images for uniform height or leave uncropped."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2373
+msgid "Slider Gallery Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2380
+msgid "Video URL"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2381
+msgid "Example: https://vimeo.com/119167199"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2385
+msgid "Note"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2386
+msgid "If using a video, the following fields are not needed."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2391
+msgid "Upload an image"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2396
+msgid "Image Website Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2397
+msgid "If you want the image to link to a URL, add it here."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2411
+msgid ""
+"The alt attribute provides alternative information if an image cannot be "
+"loaded."
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2431
+msgid ""
+"&#8220;Large&#8221; or &#8220;Small&#8221; for image icons, pixels for "
+"FontAwesome icons (eg. 16px)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2445
+msgid "Note: only used with &#8220;FontAwesome&#8221; icons"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2451
+msgid "RSS Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2456
+msgid "Facebook Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2461
+msgid "Twitter Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2466
+msgid "Dribbble Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2471
+msgid "Google+ Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2476
+msgid "LinkedIn Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2481
+msgid "Blogger Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2482
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2493
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2499
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2505
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2527
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2533
+msgid "Note: only works with &#8220;Image&#8221; icons"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2487
+msgid "Tumblr Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2492
+msgid "Reddit Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2498
+msgid "Deviantart Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2504
+msgid "Vimeo Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2510
+msgid "Youtube Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2516
+msgid "Pinterest Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2521
+msgid "Flickr Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2526
+msgid "Forrst Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2532
+msgid "Myspace Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2538
+msgid "Skype Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2542
+msgid "Social Links Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2556
+msgid "SoundCloud Url"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2557
+msgid "The SoundCloud url"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2561
+msgid "Show Comments"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2562
+msgid "Choose to display comments"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2567
+msgid "Autoplay"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2568
+msgid "Choose to autoplay the track"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2574
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2784
+msgid "Color"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2575
+msgid "Select the color of the shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2580
+msgid "Width"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2581
+msgid "In pixels (px) or percentage (%)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2586
+msgid "Height"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2587
+msgid "In pixels (px)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2591
+msgid "Sharing Box Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2605
+msgid "Select the table style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2607
+msgid "Style 1"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2608
+msgid "Style 2"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2613
+msgid "Number of Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2614
+msgid "Select how many columns to display"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2616
+msgid "1 Column"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2617
+msgid "2 Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2618
+msgid "3 Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2619
+msgid "4 Columns"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2624
+msgid "Table Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2637
+msgid "Layout"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2638
+msgid "Choose between &#8220;Horizontal&#8221; and &#8220;Vertical&#8221; tabs"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2641
+msgid "Vertical (tabs to the left)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2642
+msgid "Vertical (tabs to the right)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2648
+msgid "Insert Tab Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2655
+msgid "Tab Title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2656
+msgid "Title of the tab"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2662
+msgid "Icon to accompany the tab title"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2666
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2668
+msgid "Tab Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2669
+msgid "Add the tab content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2673
+msgid "Add Tab"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2699
+msgid "Insert Testimonials Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2707
+msgid "Insert the name of the person"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2711
+msgid "Gender"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2712
+msgid "Choose male or female"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2714
+msgid "Male"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2715
+msgid "Female"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2721
+msgid "Company"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2722
+msgid "Insert the name of the company"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2727
+msgid "Link"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2728
+msgid "Add the url the company name will link to"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2741
+msgid "Testimonial Content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2742
+msgid "Add the testimonial content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2746
+msgid "Add Testimonial"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2762
+msgid "Insert the title text"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2768
+msgid "Examples: H1, H2, H3, H4, H5, H6... or enter any font size (ex: 12px)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2772
+msgid "Bold text?"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2791
+msgid "Border Style"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2793
+msgid "(no border)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2794
+msgid "Underline (full)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2795
+msgid "Underline (text width)"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2796
+msgid "Single Line-through"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2797
+msgid "Dashed Line-through"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2798
+msgid "Double Line-through"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2799
+msgid "Double Dashed Line-through"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2812
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2818
+msgid "ex: 20px"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2822
+msgid "Title Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2863
+msgid "Add the toggle content"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2888
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2913
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2938
+msgid "Video URL/ID"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2893
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2918
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2943
+msgid "Autoplay Video"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2894
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2919
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2944
+msgid "Set to yes to make video autoplaying"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2899
+msgid "Vimeo Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2924
+msgid "Vine Shortcode"
+msgstr ""
+
+#: ts-essentials/includes/shortcodes/tinymce/config.php:2950
+msgid "Youtube Shortcode"
+msgstr ""
