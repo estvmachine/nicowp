@@ -15,6 +15,16 @@ function ts_register_sidebars()
             'after_title'   => '</span></h5></div>'
         ));
 
+        register_sidebar(array(
+            'name'          => __('Second Sidebar', 'ThemeStockyard'),
+            'description'   => __('Sidebar con bluebox.', 'ThemeStockyard'),
+            'id'            => 'ts-second-sidebar',
+            'before_widget' => '<div id="%1$s" class="widget %2$s clearfix">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
+            'after_title'   => '</span></h5></div>'
+        ));
+
 
 
         $footer_sidebar_layout = ts_option_vs_default('footer_layout', 'footer2');
@@ -28,7 +38,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 2', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-2',
@@ -37,7 +47,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 3', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-3',
@@ -46,7 +56,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 4', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-4',
@@ -68,7 +78,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 2', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-2',
@@ -77,7 +87,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 3', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-3',
@@ -99,7 +109,7 @@ function ts_register_sidebars()
                     'before_title'  => '<div class="page-title clearfix"><h5 class="mimic-small uppercase subtle-text-color"><span>',
                     'after_title'   => '</span></h5></div>'
                 ));
-                
+
                 register_sidebar(array(
                     'name'          => __('Footer Area 2', 'ThemeStockyard'),
                     'id'            => 'ts-footer-sidebar-2',
