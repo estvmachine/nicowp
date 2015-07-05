@@ -3,20 +3,20 @@ global $smof_data, $ts_options;
 
 /* Add filters, actions, and theme-supported features. */
 add_action( 'after_setup_theme', 'ts_theme_setup' );
-function ts_theme_setup() 
+function ts_theme_setup()
 {
     global $smof_data, $content_width;
-    
+
     /* Content Width */
     if(!isset($content_width) || (!$content_width)) $content_width = 1000;
-    
+
     /* Add support for 'ThemeStockyard Essentials' */
     add_theme_support('ts-essentials');
     define('TS_ESSENTIALS_SUPPORTED_POSTTYPES', 'megamenu'); // separate with commas
-    
+
     /* Thumbnails */
     if(function_exists('add_image_size'))
-    { 
+    {
         add_theme_support('post-thumbnails');
         add_image_size('thumb_1200', 1200, 0, false);
         add_image_size('thumb_1200x600', 1200, 600, true);
@@ -26,49 +26,49 @@ function ts_theme_setup()
         add_image_size('thumb_480', 480, 0, false);
         add_image_size('thumb_480x320', 480, 320, true);
     }
-    
+
     /* When an image is deleted, remove any additional thumbnails that were created by aq_resize function */
     add_filter('delete_attachment', 'ts_aq_resized_images_removal', 900);
-    
+
     /* Increase JPG quality for resized images */
     if(ts_option_vs_default('use_custom_jpeg_compression', 1) == 1) {
         add_filter('jpeg_quality', 'ts_image_full_quality');
         add_filter('wp_editor_set_quality', 'ts_image_full_quality');
     }
-    
+
     /* Sharpen resized images */
     if(ts_option_vs_default('sharpen_resized_images', 1) == 1) {
         add_filter('image_make_intermediate_size', 'ts_sharpen_resized_files',900);
     }
-    
+
     /* Better SEO: page titles */
     add_filter( 'wp_title', 'ts_filter_wp_title', 10, 2 );
-    
+
     /* Sidebars */
     add_action( 'widgets_init', 'ts_register_sidebars' );
-    
+
     /* Post formats */
     add_theme_support('post-formats', array('gallery', 'video', 'audio')); // need to support more here
 
-    /* Add support for nav menus */ 
-    add_theme_support( 'nav-menus' ); 
+    /* Add support for nav menus */
+    add_theme_support( 'nav-menus' );
     register_nav_menus( array(
             'top_bar' => __( 'Top Bar: Small Navigation', 'ThemeStockyard'),
             'main_nav' => __( 'Main Navigation', 'ThemeStockyard'),
             'footer_nav' => __( 'Footer Navigation', 'ThemeStockyard'),
     ));
-    
+
     /* Add custom classes to wp_nav_menu */
     add_filter('nav_menu_css_class', 'ts_add_class_to_wp_nav_menu');
-    
+
     /* Enable shortcodes in excerpts and widgets */
     add_filter('the_excerpt', 'do_shortcode');
     add_filter('widget_text', 'do_shortcode');
-    
+
     /* Properly format shortcodes (particularly block elements) */
     add_filter('the_content', 'ts_shortcodes_formatter');
-    add_filter('widget_text', 'ts_shortcodes_formatter', 9); 
-    
+    add_filter('widget_text', 'ts_shortcodes_formatter', 9);
+
     /* End truncated excerpts with "..." */
     add_filter('excerpt_more', 'ts_new_excerpt_more');
 
@@ -83,30 +83,30 @@ function ts_theme_setup()
         }
     }
 
-    /* Add support for woocommerce */ 
+    /* Add support for woocommerce */
     add_theme_support( 'woocommerce' );
     //define('WOOCOMMERCE_USE_CSS', false);
     add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 9;' ), 20 );
-    
+
     /* Add custom CSS & JS (from Theme Options) to wp_head */
     add_action('wp_head', 'ts_wp_head_addons');
-    
+
     /* Add custom JS & HTML (from Theme Options) to wp_footer */
     add_action('wp_footer', 'ts_wp_footer_addons', 999);
-    
+
     /* Custom theme activation function */
     add_action('after_switch_theme', 'ts_activation_function');
-    
+
     /* RSS feed link */
     add_theme_support( 'automatic-feed-links' );
     add_action( 'feed_link', 'ts_custom_rss_feed', 99, 2 );
-    
+
     /* Wrap oEmbeds with responsive div */
     add_filter('embed_oembed_html', 'my_embed_oembed_html', 99, 4);
-    
+
     /* Modify the search form */
     add_filter( 'get_search_form', 'ts_html5_search_form' );
-    
+
     /* adding support for WP Reviews plugin */
     if ( function_exists( 'wp_review_theme_defaults' )) {
         $color_options = array(
@@ -120,35 +120,35 @@ function ts_theme_setup()
         );
         wp_review_theme_defaults( $color_options );
     }
-    
+
     /* ajax load mini woocommerce cart */
     add_action("wp_ajax_ts_reload_mini_cart", "ts_reload_mini_cart");
     add_action("wp_ajax_nopriv_ts_reload_mini_cart", "ts_reload_mini_cart");
-    
+
     /* ajax load infinite blog */
     add_action("wp_ajax_ts_load_infinite_blog", "ts_load_infinite_blog");
     add_action("wp_ajax_nopriv_ts_load_infinite_blog", "ts_load_infinite_blog");
-    
+
     /* ajax postview counter */
     add_action("wp_ajax_ts_update_postviews", "ts_update_postviews");
     add_action("wp_ajax_nopriv_ts_update_postviews", "ts_update_postviews");
-    
+
     /* add post id column to wp-admin/posts.php */
     add_filter('manage_posts_columns', 'ts_posts_columns_id', 5);
     add_action('manage_posts_custom_column', 'ts_posts_custom_id_columns', 5, 2);
-    
+
     /* add custom query vars */
     add_filter( 'query_vars', 'ts_add_query_vars_filter' );
-    
+
     /* dynamic CSS from theme options */
     if( !function_exists( 'ts_style_options' )) {
         function ts_style_options($wp) {
             if (!empty($_GET['theme-options']) && $_GET['theme-options'] == 'css') {
                 # get theme options
                 header("Content-type: text/css; charset: UTF-8");
-                header("Cache-Control: must-revalidate"); 
-                $offset = 72000; 
-                $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT"; 
+                header("Cache-Control: must-revalidate");
+                $offset = 72000;
+                $ExpStr = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
                 header($ExpStr);
                 echo ts_dynamic_css();
                 exit;
@@ -156,18 +156,18 @@ function ts_theme_setup()
         }
         add_action('parse_request', 'ts_style_options');
     }
-    
+
     /* smart date/time conversion (for localizing dates/times for posts) */
     add_filter('get_the_date', 'ts_smart_date', 999, 3);
     add_filter('get_the_time', 'ts_smart_time', 999, 3);
-    
+
     /* setup global $ts_previous_posts var */
     add_action('wp_head', 'ts_setup_previous_post_cache', 99999);
 }
 
 
 
-// --------------  variables -------------- 
+// --------------  variables --------------
 // Variables begin...
 // --------------  variables --------------
 
@@ -187,19 +187,19 @@ $ts_within_blog_loop = false;
 $ts_comments_top_padding = true;
 $ts_sidebar_position = 'right';
 
-// --------------  functions -------------- 
+// --------------  functions --------------
 // Functions begin...
 // --------------  functions --------------
 
 function ts_setup_previous_post_cache() {
     global $ts_previous_posts;
-    
+
     $ts_previous_posts = array(); // yep, that's all folks
 }
 function ts_smart_date($date, $format = '', $post = null) {
     if(ts_option_vs_default('smart_datetime', 0) == 1) {
         $date_pref = ts_option_vs_default('smart_date_format', 'american');
-        
+
         if($date_pref != 'american')
         {
             if($format == 'M j')
@@ -216,19 +216,19 @@ function ts_smart_date($date, $format = '', $post = null) {
                 $format = 'dd-mm-yyyy';
             elseif($format == 'm/d/yyyy')
                 $format = 'd/m/yyyy';
-            
-            
+
+
             $date = (trim($format)) ? mysql2date( $format, $date ) : $date;
         }
     }
-    
+
     return $date;
 }
 
 function ts_smart_time($time, $format = '', $post = null) {
     if(ts_option_vs_default('smart_datetime', 0) == 1) {
         $time_pref = ts_option_vs_default('smart_time_format', '12hour');
-        
+
         if($format == 'g:ia' || $format == 'g:i a' || $format == 'g:iA' || $format == 'g:i A' || $format == 'h:iA' || $format == 'h:i A')
         {
             $time = ($time_pref != '12hour') ? get_post_time('H:i', false, $post, true) : $time;
@@ -238,16 +238,16 @@ function ts_smart_time($time, $format = '', $post = null) {
             $time = (trim($format)) ? ts_smart_date($time, $format) : $time;
         }
     }
-    
+
     return $time;
 }
 
-function ts_wp_head_addons() 
+function ts_wp_head_addons()
 {
     global $smof_data;
-    
+
     ts_custom_css();
-    
+
     // load woo cart(s) via ajax (useful when pages have been cached)
     if(isset($smof_data['disable_woocommerce_checkout']) && $smof_data['disable_woocommerce_checkout'] == 1) {
         echo '<script type="text/javascript">';
@@ -264,10 +264,10 @@ function ts_wp_head_addons()
     }
 }
 
-function ts_wp_footer_addons() 
+function ts_wp_footer_addons()
 {
-    global $smof_data;    
-    
+    global $smof_data;
+
     // load woo cart(s) via ajax (useful when pages have been cached)
     if(isset($smof_data['enable_cart_ajax_loading']) && $smof_data['enable_cart_ajax_loading'] == 1) {
         echo '<script type="text/javascript">';
@@ -283,25 +283,25 @@ function ts_wp_footer_addons()
 function ts_theme_data($var = '')
 {
     global $theme_data;
-    
+
     if((is_array($theme_data) && count($theme_data) > 1) || (is_string($theme_data) && count($theme_data) > 1)) {
         return ($var && isset($theme_data[$var])) ? $theme_data[$var] : $theme_data;
     } else {
         $theme_data = array();
     }
-    
+
     if( is_child_theme() ) {
         $temp_obj = wp_get_theme();
         $theme_obj = wp_get_theme( $temp_obj->get('Template') );
     } else {
-        $theme_obj = wp_get_theme();    
+        $theme_obj = wp_get_theme();
     }
 
     $theme_data['version'] = $theme_obj->get('Version');
     $theme_data['name'] = $theme_obj->get('Name');
     $theme_data['uri'] = $theme_obj->get('ThemeURI');
     $theme_data['author_uri'] = $theme_obj->get('AuthorURI');
-    
+
     return ($var) ? $theme_data[$var] : $theme_data;
 }
 define('TS_THEME_VERSION', ts_theme_data('version'));
@@ -310,7 +310,7 @@ define('TS_THEMEURI', ts_theme_data('uri'));
 define('TS_AUTHOR_URI', ts_theme_data('author_uri'));
 
 // Wrap oEmbeds with responsive div
-function my_embed_oembed_html($html, $url, $attr, $post_id) 
+function my_embed_oembed_html($html, $url, $attr, $post_id)
 {
     return '<p class="ts-wp-oembed fluid-width-video-wrapper">' . $html . '</p>';
 }
@@ -378,11 +378,11 @@ function ts_escape($str = '', $type = '', $context = '')
             return wp_kses_post($str);
         }
     }
-    
+
     return $str;
 }
 
-// Add post id column to wp-admin/posts.php (part 1) 
+// Add post id column to wp-admin/posts.php (part 1)
 function ts_posts_columns_id($defaults){
     $defaults['ts_post_id'] = 'ID';
     return $defaults;
@@ -396,7 +396,7 @@ function ts_posts_custom_id_columns($column_name, $id){
 }
 
 // Increase jpeg quality to 100 percent
-function ts_image_full_quality($arg = '') 
+function ts_image_full_quality($arg = '')
 {
     $quality = ts_option_vs_default('jpeg_compression', 95);
     return $quality;
@@ -454,7 +454,7 @@ function ts_get_comments_sidebar()
 
 function ts_custom_css() {
     global $ts_custom_css, $ts_css_addon, $smof_data;
-    $css  = '';    
+    $css  = '';
     $css .= (isset($smof_data['enable_inline_css']) && $smof_data['enable_inline_css'] == 1) ? ts_get_dynamic_css() : '';
     $css .= (isset($smof_data['custom_css'])) ? $smof_data['custom_css'] : '';
     $css .= (isset($ts_custom_css)) ? $ts_custom_css : '';
@@ -478,75 +478,75 @@ function ts_css_num($num, $allow_percent = false, $default = '')
         $num = preg_replace("/[^0-9]*/", "", $num);
         $num = ($num == '') ? '' : $num.'px';
     endif;
-    
+
     return ($num == '') ? $default : $num;
 }
 
 function ts_theme_logo() {
     global $smof_data;
-    
+
     $html = '';
-    
+
     $logo_tag = (is_front_page()) ? 'h1' : 'div';
-    
+
     $logo = ts_option_vs_default('logo_upload', '');
     $logo_text = ts_option_vs_default('logo_text', get_bloginfo('name'));
-    
+
     if(!trim($logo)) :
         $html .= '<'.tag_escape($logo_tag).' class="logo-text"><a href="'.esc_url(home_url()).'" title="'.esc_attr(get_bloginfo('description')).'" class="text-logo">'.$logo_text.'</a></'.tag_escape($logo_tag).'>';
     else :
         $retina_logo = (isset($smof_data['retina_logo'])) ? $smof_data['retina_logo'] : '';
-        
+
         $width = preg_replace("/[^0-9]*/", "", ts_css_num(ts_option_vs_default('retina_logo_width','')));
         $height = preg_replace("/[^0-9]*/", "", ts_css_num(ts_option_vs_default('retina_logo_height','')));
-        
+
         $logo_dims = $retina_dims = '';
-        
+
         $retina_dims .= ($width) ? 'width="'.esc_attr($width).'"' : '';
         $retina_dims .= ($height) ? 'height="'.esc_attr($height).'"' : '';
-        
+
         $retina_class = ($height && $height > 30) ? 'retina-logo resize-sticky-retina-logo' : 'retina-logo';
-        
+
         if(!trim($logo) && trim($retina_logo)) :
             $logo = $retina_logo;
             $retina_logo = '';
             $logo_dims = $retina_dims;
         endif;
-        
+
         $html .= '<'.tag_escape($logo_tag).' class="logo-image"><a href="'.esc_url(home_url()).'" title="'.esc_attr(get_bloginfo('description')).'">';
         $html .= '<img src="'.esc_url($logo).'" alt="'.esc_attr(get_bloginfo('name')).'" class="low-res-logo" '.$logo_dims.'/>';
         $html .= ($retina_logo) ? '<img src="'.esc_url($retina_logo).'" alt="'.esc_attr(get_bloginfo('name')).'" class="'.esc_attr($retina_class).'" '.$retina_dims.'/>' : '';
         $html .= '</a></'.tag_escape($logo_tag).'>';
     endif;
-    
+
     return $html;
 }
 
 function ts_theme_logo_tagline()
 {
     $html = '';
-    
+
     $tagline_alt = ts_option_vs_default('logo_tagline_text', '');
-    
+
     if(trim($tagline_alt))
     {
         $html .= '<p id="logo-tagline" class="mimic-smaller uppercase">';
         $html .= do_shortcode($tagline_alt);
         $html .= '</p>';
     }
-    
+
     return $html;
 }
 
 function ts_theme_top_stuff()
 {
     $return = array();
-    
+
     $left_side_of_header_content = ts_option_vs_default('left_side_of_header_content', 'social_icons');
     $right_side_of_header_content = ts_option_vs_default('right_side_of_header_content', 'shop_search');
-    
+
     $left_html = $right_html = $html = $logo_class = '';
-    
+
     // left side...
     if($left_side_of_header_content != 'nothing') :
         if($left_side_of_header_content == 'social_icons') :
@@ -566,15 +566,15 @@ function ts_theme_top_stuff()
                 'depth' => -1,
                 'items_wrap' => '%3$s'
             );
-            
+
             $nav_menu = wp_nav_menu($nav_menu_options);
             $html .= '<div class="header-menu">'.$nav_menu.'</div>';
         endif;
         $left_html = $html;
     endif;
-    
+
     $html = '';
-    
+
     // right side
     if($right_side_of_header_content != 'nothing') :
         if($right_side_of_header_content == 'social_links') :
@@ -594,13 +594,13 @@ function ts_theme_top_stuff()
                 'depth' => -1,
                 'items_wrap' => '%3$s'
             );
-            
+
             $nav_menu = wp_nav_menu($nav_menu_options);
             $html .= '<div class="header-menu">'.$nav_menu.'</div>';
         endif;
         $right_html = $html;
     endif;
-    
+
     if($left_html || $right_html) :
         $return['left'] = '<div id="top-stuff-left" class="mimic-small uppercase top-stuff-side">'.$left_html.'</div>';
         $return['right'] = '<div id="top-stuff-right" class="mimic-small uppercase top-stuff-side">'.$right_html.'</div>';
@@ -610,11 +610,11 @@ function ts_theme_top_stuff()
         $return['right'] = '';
         $return['logo_class'] = 'without-side-stuff';
     endif;
-    
+
     return ts_array2object($return);
 }
 
-function ts_top_class() 
+function ts_top_class()
 {
     return '';//(is_front_page()) ? 'ts-fade-in-from-top' : '';
 }
@@ -625,16 +625,16 @@ function ts_top_class()
 function ts_get_top_bar()
 {
     global $ts_page_id;
-    
+
     $show_top_bar = ts_option_vs_default('show_top_bar', 'yes');
-    
+
     if(in_array($show_top_bar, array('yes','social'))) :
-    
+
         $center_section = true;
-        
+
         $top_bar_center_content = ts_option_vs_default('top_bar_center_content', 'alt_text');
         $top_bar_center_alt_content = do_shortcode(ts_option_vs_default('top_bar_center_alt_content', 'Lorem ipsum...'));
-        
+
         if($top_bar_center_content == 'blank') :
             $center_content = '&nbsp;';
         elseif($top_bar_center_content == 'hidden') :
@@ -651,22 +651,22 @@ function ts_get_top_bar()
                 'depth' => 1,
                 'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
             );
-            
+
             $center_content = wp_nav_menu($nav_menu_options);
         endif;
-        
+
         $center_content = (trim($center_content)) ? $center_content : '&nbsp;';
-        
+
         $top_bar_wrap_class = ($center_section) ? 'three-part' : 'two-part';
-        
+
         $html  = '<div id="top-bar-wrap" class="'.esc_attr($top_bar_wrap_class).'">';
         $html .= '<div id="top-bar" class="mimic-small container clearfix">'."\n";
-        $html .= '<div class="left-side side header-social-icons">'.ts_small_nav_social().'</div>'."\n";  
-        $html .= ($center_section) ? '<div class="middle-area">'.$center_content.'</div>'."\n" : '';     
+        $html .= '<div class="left-side side header-social-icons">'.ts_small_nav_social().'</div>'."\n";
+        $html .= ($center_section) ? '<div class="middle-area">'.$center_content.'</div>'."\n" : '';
         $html .= '<div class="text-right right-side side">'.ts_top_search().'</div>'."\n";
         $html .= '</div>';
         $html .= '</div>';
-        
+
         return $html;
     endif;
 }
@@ -678,24 +678,24 @@ function ts_get_ticker($location = 'above-footer')
 {
     return; // not quite ready (performance issues).
     $location_option = ts_option_vs_default('ticker_location', 'above-footer');
-    
+
     if($location == $location_option) :
         $ticker_limit = ts_option_vs_default('ticker_limit', 6);
-        
+
         ob_start();
         ts_blog('ticker', array('exclude_previous_posts'=>'0','exclude_these_later'=>'0','limit'=>$ticker_limit));
         $ticker = ob_get_contents();
         ob_end_clean();
-        
+
         $html = '<div id="ts-news-ticker-wrap"><div id="ts-news-ticker-inner" class="flexslider container">'.$ticker.'</div></div>';
-        
+
         return $html;
     endif;
-    
+
     return;
 }
 
-function ts_top_ticker_label() 
+function ts_top_ticker_label()
 {
     $label = ts_option_vs_default('top_ticker_label_text', 'Trending:');
     return (trim($label)) ? '<strong class="uppercase primary-color">'.$label.'</strong> ' : '';
@@ -711,38 +711,38 @@ function ts_top_search()
     $search_link .= '<span class="top-stuff-search-link-text">'.__('Search', 'ThemeStockyard').'</span>';
     $search_link .= '</a>';
     $search_link .= '<div class="search-pocket-wrap ts-hover-menu"><div class="search-pocket">'.ts_html5_search_form().'</div></div>';
-    $search_link .= '</div>';                                        
+    $search_link .= '</div>';
     $html .= $search_link;
     */
-    
+
     $html .= '<div class="top-stuff-link-item ts-hover-menu-wrap">';
     $html .= '<div class="search-pocket">'.ts_html5_search_form().'</div>';
-    $html .= '</div>';     
-    
+    $html .= '</div>';
+
     return $html;
 }
 
 function ts_sidebar_width($sidebar_width = '310px', $return = 'sidebar', $percent_sign = true)
 {
     global $content_width;
-    
+
     if(!isset($ts_sidebar_width) || !isset($ts_main_width) || !isset($ts_sidebar_margin_width))
-    {  
+    {
         global $ts_sidebar_width, $ts_main_width, $ts_sidebar_margin_width;
-        
+
         $sidebar_width = preg_replace("/[^0-9]*/", "", ts_css_num($sidebar_width));
         $sidebar_width = (ts_number_within_range($sidebar_width, 100, 600)) ? $sidebar_width : 310;
         $sidebar_width_percent = $sidebar_width / $content_width;
-        
+
         $ts_sidebar_width = round($sidebar_width_percent, 6) * 100;
-        
+
         $ts_sidebar_margin_width = 3.1915; // always stays the same (for now at least)
-        
+
         $ts_main_width = 100 - $ts_sidebar_width - $ts_sidebar_margin_width;
     }
-    
+
     $percent = ($percent_sign) ? '%' : '';
-    
+
     if($return == 'sidebar')
         return $ts_sidebar_width . $percent;
     elseif($return == 'main')
@@ -793,43 +793,43 @@ function ts_new_excerpt_more( $more ) {
 function ts_grab_google_fonts($echo = false)
 {
     global $ts_standard_fonts;
-    
+
     // build global var (array) to only be used and taking up memory when needed
     ts_standard_fonts();
-    
+
     $fonts = array();
     $output = '';
-    
-    
+
+
     $theme_options_fonts = array();
-    $theme_options_fonts[] = ts_option_vs_default('logo_font_family', 'Droid Serif');    
-    $theme_options_fonts[] = ts_option_vs_default('body_font_family', 'Droid Serif');    
+    $theme_options_fonts[] = ts_option_vs_default('logo_font_family', 'Droid Serif');
+    $theme_options_fonts[] = ts_option_vs_default('body_font_family', 'Droid Serif');
     $theme_options_fonts[] = ts_option_vs_default('h1_font_family', 'Droid Serif');
     $theme_options_fonts[] = ts_option_vs_default('h2_font_family', 'Droid Serif');
     $theme_options_fonts[] = ts_option_vs_default('h3_font_family', 'Droid Serif');
     $theme_options_fonts[] = ts_option_vs_default('h4_font_family', 'Droid Serif');
     $theme_options_fonts[] = ts_option_vs_default('h5_font_family', 'Open Sans');
-    $theme_options_fonts[] = ts_option_vs_default('h6_font_family', 'Open Sans');    
-    $theme_options_fonts[] = ts_option_vs_default('small_font_family', 'Open Sans');    
+    $theme_options_fonts[] = ts_option_vs_default('h6_font_family', 'Open Sans');
+    $theme_options_fonts[] = ts_option_vs_default('small_font_family', 'Open Sans');
     $theme_options_fonts[] = ts_option_vs_default('main_nav_font_family', 'Open Sans');
     $theme_options_fonts[] = ts_option_vs_default('main_nav_submenu_font', 'Open Sans');
-    
-    if(is_array($theme_options_fonts)) 
+
+    if(is_array($theme_options_fonts))
     {
         foreach($theme_options_fonts AS $item)
         {
             if(trim($item) && !in_array($item, $ts_standard_fonts))
                 $fonts[] = $item;
         }
-        
+
         $fonts = array_filter(array_unique($fonts));
-        
+
         foreach($fonts AS $font)
         {
             $url  = '';
             $url .= '//fonts.googleapis.com/css?family='.urlencode($font).':400,400italic,700,700italic&amp;';
             $url .= 'subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese';
-            
+
             if($echo)
             {
                 echo '<link href="'.esc_url($url).'" rel="stylesheet" type="text/css" />'."\n";
@@ -839,7 +839,7 @@ function ts_grab_google_fonts($echo = false)
                 $output .= '<link href="'.esc_url($url).'" rel="stylesheet" type="text/css" />'."\n";
             }
         }
-        
+
         if(!$echo) return $output;
     }
 }
@@ -848,7 +848,7 @@ function ts_grab_google_fonts($echo = false)
 function aq_font_style($arg = null, $important = false)
 {
     $important = ($important) ? '!important' : '';
-    
+
     if(!is_null($arg))
     {
         $arg = strtolower($arg);
@@ -867,26 +867,26 @@ function aq_font_style($arg = null, $important = false)
 function ts_blog_loop($layout = '', $atts = array())
 {
     global $paged, $ts_query, $smof_data, $ts_show_sidebar, $wp_query, $ts_previous_posts;
-    
+
     $default_layout = ts_option_vs_default('blog_layout', '1column');
-    
+
     $orig_layout = trim(strtolower($layout));
     $layout = ($layout) ? preg_replace("/[^0-9a-z]*/", "", strtolower($layout)) : $default_layout;
     $test_layout = ($orig_layout) ? '-'.$orig_layout : '';
-    
+
     if($layout == 'banner' || $layout == '2columnbanner') :
         $atts['meta_query'] = array(
-            'relation'=>'OR', 
+            'relation'=>'OR',
             array('key'=>'_thumbnail_id'),
             array('key'=>'_p_preview_image_id')
         );
     endif;
-    
+
     if($layout == 'banner' && isset($atts['columns']) && intval($atts['columns']) > 1) :
         $layout = '2columnbanner';
         $test_layout = '2-column-banner';
     endif;
-    
+
     if(file_exists(TS_SERVER_PATH . '/includes/_loop/loop'.$test_layout.'.php')) :
         include(locate_template('includes/_loop/loop'.$test_layout.'.php'));
     elseif(in_array($layout, array('masonry', 'grid', 'masonrygrid', 'masonry2columns', 'masonry3columns'))) :
@@ -913,13 +913,13 @@ function ts_blog_loop($layout = '', $atts = array())
 function ts_portfolio_loop($layout = '', $atts = '')
 {
     global $paged, $ts_query, $smof_data, $ts_show_sidebar, $wp_query;
-    
+
     $default_layout = ts_option_vs_default('portfolio_loop_layout', '3column');
-    
+
     $orig_layout = trim(strtolower($layout));
     $layout = ($layout) ? preg_replace("/[^0-9a-z]*/", "", strtolower($layout)) : $default_layout;
     $test_layout = ($orig_layout) ? '-'.$orig_layout : '';
-    
+
     if(file_exists(TS_SERVER_PATH . '/includes/_loop/loop'.$test_layout.'.php')) :
         include(locate_template('includes/_loop/loop'.$test_layout.'.php'));
     elseif(in_array($layout, array('masonry', 'grid', 'masonrygrid'))) :
@@ -940,7 +940,7 @@ function ts_portfolio_loop($layout = '', $atts = '')
 function ts_portfolio()
 {
     $args = func_get_args();
-        
+
     if(func_num_args() == 2)
     {
         $atts = (is_array($args[0])) ? $args[0] : $args[1];
@@ -951,16 +951,16 @@ function ts_portfolio()
         $atts = (isset($args[0]) && is_array($args[0])) ? $args[0] : array();
         $layout = (isset($args[0]) && is_string($args[0])) ? $args[0] : '';
     }
-    
+
     $atts['post_type'] = 'portfolio';
-    
+
     ts_blog($layout, $atts);
 }
 
 function ts_blog()
-{    
+{
     $args = func_get_args();
-        
+
     if(func_num_args() == 2)
     {
         $atts = (is_array($args[0])) ? $args[0] : $args[1];
@@ -971,36 +971,36 @@ function ts_blog()
         $atts = (isset($args[0]) && is_array($args[0])) ? $args[0] : array();
         $layout = (isset($args[0]) && is_string($args[0])) ? $args[0] : '';
     }
-    
+
     global $ts_previous_posts;
     global $post, $paged, $ts_query_original_atts, $ts_query, $smof_data, $ts_show_sidebar, $wp_query, $ts_slider_post_ids, $ts_within_blog_loop;
-    
+
     $original_atts = $atts;
     $original_atts['pid'] = $atts_pid = (isset($atts['pid'])) ? $atts['pid'] : ((is_object($post) && isset($post)) ? $post->ID : '');
-    
+
     $ts_within_blog_loop = 'yes';
     $post_type = (isset($atts['post_type'])) ? $atts['post_type'] : 'post';
     $sharing_options_var = ($post_type == 'portfolio') ? 'show_sharing_options_on_portfolio' : 'show_sharing_options_on_blog';
-    
+
     if((is_front_page() || is_home())) :
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : ((get_query_var('page')) ? get_query_var('page') : 1);
 	else :
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	endif;
-	
+
 	$paged = (isset($atts['paged'])) ? $atts['paged'] : $paged;
-	
+
 	$show_sharing_options = (ts_option_vs_default($sharing_options_var, 1) == 1) ? 'true' : 'false';
 	if(isset($atts['show_sharing_options'])) :
         $show_sharing_options = (in_array($atts['show_sharing_options'], array('false','no','0'))) ? 'false' : 'true';
 	endif;
-	
+
     $title_align = (isset($atts['title_align']) && in_array($atts['title_align'], array('right','center','left'))) ? 'text-'.$atts['title_align'] : '';
     $meta_align = (isset($atts['meta_align']) && in_array($atts['meta_align'], array('right','center','left'))) ? 'text-'.$atts['meta_align'] : '';
     $excerpt_align = (isset($atts['excerpt_align']) && in_array($atts['excerpt_align'], array('right','center','left'))) ? 'text-'.$atts['excerpt_align'] : '';
     $read_more_align = (isset($atts['read_more_align']) && in_array($atts['read_more_align'], array('right','center','left'))) ? 'text-'.$atts['read_more_align'] : '';
     $posts_per_page = (isset($atts['posts_per_page'])) ? $atts['posts_per_page'] : ((isset($atts['limit']) ? $atts['limit'] : get_option('posts_per_page')));
-    
+
 	if($post_type == 'portfolio') :
         $nopaging = (isset($atts['nopaging']) && in_array($atts['nopaging'], array('false','no','0'))) ? false : true;
         $show_pagination = (isset($atts['show_pagination']) && in_array($atts['show_pagination'], array('true','yes','1'))) ? true : false;
@@ -1014,8 +1014,8 @@ function ts_blog()
         $posts_per_page = (isset($atts['posts_per_page'])) ? $atts['posts_per_page'] : ((isset($atts['limit']) ? $atts['limit'] : get_option('posts_per_page')));
         $posts_per_page = (in_array($posts_per_page, array('unlimited','no-limit', 'no limit', 'nolimit','none'))) ? -1 : $posts_per_page;
     endif;
-	
-    
+
+
     $atts = shortcode_atts( array(
             'meta_query'          => '',
             'author'              => '',
@@ -1096,10 +1096,10 @@ function ts_blog()
             'ignore_sticky_posts' => '',
             'lang' => (function_exists('pll_current_language')) ? pll_current_language() : '',
         ), $atts);
-    
+
     $post__in = (trim($atts['include'])) ? $atts['include'] : $atts['post__in'];
     $atts['post__in'] = (is_array($post__in)) ? $post__in : ((is_string($post__in)) ? explode(',', $post__in) : false);
-    
+
     $post__not_in = (trim($atts['exclude'])) ? $atts['exclude'] : $atts['post__not_in'];
     $atts['post__not_in'] = (is_array($post__not_in)) ? $post__not_in : ((is_string($post__not_in)) ? explode(',', $post__not_in) : false);
     $atts['post__not_in'] = (is_array($atts['post__not_in'])) ? $atts['post__not_in'] : array();
@@ -1109,25 +1109,25 @@ function ts_blog()
         if(is_array($ts_slider_post_ids))
             $atts['post__not_in'] = array_merge($atts['post__not_in'], $ts_slider_post_ids);
     endif;
-    
+
     $excluded_cats = ts_option_vs_default('excluded_blog_loop_categories');
     if($atts['exclude_categories'] != '0') :
         $excluded_cats = (trim($atts['exclude_categories'])) ? $atts['exclude_categories'] : $excluded_cats;
         $excluded_cats = (is_string($excluded_cats) && trim($excluded_cats)) ? explode(',', $excluded_cats) : $excluded_cats;
         $atts['category__not_in'] = (is_array($excluded_cats) && count($excluded_cats) > 0) ? $excluded_cats : $atts['category__not_in'];
         $atts['category__not_in'] = (is_array($atts['category__not_in']) && $atts['is_search'] === false) ? $atts['category__not_in'] : array();
-        
+
         $cats = (is_array($atts['cat'])) ? $atts['cat'] : (trim($atts['cat']) ? explode(',', $atts['cat']) : array());
-        
+
         $atts['category__not_in'] = array_diff($atts['category__not_in'], $cats);
     endif;
-    
-    if(!in_array($atts['exclude_previous_posts'], array('0','false','no')) && !$atts['default_query']) : 
+
+    if(!in_array($atts['exclude_previous_posts'], array('0','false','no')) && !$atts['default_query']) :
         $atts['post__not_in'] = array_merge($atts['post__not_in'], $ts_previous_posts);
     else :
         $atts['exclude'] = $atts['post__not_in'] = '';
     endif;
-    
+
     if($atts['include'] == 'related') :
         if($post_type == 'portfolio') :
             $atts['post__not_in'] = (isset($post->ID)) ? array($post->ID) : $atts['post__not_in'];
@@ -1148,7 +1148,7 @@ function ts_blog()
         else :
             $atts['post__not_in'] = (isset($post->ID)) ? array($post->ID) : $atts['post__not_in'];
             $atts['category__in'] = (isset($post->ID)) ? wp_get_post_categories($post->ID) : '';
-            
+
             if(isset($post->ID)) :
                 $related_filter = ts_related_post_filter($post->ID);
                 $atts['category__in'] = (is_array($related_filter) && $related_filter['type'] == 'category') ? $related_filter['arg'] : '';
@@ -1158,7 +1158,7 @@ function ts_blog()
         $atts['include'] = '';
         $atts['post__in'] = '';
     endif;
-    
+
     if($post_type == 'portfolio' && trim($atts['category_name']) && $atts['include'] != 'related') :
         $portfolio_cats = (is_array($atts['category_name'])) ? $atts['category_name'] : explode(',', $atts['category_name']);
         $atts['tax_query'] = array(
@@ -1170,18 +1170,18 @@ function ts_blog()
         );
         $atts['category_name'] = '';
     endif;
-    
-    
+
+
     if($layout == 'slider') :
         $atts['meta_query'] = array(
-            'relation'=>'OR', 
+            'relation'=>'OR',
             array('key'=>'_thumbnail_id'),
             array('key'=>'_p_preview_image_id'),
             array('key'=>'_slider_vimeo_id'),
             array('key'=>'_slider_youtube_id')
         );
     endif;
-    
+
     // if is not infinite scroll, and we're on page 2+, and there are previous posts to exclude...
     // that means we need to use an offset.
     $ts_offset = get_query_var('ts-offset');
@@ -1201,12 +1201,12 @@ function ts_blog()
 
         endif;
     endif;
-    
-    
+
+
     $atts['hide_enlarge'] = (in_array($atts['hide_enlarge'], array('yes','true','1','hide','hidden'))) ? true : false;
     $atts['show_author_avatar'] = (trim($atts['show_author_avatar'])) ? $atts['show_author_avatar'] : ts_option_vs_default('show_author_avatar', 0);
     $atts['show_author_avatar'] = (in_array($atts['show_author_avatar'], array('yes','true','1'))) ? true : false;
-    
+
     $atts['post_type'] = $post_type;
     $atts['posts_per_page'] = $posts_per_page;
     $atts['nopaging'] = ($posts_per_page == -1) ? true : $nopaging;
@@ -1216,20 +1216,20 @@ function ts_blog()
     $atts['meta_align'] = $meta_align;
     $atts['excerpt_align'] = $excerpt_align;
     $atts['read_more_align'] = $read_more_align;
-    
+
     $atts['columns'] = ($layout == 'banner') ? $atts['columns'] : ((strpos($layout, '3columns') === false) ? 2 : 3);
-    
+
     $original_atts['paged'] = $paged;
     $original_atts['infinite_scroll_button_text'] = $atts['infinite_scroll_button_text'];
-    
+
     $atts['original_atts'] = $original_atts;
-    
+
     if($post_type == 'portfolio') :
         ts_portfolio_loop($layout, $atts);
     else :
         ts_blog_loop($layout, $atts);
     endif;
-    
+
     unset($ts_query);
     wp_reset_postdata();
     $ts_within_blog_loop = false;
@@ -1243,7 +1243,7 @@ function ts_related_post_filter($postid)
     {
         $related_option = ts_option_vs_default('show_related_blog_posts', 'yes');
         $related_option = ts_postmeta_vs_default($postid, '_p_related_posts', $related_option);
-        
+
         if($related_option != 'no' && $related_option != '0')
         {
             if($related_option == 'yes' || $related_option == '1') // filter by category
@@ -1280,7 +1280,7 @@ function ts_related_post_filter($postid)
             }
         }
     }
-    
+
     return (is_array($filter)) ? $filter : '';
 }
 
@@ -1302,12 +1302,12 @@ function ts_attr_is_false($arg)
 function ts_maybe_show_blog_elements($atts = '')
 {
     $atts = (is_array($atts)) ? $atts : array();
-    
+
     $true_options = array('true','1','yes');
     $false_options = array('false','0','no');
-    
+
     $return = array();
-    
+
     $return['media'] = (isset($atts['show_media']) && in_array($atts['show_media'], $false_options)) ? false : true;
     $return['title'] = (isset($atts['show_title']) && in_array($atts['show_title'], $false_options)) ? false : true;
     $return['meta'] = (isset($atts['show_meta']) && in_array($atts['show_meta'], $false_options)) ? false : true;
@@ -1316,48 +1316,48 @@ function ts_maybe_show_blog_elements($atts = '')
     $return['read_more'] = (isset($atts['show_read_more']) && in_array($atts['show_read_more'], $false_options)) ? false : true;
     $return['sharing_options'] = (isset($atts['show_sharing_options']) && in_array($atts['show_sharing_options'], $false_options)) ? false : true;
     $return['sharing_options'] = ($atts['show_sharing_options'] === false) ? false : $return['sharing_options'];
-    
+
     return ts_array2object($return);
 }
 
 function ts_maybe_show_blog_widget_elements($atts = '')
 {
     $atts = (is_array($atts)) ? $atts : array();
-    
+
     $true_options = array('true','1','yes');
     $false_options = array('false','0','no');
-    
+
     $return = array();
-    
+
     $return['media'] = (isset($atts['hide_media']) && in_array($atts['hide_media'], $true_options)) ? false : true;
     $return['media'] = (isset($atts['show_media']) && in_array($atts['show_media'], $false_options)) ? false : $return['media'];
     $return['featured_first'] = (isset($atts['show_media']) && $atts['show_media'] == 'first') ? true : false;
     $return['meta'] = (isset($atts['show_meta']) && in_array($atts['show_meta'], $false_options)) ? false : true;
     $return['excerpt'] = (isset($atts['show_excerpt']) && in_array($atts['show_excerpt'], $true_options)) ? true : false;
     $return['first_excerpt'] = (isset($atts['show_first_excerpt']) && in_array($atts['show_first_excerpt'], $true_options)) ? true : false;
-    
+
     return ts_array2object($return);
 }
 
 /* wrapper for ts_figure_h_size */
 function ts_get_blog_loop_title_size($atts = '', $default = 4)
-{    
+{
     return ts_figure_h_size($atts, $default);
 }
 function ts_figure_h_size($atts = '', $default = 4)
 {
     $atts = (is_array($atts)) ? $atts : ((is_numeric($atts) || is_string($atts)) ? array('h_size'=>$atts) : array());
-    
+
     $h_size = (isset($atts['h_size'])) ? $atts['h_size'] : ((isset($atts['title_size'])) ? $atts['title_size'] : $default);
-    
+
     $h_size = $h_font_size = preg_replace("/[^0-9]*/","", $h_size);
     $h_size = (ts_number_within_range($h_size, 1, 6)) ? $h_size : ((ts_number_within_range($default, 1, 6)) ? $default : '4');
     $h_style = ($h_font_size > 6) ? 'style="font-size:'.esc_attr($h_font_size).'px;"' : '';
-    
+
     $return['h'] = $h_size;
     $return['style'] = $h_style;
     $return['h_style'] = $h_size.' '.$h_style;
-    
+
     return ts_array2object($return);
 }
 
@@ -1369,45 +1369,45 @@ function ts_get_blog_loop_text_align($atts = '', $default = '')
 function ts_figure_text_align($atts = '', $default = '')
 {
     $atts = (is_array($atts)) ? $atts : array();
-    
+
     $text_align = (isset($atts['text_align'])) ? $atts['text_align'] : $default;
-    
+
     return (in_array($text_align, array('left','center','right'))) ? 'text-'.$text_align : '';
 }
 
 function ts_portfolio_filter($atts = '')
 {
     return; // not used right now...
-    
+
     global $wp_query;
-    
+
     $atts = (is_array($atts)) ? $atts : array();
     $show_filter = (isset($atts['show_filter'])) ? $atts['show_filter'] : 'true';
-    $show_filter = (in_array($show_filter, array('false','0','no')) || $show_filter === false) ? 0 : 1; 
-    
+    $show_filter = (in_array($show_filter, array('false','0','no')) || $show_filter === false) ? 0 : 1;
+
     $align_filter = (isset($atts['align_filter'])) ? $atts['align_filter'] : (isset($atts['align_category_filter']) ? $atts['align_category_filter'] : 'center');
     //$align_filter = (in_array($align_filter, array('left','center','right'))) ? $align_filter : 'center';
-    
+
     $output = '';
-    
+
     if(isset($atts['is_search']) && $atts['is_search'] && isset($atts['default_query']) && $atts['default_query'] && !$wp_query->have_posts())
         return $output;
-    
+
     if($show_filter)
     {
         $categories = get_categories(array('taxonomy' => 'portfolio-category', 'hide_empty' => 1));
         if(count($categories) && !isset($categories['errors'])) :
             $output .= '<ul class="portfolio-filter text-'.esc_attr($align_filter).'" data-show-filter="'.esc_attr($show_filter).'">';
             $output .= '<li><a data-filter="" class="active">'.__('All', 'ThemeStockyard').'</a></li>';
-            
+
             foreach($categories AS $cat) :
                 $output .= '<li><a data-filter="ts-folio-'.esc_attr($cat->slug).'">'.$cat->name.'</a></li>';
             endforeach;
-            
+
             $output .= '</ul>';
         endif;
     }
-    
+
     return $output;
 }
 
@@ -1420,11 +1420,11 @@ function ts_portfolio_media_wrap_class($layout = '')
         '1-3-text_2-3-media',
         '1-2-media_1-2-text',
         '1-2-text_1-2-media',
-        'fullwidth',  
+        'fullwidth',
     );
-    
+
     $layout = (in_array($layout, $layout_options)) ? $layout : $layout_options[0];
-    
+
     if($layout == '2-3-media_1-3-text') :
         $output = 'span8 span-pull-left';
     elseif($layout == '2-3-text_1-3-media') :
@@ -1440,7 +1440,7 @@ function ts_portfolio_media_wrap_class($layout = '')
     else :
         $output = 'span12';
     endif;
-    
+
     return $output;
 }
 
@@ -1453,11 +1453,11 @@ function ts_portfolio_post_wrap_class($layout = '')
         '1-3-text_2-3-media',
         '1-2-media_1-2-text',
         '1-2-text_1-2-media',
-        'fullwidth',  
+        'fullwidth',
     );
-    
+
     $layout = (in_array($layout, $layout_options)) ? $layout : $layout_options[0];
-    
+
     if($layout == '2-3-media_1-3-text') :
         $output = 'span4 span-pull-right';
     elseif($layout == '2-3-text_1-3-media') :
@@ -1473,23 +1473,23 @@ function ts_portfolio_post_wrap_class($layout = '')
     else :
         $output = 'span12';
     endif;
-    
+
     return $output;
 }
 
 function ts_portfolio_direction_nav($reverse = false, $previous_text = '', $next_text = '')
-{        
+{
     return ts_post_direction_nav($reverse, $previous_text, $next_text);
 }
 
 function ts_post_direction_nav($reverse = false, $previous_text = '', $next_text = '')
-{    
+{
     $prev_function = ($reverse) ? 'next_post_link' : 'previous_post_link';
     $next_function = ($reverse) ? 'previous_post_link' : 'next_post_link';
-    
+
     $previous_text = (trim($previous_text)) ? $previous_text : __('Older', 'ThemeStockyard');
     $next_text = (trim($next_text)) ? $next_text : __('Newer', 'ThemeStockyard');
-    
+
     echo '<div class="post-single-prev-next ts-post-section-inner clearfix">';
     echo '<div class="post-single-next">';
     $next_function('%link','<span class="dir smaller uppercase"><i class="fa fa-chevron-left"></i>'.$next_text.'</span><span class="title">%title</span>');
@@ -1519,9 +1519,9 @@ function ts_get_the_category($taxonomy = 'category', $return = 'list', $separato
                 $i = 1;
                 foreach($categories as $category) :
                     $output[$i-1] = $category->name;
-                    
+
                     if($limit && is_numeric($limit) && $i == $limit) break;
-                    
+
                     $i++;
                 endforeach;
             else :
@@ -1538,9 +1538,9 @@ function ts_get_the_category($taxonomy = 'category', $return = 'list', $separato
                     $category = (array) $category;
                     $category['color'] = ts_option_vs_default('taxonomy_'.$category['term_id'].'_color', '');
                     $output[$i-1] = $category;
-                    
+
                     if($limit && is_numeric($limit) && $i == $limit) break;
-                    
+
                     $i++;
                 endforeach;
             else :
@@ -1553,9 +1553,9 @@ function ts_get_the_category($taxonomy = 'category', $return = 'list', $separato
                 $i = 1;
                 foreach($categories as $category) :
                     $output .= '<a href="'.esc_url($category->rewrite).'">'.$category->name.'</a>'.$separator;
-                    
+
                     if($limit && is_numeric($limit) && $i == $limit) break;
-                    
+
                     $i++;
                 endforeach;
                 $output = trim($output, $separator);
@@ -1568,101 +1568,101 @@ function ts_get_the_category($taxonomy = 'category', $return = 'list', $separato
                 foreach($categories as $category) :
                     $display = ($return == 'slugs') ? $category->slug : (($return == 'filter-slugs') ? 'ts-folio-'.$category->slug : $category->name);
                     $output .= $display.$separator;
-                    
+
                     if($limit && is_numeric($limit) && $i == $limit) break;
-                    
+
                     $i++;
                 endforeach;
                 $output = trim($output, $separator);
             endif;
         endif;
     endif;
-    
+
     return $output;
 }
 
 // get list of all available entries for a specific taxonomy
-function ts_get_categories($category_name = 'category', $hide_empty = '1', $return = 'array') 
+function ts_get_categories($category_name = 'category', $hide_empty = '1', $return = 'array')
 {
     $hide_empty  = ($hide_empty == 1) ? '1' : '0';
     $categories = get_categories(array('taxonomy' => $category_name, 'hide_empty' => $hide_empty));
     $categories = (isset($categories['errors'])) ? array() : $categories;
     //$categories = get_terms($category_name, array('hide_empty' => $hide_empty));
     //$categories = $categories[0];
-    
-    if($return == 'array') 
-        return $categories;    
+
+    if($return == 'array')
+        return $categories;
     elseif($return == 'cb_metabox_array')
     {
         $category_list = array();
-        foreach ($categories as $category) 
+        foreach ($categories as $category)
         {
             $category_list[] = array('name'=>$category->cat_name, 'value'=>$category->term_id);
         }
-        
+
         return $category_list;
     }
     else
     {
         $all = ($parent) ? $parent : 'All';
         $category_list = array('0' => $all);
-        
-        foreach ($categories as $category) 
+
+        foreach ($categories as $category)
         {
             $category_list[] = $category['name'];
         }
-            
+
         return $category_list;
     }
 }
 
 // WP Loop Pagination
-function ts_paginator($pages = '', $range = 2) 
-{  
+function ts_paginator($pages = '', $range = 2)
+{
     global $ts_previous_posts;
-    
+
     $output = '';
     $append = '';
-    $showitems = ($range * 2)+1; 
-    $atts = (is_array($pages)) ? $pages : array();    
+    $showitems = ($range * 2)+1;
+    $atts = (is_array($pages)) ? $pages : array();
     $atts = (isset($atts['original_atts']) && is_array($atts['original_atts'])) ? $atts['original_atts'] : $atts;
     $infinite_scroll = false;
     $pages = (is_array($pages)) ? '' : $pages;
     $limit = (isset($atts['limit'])) ? $atts['limit'] : ((isset($atts['posts_per_page'])) ? $atts['posts_per_page'] : get_option('posts_per_page'));
-    
-    $next_icon_direction = (ts_option_vs_default('rtl', 0) == 1) ? 'left' : 'right'; 
+
+    $next_icon_direction = (ts_option_vs_default('rtl', 0) == 1) ? 'left' : 'right';
     $prev_icon_direction = (ts_option_vs_default('rtl', 0) == 1) ? 'right' : 'left';
 
     global $paged;
     if (empty($paged)) $paged = 1;
-    
-    $paged = (isset($atts['paged']) && isset($atts['via_ajax'])) ? $atts['paged'] : $paged;
-    
 
-    if ($pages == '') 
+    $paged = (isset($atts['paged']) && isset($atts['via_ajax'])) ? $atts['paged'] : $paged;
+
+
+    if ($pages == '')
     {
         global $wp_query, $ts_query;
         $pages = (isset($ts_query) && !is_search()) ? $ts_query->max_num_pages : $wp_query->max_num_pages;
         if (!$pages) { $pages = 1; }
     }
-    
-    $use_offset = false; //($paged >= 1 && is_array($ts_previous_posts) && count($ts_previous_posts) > $limit) ? true : false;  
-    
+
+    $use_offset = false; //($paged >= 1 && is_array($ts_previous_posts) && count($ts_previous_posts) > $limit) ? true : false;
+
     // if "use offset", we need to override "max_num_pages"
-    if($use_offset) 
+    if($use_offset)
     {
         $found_posts = (isset($ts_query) && !is_search()) ? $ts_query->found_posts : $wp_query->found_posts;
         $pages = ceil($found_posts / count($ts_previous_posts));
     }
 
-    if (1 != $pages) 
+    if (1 != $pages)
     {
         $output .= '<div class="divider-shortcode divider"></div>';
-        
+
         if(isset($atts['infinite_scroll']) && in_array($atts['infinite_scroll'], array('yes','true','1','yes_button')))
         {
             global $ts_infinite_scroller;
-            
+
             // if an infinite scroller is already active on current page,
             // or if max_page has been reached, do nothing.
             if($ts_infinite_scroller == true || ($paged > $pages))
@@ -1672,12 +1672,12 @@ function ts_paginator($pages = '', $range = 2)
             else
             {
                 $layout = (isset($atts['layout'])) ? preg_replace("/[^0-9a-z]*/", "", strtolower($atts['layout'])) : '';
-    
+
                 if(in_array($layout, array('masonry', 'grid', 'cards', 'gridcards', 'cardgrid', 'masonrycards')))
                     $threshold_class = 'threshold-pending';
                 else
                     $threshold_class = 'threshold';
-            
+
                 $atts['paged'] = $paged + 1; // set up next query
                 $atts['is_final'] = ($paged == $pages) ? 1 : 0;
                 if(isset($atts['excluded_posts_preserved'])) :
@@ -1699,7 +1699,7 @@ function ts_paginator($pages = '', $range = 2)
                 $hide_spinner = ($atts['infinite_scroll'] == 'yes_button') ? 'display:none;' : '';
                 $load_button_text = (isset($atts['infinite_scroll_button_text'])) ? $atts['infinite_scroll_button_text'] : '';
                 $load_button_text = (trim($load_button_text)) ? $load_button_text : __('Load more posts','ThemeStockyard');
-                
+
                 $load_button_color = (isset($atts['infinite_scroll_button_color'])) ? esc_attr($atts['infinite_scroll_button_color']) : '';
                 $load_button_color = ($load_button_color == '#fff' || $load_button_color == '#ffffff') ? 'white' : $load_button_color;
                 if(substr($load_button_color, 0, 1) == '#') :
@@ -1710,7 +1710,7 @@ function ts_paginator($pages = '', $range = 2)
                     $load_button_color = $load_button_color.' color-shortcode';
                     $load_spinner_color = 'bg-'.$load_button_color;
                 endif;
-                
+
                 $output .= '<div class="infinite-scroller ready '.esc_attr($use_button).'">';
                 $output .= '<div class="'.esc_attr($threshold_class).'"></div>';
                 $output .= '<div class="spinner" style="'.esc_attr($hide_spinner).'">';
@@ -1721,7 +1721,7 @@ function ts_paginator($pages = '', $range = 2)
                 $output .= '<div class="alt-loader text-center">';
                 $output .= '<a class="button mimic-smaller uppercase '.esc_attr($load_button_color).'" style="'.esc_attr($load_button_color_css).'">'.$load_button_text.'</a>';
                 $output .= '</div>';
-                
+
                 if(isset($atts['default_query']) && $atts['default_query'] === true && isset($wp_query->query_vars)) :
                     $_atts = $wp_query->query_vars;
                     $_atts['paged'] = $atts['paged'];
@@ -1736,10 +1736,10 @@ function ts_paginator($pages = '', $range = 2)
                     $atts['exclude'] = '';
                     $atts['action'] = '';
                 endif;
-                
+
                 $output .= '<div class="infinite-scroller-atts hidden">'.json_encode($atts).'</div>';
                 $output .= '</div>';
-                
+
                 $ts_infinite_scroller = true;
             }
         }
@@ -1752,30 +1752,30 @@ function ts_paginator($pages = '', $range = 2)
             else :
                 $q_offset_key = '';
                 $q_offset_var = '';
-            endif;   
-                     
+            endif;
+
             $output .= '<div class="pagination-wrap"><p class="pagination clearfix">';
-            
-            $link = remove_query_arg('ts-offset', get_pagenum_link(1)); 
+
+            $link = remove_query_arg('ts-offset', get_pagenum_link(1));
             $link_or_span_open = ($paged > 1) ? '<a href="' . esc_url($link) . '">' : '<span class="subtle-text-color">';
             $link_or_span_close = ($paged > 1) ? '</a>' : '</span>';
             $output .= $link_or_span_open.'<i class="fa fa-angle-double-'.esc_attr($prev_icon_direction).'"></i>'.$link_or_span_close;
-            
-            
+
+
             $link = esc_url(add_query_arg($q_offset_key, $q_offset_var, get_pagenum_link($paged - 1)));
             if($paged == 2) :
                 $link = esc_url(remove_query_arg('ts-offset', get_pagenum_link($paged - 1)));
             else :
                 $link = esc_url(add_query_arg($q_offset_key, $q_offset_var, get_pagenum_link($paged - 1)));
             endif;
-            
+
             $link_or_span_open = ($paged > 1) ? '<a href="' . esc_url($link) . '">' : '<span class="subtle-text-color">';
             $link_or_span_close = ($paged > 1) ? '</a>' : '</span>';
             $output .= $link_or_span_open.'<i class="fa fa-angle-'.esc_attr($prev_icon_direction).'"></i>'.$link_or_span_close;
 
-            for ($i=1; $i <= $pages; $i++) 
+            for ($i=1; $i <= $pages; $i++)
             {
-                if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) 
+                if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
                 {
                     $link = esc_url(add_query_arg($q_offset_key, $q_offset_var, get_pagenum_link($i)));
                     $link = ($i == 1) ? remove_query_arg('ts-offset', get_pagenum_link($i)) : $link;
@@ -1786,22 +1786,22 @@ function ts_paginator($pages = '', $range = 2)
                     endif;
                 }
             }
-            
+
             $link = esc_url(add_query_arg($q_offset_key, $q_offset_var, get_pagenum_link($paged + 1)));
             $link_or_span_open = ($paged < $pages) ? '<a href="' . esc_url($link) . '" >' : '<span class="subtle-text-color">';
-            $link_or_span_close = ($paged < $pages) ? '</a>' : '</span>'; 
-            $output .= $link_or_span_open.'<i class="fa fa-angle-'.esc_attr($next_icon_direction).'"></i>'.$link_or_span_close;  
-            
+            $link_or_span_close = ($paged < $pages) ? '</a>' : '</span>';
+            $output .= $link_or_span_open.'<i class="fa fa-angle-'.esc_attr($next_icon_direction).'"></i>'.$link_or_span_close;
+
             $link = esc_url(add_query_arg($q_offset_key, $q_offset_var, get_pagenum_link($pages)));
             $link_or_span_open = ($paged < $pages) ? '<a href="' . esc_url($link) . '">' : '<span class="subtle-text-color">';
-            $link_or_span_close = ($paged < $pages) ? '</a>' : '</span>';  
+            $link_or_span_close = ($paged < $pages) ? '</a>' : '</span>';
             $output .= $link_or_span_open.'<i class="fa fa-angle-double-'.esc_attr($next_icon_direction).'"></i>'.$link_or_span_close;
-            
+
             $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
             $output .= '</p></div>'."\n";
         }
-        
+
         return str_replace("\n", '', $output);
     }
     else
@@ -1814,18 +1814,18 @@ function ts_paginator($pages = '', $range = 2)
 function ts_load_infinite_blog()
 {
     $post = get_post($_POST['pid']);
-    
+
     if(is_object($post) && isset($post->ID))
     {
         $ts_show_sidebar_option = (ts_option_vs_default('show_page_sidebar', 1) < 1) ? 'no' : 'yes';
         $ts_show_sidebar = ts_postmeta_vs_default($post->ID, '_page_sidebar', $ts_show_sidebar_option);
-        
+
         $post_data = $_POST;
         $post_data['via_ajax'] = 1;
-        
+
         echo ts_blog($post_data, $post_data['layout']);
     }
-    
+
     exit;
 }
 
@@ -1867,7 +1867,7 @@ function dimox_breadcrumbs() {
 	$frontpage_id = get_option('page_on_front');
 
 	if (is_home() || is_front_page()) {
-        if( is_home() && get_option('page_for_posts') ) 
+        if( is_home() && get_option('page_for_posts') )
         {
             $ts_blog_page_id = get_option('page_for_posts');
             $ts_page_title = get_page($ts_blog_page_id)->post_title;
@@ -1919,15 +1919,15 @@ function dimox_breadcrumbs() {
                 if ($show_current == 1) $output .= $before . ts_trim_text($shop_page->post_title, $current_limit) . $after;
             } else {
                 $output .= sprintf($link, get_permalink($shop_page->ID), $shop_page->post_title);
-            }        
+            }
 		} elseif ( is_single() && !is_attachment() ) {
 			if ( get_post_type() != 'post' ) {
 				$post_type = get_post_type_object(get_post_type());
 				$slug = $post_type->rewrite;
 				$home_link = (ts_ends_with($home_link, '/')) ? $home_link : $home_link . '/';
-				
+
 				$label = (trim($text['portfolio']) && get_post_type() == 'portfolio') ? $text['portfolio'] : $post_type->labels->name;
-				
+
 				sprintf($link, $home_link . $slug['slug'] . '/', $label);
 				if ($show_current == 1) $output .= $delimiter . $before . ts_trim_text(get_the_title(), $current_limit) . $after;
 			} else {
@@ -1948,7 +1948,7 @@ function dimox_breadcrumbs() {
 
 		} elseif ( is_attachment() ) {
 			$parent = get_post($parent_id);
-			$cat = get_the_category($parent->ID); 
+			$cat = get_the_category($parent->ID);
 			$cat = (isset($cat[0])) ? $cat[0] : '';
 			if($cat)
 			{
@@ -2005,19 +2005,19 @@ function dimox_breadcrumbs() {
 		$output .= '</div><!-- .breadcrumbs -->';
 
 	}
-	
+
 	return $output;
 } // end dimox_breadcrumbs(
- 
-function ts_breadcrumbs() 
+
+function ts_breadcrumbs()
 {
     global $smof_data, $post;
-    
+
     $breadcrumb_prefix = ts_option_vs_default('breadcrumb_prefix', '');
     $output         = '';
     $output        .= '<ul class="breadcrumbs small">';
-    
-    if(!is_front_page()) 
+
+    if(!is_front_page())
     {
         $output    .= '<li>'.$breadcrumb_prefix.' <a href="'.esc_url(home_url()).'">'.__('Home', 'ThemeStockyard')."</a></li>";
     }
@@ -2026,32 +2026,32 @@ function ts_breadcrumbs()
     $params['link_none'] = '';
     $separator = '';
 
-    if(is_category() && !is_singular('ts_portfolio')) 
+    if(is_category() && !is_singular('ts_portfolio'))
     {
         $category   = get_the_category();
         $cat_id     = $category[0]->cat_ID;
         $output    .= is_wp_error( $cat_parents = get_category_parents($cat_id, true, '', false)) ? '' : '<li>'.$cat_parents.'</li>';
     }
 
-    if(is_singular('ts_portfolio')) 
+    if(is_singular('ts_portfolio'))
     {
-        $output    .= get_the_term_list($post->ID, 'portfolio_category', '<li>', '&nbsp;/&nbsp;', '</li>');  
-        $output    .= '<li>'.get_the_title().'</li>'; 
+        $output    .= get_the_term_list($post->ID, 'portfolio_category', '<li>', '&nbsp;/&nbsp;', '</li>');
+        $output    .= '<li>'.get_the_title().'</li>';
     }
 
-    if(is_tax()) 
+    if(is_tax())
     {
         $term       = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
         $output    .= '<li>'.$term->name.'</li>';
     }
 
-    if(is_home()) 
+    if(is_home())
     {
         $blog_title = ts_option_vs_default('blog_title', __('Blog', 'ThemeStockyard'));
-        $output    .= '<li>'.$blog_title.'</li>'; 
+        $output    .= '<li>'.$blog_title.'</li>';
     }
-    
-    if(is_page() && !is_front_page()) 
+
+    if(is_page() && !is_front_page())
     {
         $parents    = array();
         $parent_id  = $post->post_parent;
@@ -2068,7 +2068,7 @@ function ts_breadcrumbs()
         $output    .= join( ' ', $parents );
         $output    .= '<li>'.get_the_title().'</li>';
     }
-    if(is_single() && !is_singular('ts_portfolio')) 
+    if(is_single() && !is_singular('ts_portfolio'))
     {
         $categories_1 = get_the_category($post->ID);
         if($categories_1) :
@@ -2095,7 +2095,7 @@ function ts_breadcrumbs()
     if(is_year()) { $output .= '<li>'.get_the_time('Y').'</li>'; }
 
     $output .= "</ul>";
-    
+
     return $output;
 }
 
@@ -2112,7 +2112,7 @@ function ts_get_cat_IDs($args = '')
             $id = (ctype_digit($arg) || is_int($arg)) ? $arg : get_cat_ID($arg);
             if($id) $ids[] = $id;
         }
-        
+
         return implode(',', $ids);
     }
     else
@@ -2120,7 +2120,7 @@ function ts_get_cat_IDs($args = '')
         $id = get_cat_ID($args);
         return ($id) ? $id : '';
     }
-        
+
 }
 
 function ts_wp_remote_get($url = '')
@@ -2157,7 +2157,7 @@ function ts_save_video_data($id = '', $service = '', $default = '')
         $data = ts_get_video_data($id, $service, $default);
         update_post_meta($post->ID, '_ts_video_data', $data);
     }
-    
+
     return $data;
 }
 
@@ -2176,7 +2176,7 @@ function ts_get_saved_video_data($id = '', $service = '')
             }
         }
     }
-    
+
     return null;
 }
 
@@ -2184,27 +2184,27 @@ function ts_get_video_data($id = '', $service = '', $default = '')
 {
     $id = trim($id);
     $service = trim($service);
-    
+
     $id = (preg_match("/^[a-z0-9\-_]+$/i", $id) || ctype_digit($id)) ? $id : ts_get_video_id($id);
-    
+
     // first, see if there is any saved video data
     $data = ts_get_saved_video_data($id, $service);
-    
+
     if(is_array($data))
         return $data;
-    
+
     if($id)
-    {    
+    {
         if($service == 'youtube')
         {
             $data = ts_wp_remote_get('https://gdata.youtube.com/feeds/api/videos/'.$id.'?v=2&alt=json');
             $data = json_decode($data);
             $data = (is_array($data)) ? $data[0] : $data;
-            
+
             $dims = ts_wp_remote_get('https://www.youtube.com/oembed?url=http%3A//www.youtube.com/watch?v%3D'.$id.'&format=json');
             $dims = json_decode($dims);
             $dims = (is_array($dims)) ? $dims[0] : $dims;
-             
+
             if($data->entry->{'media$group'}->{'media$player'}->url)
             {
                 if($data->entry->{'media$group'}->{'media$thumbnail'}[1]->width == 480)
@@ -2213,14 +2213,14 @@ function ts_get_video_data($id = '', $service = '', $default = '')
                     $thumb = 2;
                 else
                     $thumb = 0;
-                
+
                 return array(
                     'id'            => $id,
                     'width'         => $dims->width,
                     'height'        => $dims->height,
                     'title'         => $data->entry->{'media$group'}->{'media$title'}->{'$t'},
                     'description'   => ts_trim_text(strip_tags($data->entry->{'media$group'}->{'media$description'}->{'$t'}), 100),
-                    'url'           => $data->entry->{'media$group'}->{'media$player'}->url, 
+                    'url'           => $data->entry->{'media$group'}->{'media$player'}->url,
                     'thumbnail'     => $data->entry->{'media$group'}->{'media$thumbnail'}[$thumb]->url,
                     'service'       => 'youtube'
                 );
@@ -2231,11 +2231,11 @@ function ts_get_video_data($id = '', $service = '', $default = '')
             $grab = ts_wp_remote_get('https://vimeo.com/api/v2/video/'.$id.'.json');
             $data = json_decode($grab);
             $data = (is_array($data)) ? $data[0] : $data;
-            
+
             $dims = ts_wp_remote_get('https://vimeo.com/api/oembed.json?url=http%3A//vimeo.com/'.$id);
             $dims = json_decode($dims);
             $dims = (is_array($dims)) ? $dims[0] : $dims;
-             
+
             if($data->url)
             {
                 return array(
@@ -2251,7 +2251,7 @@ function ts_get_video_data($id = '', $service = '', $default = '')
             }
         }
     }
-    
+
     return $default;
 }
 
@@ -2259,41 +2259,41 @@ function ts_get_video_qs_addons($url, $sep = '')
 {
     if(preg_match("/^[a-z0-9\-_]+$/i", $url) || ctype_digit($url) || !trim($url))
         return '';
-    
+
     $url = str_replace('&amp;', '&', $url);
     $url_parts  = parse_url($url);
     $url_part   = (is_array($url_parts)) ? ts_array2object($url_parts) : $url_parts;
-    
+
     if(is_object($url_part) && isset($url_part->query))
     {
         parse_str($url_part->query, $qvars);
-        
+
         if(isset($qvars['id'])) unset($qvars['id']);
         if(isset($qvars['v'])) unset($qvars['v']);
         if(isset($qvars['list']) && strtolower($qvars['list']) == 'wl') unset($qvars['list']);
-        
+
         return $sep . http_build_query($qvars);
     }
-    
+
     return '';
 }
 
 // Parse a Youtube, Vine, or Vimeo URL and return the ID
 function ts_get_video_id($url)
-{    
+{
     $url        = trim($url);
-    
+
     if(preg_match("/^[a-z0-9\-_]+$/i", $url) || ctype_digit($url))
         return $url;
-    
+
     $url_parts  = parse_url($url);
     $url_part   = (is_array($url_parts)) ? ts_array2object($url_parts) : $url_parts;
-    
+
     if(is_object($url_part) && isset($url_part->host))
     {
         $host_names     = explode(".", $url_part->host);
         $url_part->host = $host_names[count($host_names)-2] . "." . $host_names[count($host_names)-1];
-        
+
         if(($url_part->host == 'youtube.com') || ($url_part->host == 'youtu.be'))
         {
             if($url_part->host == 'youtube.com')
@@ -2302,7 +2302,7 @@ function ts_get_video_id($url)
                 {
                     parse_str($url_part->query);
                 }
-                
+
                 if(isset($v)) :
                     $id = $v;
                 elseif(strpos($url_part->path, '/v/') !== false) :
@@ -2319,7 +2319,7 @@ function ts_get_video_id($url)
             {
                 $id = substr($url_part->path, 1);
             }
-            
+
             return $id;
         }
         elseif($url_part->host == 'vimeo.com')
@@ -2332,37 +2332,37 @@ function ts_get_video_id($url)
             else :
                 $id = substr($url_part->path, 1);
             endif;
-            
+
             if(ctype_digit($id))
                 return $id;
-        } 
+        }
         elseif($url_part->host == 'vine.co')
         {
             if(substr($url_part->path, 0, 3) == '/v/')
                 return current(explode('/', substr($url_part->path, 3)));
-        } 
-    }        
-    
+        }
+    }
+
     return null;
 }
 
 // Parse a SoundCloud or Spotify URL and return the embed URL
 function ts_get_audio_embed_url($url)
-{    
+{
     $url  = trim($url);
     $embed_url = '';
-    
+
     $url_parts  = parse_url($url);
     $url_part   = (is_array($url_parts)) ? ts_array2object($url_parts) : $url_parts;
-    
+
     if(is_object($url_part) && isset($url_part->host)) :
         $host_names     = explode(".", $url_part->host);
         $url_host = $host_names[count($host_names)-2] . "." . $host_names[count($host_names)-1];
     else :
         $url_host = '';
     endif;
-    
-    
+
+
     if($url_host == 'spotify.com' || substr($url, 0, 14) == 'spotify:track:')
     {
         if(substr($url, 0, 14) == 'spotify:track:')
@@ -2375,16 +2375,16 @@ function ts_get_audio_embed_url($url)
             $id = end($id);
             $embed_url = 'https://embed.spotify.com/?uri=spotify:track:'.$id;
         }
-        
+
         return $embed_url;
     }
     elseif($url_host == 'soundcloud.com')
     {
         $embed_url ='https://w.soundcloud.com/player/?url='.urlencode($url);
-        
+
         return $embed_url;
-    }        
-    
+    }
+
     return null;
 }
 
@@ -2398,7 +2398,7 @@ function ts_num2str($val)
         $val /= 1000;
         array_shift($unit);
     }
-    $unit = array_shift($unit);		
+    $unit = array_shift($unit);
     return (round($val, 0) > 99) ? round($val, 0).$unit : round($val, 1).$unit;
 }
 
@@ -2533,7 +2533,7 @@ function aq_get_map_coordinates($address, $force_refresh = false ) {
 /*
  * Converts multiple line breaks to '<p>[blah,blah]</p>'
  */
-function ts_nl2p($str, $open_and_close = true, $class = false) 
+function ts_nl2p($str, $open_and_close = true, $class = false)
 {
     $class = ($class) ? $class : '';
     $new_str = preg_replace('/<br \\/>\s*<br \\/>/', '</p>\n<p class="'.esc_attr($class).'">', nl2br($str));
@@ -2543,7 +2543,7 @@ function ts_nl2p($str, $open_and_close = true, $class = false)
 /*
  * Converts multiple "br" tags to "\n"
  */
-function ts_br2nl($str) 
+function ts_br2nl($str)
 {
     return preg_replace('/<br(.+?)>/', "", preg_replace('/<br(.+?)>\s*<br(.+?)>/', "\n\n", $str));
 }
@@ -2598,12 +2598,12 @@ function ts_slugify($str = '')
 function ts_fontawesome_class($icon, $default = '')
 {
     $icon = (trim($icon)) ? trim($icon) : $default;
-    
+
     if(ts_starts_with($icon, 'fa-'))
         $icon = substr($icon, 3);
     elseif(ts_starts_with($icon, 'icon-'))
         $icon = substr($icon, 5);
-    
+
     return (trim($icon)) ? 'fa fa-'.$icon : '';
 }
 
@@ -2612,7 +2612,7 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
     $output = '';
     $columns = ($columns > 4) ? 4 : $columns;
     $ul_class = esc_attr($ul_class);
-    
+
     if(is_array($content))
     {
         if($columns < 2)
@@ -2622,26 +2622,26 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
         else
         {
             $count = count($content);
-            $base_count_per_column = floor($count / $columns);            
+            $base_count_per_column = floor($count / $columns);
             $high_count_per_column = ceil($count / $columns);
             $remainder = $og_remainder = $count - ($base_count_per_column * $columns);
-            
+
             $column_class = 'ts-1-of-'.$columns;
-            
+
             if($arrange_columns == 'vertical')
-            {                
+            {
                 $columns_array = array();
                 for($i = 0; $i < $columns; $i++)
                 {
                     $columns_array[$i] = '';
                 }
-                
+
                 $j = 0;
                 $k = 0;
                 foreach($content AS $item)
                 {
                     if(!trim($item)) continue;
-                    
+
                     $count_per_column = ($remainder) ? $high_count_per_column : $base_count_per_column;
                     $columns_array[$k] .= "\t".$item."\n";
                     if($j == ($count_per_column - 1))
@@ -2655,7 +2655,7 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
                         $j++;
                     }
                 }
-                
+
                 $l = 1;
                 foreach($columns_array AS $column)
                 {
@@ -2663,7 +2663,7 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
                     $output .= "\n".'<ul class="'.esc_attr($ul_class).' '.esc_attr($column_class).'">'."\n".$column.'</ul>';
                     $l++;
                 }
-                
+
             }
             else
             {
@@ -2672,12 +2672,12 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
                 {
                     $columns_array[$i] = '';
                 }
-                
+
                 $j = 0;
                 foreach($content AS $item)
                 {
                     if(!trim($item)) continue;
-                    
+
                     $count_per_column = $high_count_per_column;
                     $columns_array[$j] .= "\t".$item."\n";
                     if($j == ($columns - 1))
@@ -2689,7 +2689,7 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
                         $j++;
                     }
                 }
-                
+
                 $l = 1;
                 foreach($columns_array AS $column)
                 {
@@ -2706,7 +2706,7 @@ function ts_divide_list_into_columns($content = '', $columns = 1, $arrange_colum
         //$output .= $content;
         $output .= "\n".'<ul class="'.esc_attr($ul_class).'">'.$content.'</ul>';
     }
-    
+
     return $output;
 }
 
@@ -2734,7 +2734,7 @@ function ts_contains_word($haystack, $needle, $ignore_case = false)
         $haystack = strtolower($haystack);
         $needle = strtolower($needle);
     endif;
-    
+
     return (strpos($haystack, $needle) !== false) ? true : false;
 }
 
@@ -2793,7 +2793,7 @@ function ts_strip_shortcode_tags($content = '')
 /*
  * truncate text/html.
  * keeps html formatting in place, accounts for html/utf8 entities, closes unfinsished html.
- * 
+ *
  * $s => string to be cut
  * $l => desired length
  * $e => ending/suffix
@@ -2801,7 +2801,7 @@ function ts_strip_shortcode_tags($content = '')
  * $allowed_tags => eg. '<strong><a><em>'
  * $allow_shortcodes => boolean (self explanatory)
  */
-function ts_truncate($s, $l, $e = '&hellip;', $allow_html = false, $allowed_tags = 'simple', $allow_shortcodes = true) 
+function ts_truncate($s, $l, $e = '&hellip;', $allow_html = false, $allowed_tags = 'simple', $allow_shortcodes = true)
 {
     // account for WordPress shortcodes...
     $s = ($allow_shortcodes && function_exists('do_shortcode')) ? do_shortcode($s) : $s;
@@ -2814,54 +2814,54 @@ function ts_truncate($s, $l, $e = '&hellip;', $allow_html = false, $allowed_tags
     $e = (strlen(strip_tags($s)) > $l) ? $e : '';
     $i = 0;
     $tags = array();
-    
+
     // account for html/utf8 entities
     $temp_s = strip_tags($s);
     preg_match_all("/&#?[a-zA-Z0-9]{1,7};|[\x80-\xFF][\x80-\xBF]*/", $temp_s, $entities, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
-    if(is_array($entities) && count($entities)) 
+    if(is_array($entities) && count($entities))
     {
-        foreach($entities AS $entity) 
+        foreach($entities AS $entity)
         {
-            if($entity[0][1] - $i >= $l) 
+            if($entity[0][1] - $i >= $l)
             {
-                break;                  
+                break;
             }
             $i = $i + strlen($entity[0][0]) - 1;
         }
     }
-    
-    if($allow_html) 
+
+    if($allow_html)
     {
         preg_match_all('/<[^>]+>([^<]*)/', $s, $m, PREG_OFFSET_CAPTURE | PREG_SET_ORDER);
-        foreach($m as $o) 
+        foreach($m as $o)
         {
-            if($o[0][1] - $i >= $l) 
+            if($o[0][1] - $i >= $l)
             {
-                break;                  
+                break;
             }
             $t = substr(strtok($o[0][0], " \t\n\r\0\x0B>"), 1);
             // don't add the following to tags that will need to be closed:
             // already closed tags, self-closing tags (with ending slash), comment tags
-            if($t[0] != '/' && substr($t, -1) != '/' && substr($t, 0, 3) != '!--') 
+            if($t[0] != '/' && substr($t, -1) != '/' && substr($t, 0, 3) != '!--')
             {
                 // and then for self-closing tags *without* ending slashes...
                 $self_closing = array('area','base','br','col','embed','hr','img','input','keygen','link','menuitem','meta','param','source','track','wbr');
                 if(!in_array($t, $self_closing))
-                    $tags[] = $t;                   
+                    $tags[] = $t;
             }
-            elseif(end($tags) == substr($t, 1)) 
+            elseif(end($tags) == substr($t, 1))
             {
-                array_pop($tags);                   
+                array_pop($tags);
             }
             $i += $o[1][1] - $o[0][1];
         }
     }
-    
+
     $output = trim(substr($s, 0, $l = min(strlen($s), $l + $i))) . (count($tags = array_reverse($tags)) ? $e . '</' . implode('></', $tags) . '>' : $e);
-    
+
     //uncomment next line to debug
     //$output .= "\n". (isset($m) ? '<pre>'.print_r($m, true).'</pre><br/>'."\n" : '').'HTML/Entity characters: '.$i."<br/>\n".'Total characters kept: '.$l;
-    
+
     return $output;
 }
 
@@ -2871,21 +2871,21 @@ function ts_truncate($s, $l, $e = '&hellip;', $allow_html = false, $allowed_tags
  * @param int $length in characters to trim to
  * @param bool $ellipses if ellipses (...) are to be added
  * @param bool $strip_html if html tags are to be stripped
- * @return string 
+ * @return string
  */
-function ts_trim_text($input, $length, $ellipses = true, $strip_html = true) 
+function ts_trim_text($input, $length, $ellipses = true, $strip_html = true)
 {
     $length = (is_numeric($length)) ? $length : 100;
-    
+
     //strip tags, if desired
     if ($strip_html) {
         $input = strip_tags(do_shortcode($input));
     }
- 
+
     //no need to trim, already shorter than trim length
     if (strlen($input) <= $length)
         return $input;
-        
+
     // first we see if there are any encoded characters
     $num = 0;
     $t = substr($input, 0, $length);
@@ -2896,16 +2896,16 @@ function ts_trim_text($input, $length, $ellipses = true, $strip_html = true)
             $length = $length + strlen($special);
         }
     }
- 
+
     // we do this again since we have now allowed for special chars
     if (strlen($input) <= $length)
         return $input;
- 
+
     //find last space within length
     $last_space = strrpos(substr($input, 0, $length), ' ');
     $trimmed_text = substr($input, 0, $last_space);
     $trimmed_text = ($trimmed_text) ? $trimmed_text : substr($input, 0, $length);
- 
+
     return ($ellipses) ? $trimmed_text . '...' : $trimmed_text;
 }
 
@@ -2917,16 +2917,16 @@ function ts_trim_text($input, $length, $ellipses = true, $strip_html = true)
 function ts_truncate_trim($input, $length)
 {
     $allow_html = (ts_option_vs_default('allow_html_excerpts', 0) == 1) ? true : false;
-    
+
     $output = ($allow_html) ? ts_truncate($input, $length, '&hellip;', true) : ts_trim_text($input, $length);
-    
+
     return $output;
 }
 
 /*
  * Similar to ts_trim_text, but will automatically fetch the excerpt of current post if none is provided.
  */
-function ts_max_charlength($charlength, $text = null) 
+function ts_max_charlength($charlength, $text = null)
 {
     $excerpt = ($text) ? $text : get_the_excerpt();
     $charlength++;
@@ -2936,15 +2936,15 @@ function ts_max_charlength($charlength, $text = null)
 /*
  * Convert an array to object. There are easier ways to do this now... do we still need this?
  */
-function ts_array2object($array) 
+function ts_array2object($array)
 {
 	if(!is_array($array))
 		return $array;
-	
+
 	$object = new stdClass();
-	if(is_array($array) && count($array) > 0) 
+	if(is_array($array) && count($array) > 0)
 	{
-        foreach ($array as $name=>$value) 
+        foreach ($array as $name=>$value)
         {
             $name = strtolower(trim($name));
             if(!empty($name))
@@ -2960,7 +2960,7 @@ function ts_array2object($array)
  * Covert hex color code to RGB array
  * Taken from: http://css-tricks.com/snippets/php/convert-hex-to-rgb/
  */
-function ts_hex2rgb($hex, $return = 'array') 
+function ts_hex2rgb($hex, $return = 'array')
 {
    $hex = str_replace("#", "", $hex);
 
@@ -2974,19 +2974,19 @@ function ts_hex2rgb($hex, $return = 'array')
       $b = hexdec(substr($hex,4,2));
    }
    $rgb = array($r, $g, $b);
-   
+
    return ($return == 'string') ? implode(", ", $rgb) : $rgb;
 }
 
-function ts_rgb2hex($rgb, $include_hex = true) 
+function ts_rgb2hex($rgb, $include_hex = true)
 {
    $hex = ($include_hex) ? "#" : '';
    $rgb = (is_array($rgb)) ? $rgb : (($rgb && is_string($rgb)) ? explode(',', $rgb) : array());
-   
+
    $red = (isset($rgb['red'])) ? $rgb['red'] : $rgb[0];
    $green = (isset($rgb['green'])) ? $rgb['green'] : $rgb[1];
    $blue = (isset($rgb['blue'])) ? $rgb['blue'] : $rgb[2];
-   
+
    $hex .= str_pad(dechex(trim($red)), 2, "0", STR_PAD_LEFT);
    $hex .= str_pad(dechex(trim($green)), 2, "0", STR_PAD_LEFT);
    $hex .= str_pad(dechex(trim($blue)), 2, "0", STR_PAD_LEFT);
@@ -2995,8 +2995,8 @@ function ts_rgb2hex($rgb, $include_hex = true)
 }
 
 function ts_small_nav_social()
-{   
-    
+{
+
     $output  = '<p class="social social-fa-icons">';
     $output .= ts_output_social_icon('facebook');
     $output .= ts_output_social_icon('twitter');
@@ -3013,7 +3013,7 @@ function ts_small_nav_social()
     $output .= ts_output_social_icon('soundcloud');
     $output .= ts_output_social_icon('rss');
     $output .= '</p>';
-    
+
     return $output;
 }
 
@@ -3036,11 +3036,11 @@ function ts_output_social_header_pocket()
     $output .= ts_output_social_icon('soundcloud');
     $output .= ts_output_social_icon('rss');
     $output .= '</p>';
-    
+
     return $output;
 }
 
-function ts_output_social_icon($arg, $preset = '', $override = false) 
+function ts_output_social_icon($arg, $preset = '', $override = false)
 {
     $orig_arg = $arg;
     $social_icon_style = ts_option_vs_default('social_icon_style', 'fontawesome');
@@ -3051,11 +3051,11 @@ function ts_output_social_icon($arg, $preset = '', $override = false)
         if($orig_arg == 'rss' && ($preset == '[rss_url]' || $url == '[rss_url]')) :
             $override = '[rss_url]';
             $url = ts_get_feed_url($override);
-        endif;  
-        
+        endif;
+
         $orig_arg = ($orig_arg == 'google_plus') ? 'google-plus' : $orig_arg;
         $orig_arg = ($orig_arg == 'vimeo') ? 'vimeo-square' : $orig_arg;
-        
+
         return '<a href="'.esc_url($url).'" class="icon-style" target="_blank"><i class="fa fa-'.esc_attr($orig_arg).'"></i></a>';
     else :
         return '';
@@ -3063,73 +3063,73 @@ function ts_output_social_icon($arg, $preset = '', $override = false)
 }
 
 function ts_get_feed_url($override = '')
-{    
+{
     if(trim($override)) {
-        if(in_array($override, array('[rss]', '[rss_url]'))) 
+        if(in_array($override, array('[rss]', '[rss_url]')))
             return get_bloginfo('rss2_url');
         else
             return $override;
     }
-    
+
     return get_bloginfo('rss2_url');
 }
 
 function ts_main_container_wrap_class($prefix = '')
 {
     global $ts_page_id;
-    
+
     $prefix_options = array(
         'p',
         'page',
         'portfolio',
     );
-    
+
     $prefix = (in_array($prefix, $prefix_options)) ? $prefix : $prefix_options[0];
-    
+
     $content_padding_options = array(
         'no_padding' => 'no-top-padding no-bottom-padding',
         'no_top_padding' => 'no-top-padding',
         'no_bottom_padding' => 'no-bottom-padding',
     );
-    
+
     $content_padding = ts_postmeta_vs_default($ts_page_id, '_'.$prefix.'_content_padding', '');
     $content_padding = (isset($content_padding_options[$content_padding])) ? $content_padding_options[$content_padding] : '';
-    
+
     return $content_padding;
 }
 
 function ts_main_div_class($section = '')
 {
     global $ts_show_sidebar, $ts_sidebar_position, $ts_is_woocommerce, $ts_is_woocommcerce_page;
-    
+
     $classes  = array();
-    
+
     $classes[] = ($ts_show_sidebar == 'yes' && in_array($ts_sidebar_position, array('left','right'))) ? 'has-sidebar' : 'no-sidebar';
     $classes[] = ($ts_show_sidebar == 'yes') ? 'has-sidebar-'.$ts_sidebar_position : 'has-no-sidebar';
-    
+
     // woocommerce class adjustment...
     if(isset($ts_is_woocommerce) && $ts_is_woocommerce == true)
         $classes[] = 'woocommerce';
-    
+
     if(isset($ts_is_woocommerce_page) && $ts_is_woocommerce_page == true)
         $classes[] = 'woocommerce-page';
-    
+
     $classes = implode(' ', $classes);
-    
+
     return $classes;
 }
 
 function ts_single_comments_wrap_wrap_class()
 {
     global $ts_show_sidebar, $ts_sidebar_position;
-    
+
     return ($ts_show_sidebar == 'no' || strpos($ts_sidebar_position, 'comments') === false) ? 'ts-post-section' : '';
 }
 
 function ts_single_comments_wrap_class()
 {
     global $ts_show_sidebar, $ts_sidebar_position;
-    
+
     return ($ts_show_sidebar == 'no' || strpos($ts_sidebar_position, 'comments') === false) ? 'ts-post-section-inner' : 'ts-post-section';
 }
 
@@ -3142,7 +3142,7 @@ function ts_footer_widgets()
         echo '<div id="footer-wrap">'."\n";
         echo '<div id="footer" class="footer-widgets container">'."\n";
         echo '<div class="row">'."\n";
-        
+
         switch (ts_option_vs_default('footer_layout', 'footer4')) {
 
             case "footer1":
@@ -3178,7 +3178,7 @@ function ts_footer_widgets()
                 break;
 
         }
-        
+
         echo '</div>'."\n";
         echo '</div>'."\n";
         echo '</div>'."\n";
@@ -3192,17 +3192,17 @@ function ts_footer_widgets()
 function ts_get_bottom_ad()
 {
     global $ts_page_id;
-    
+
     $prefix = (is_page($ts_page_id)) ? '_page_' : '_p_';
-    
+
     $show_bottom_ad = (ts_option_vs_default('show_bottom_ad', 1) == 1) ? 'yes' : 'no';
     $show_bottom_ad = ts_postmeta_vs_default($ts_page_id, $prefix.'show_bottom_ad', $show_bottom_ad);
-    
+
     if(ts_attr_is_true($show_bottom_ad)) :
-        
-        $bottom_ad = ts_option_vs_default('bottom_ad_code', '');   
+
+        $bottom_ad = ts_option_vs_default('bottom_ad_code', '');
         $bottom_ad = do_shortcode(ts_postmeta_vs_default($ts_page_id, $prefix.'bottom_ad', $bottom_ad));
-        
+
         return (trim($bottom_ad)) ? '<div id="bottom-ad"><div id="bottom-ad-inner" class="container text-center">'.$bottom_ad.'</div></div>'."\n" : '';
     endif;
 }
@@ -3216,18 +3216,18 @@ function ts_bottom_ad_widgets_sep($show = true)
     if($show === false) return;
 
     global $ts_page_id;
-    
+
     $prefix = (is_page($ts_page_id)) ? '_page_' : '_p_';
-    
+
     $show_bottom_ad = (ts_option_vs_default('show_bottom_ad', 1) == 1) ? 'yes' : 'no';
     $show_bottom_ad = ts_postmeta_vs_default($ts_page_id, $prefix.'show_bottom_ad', $show_bottom_ad);
-    
+
     if(ts_attr_is_true($show_bottom_ad) && ts_option_vs_default('show_footer_widgets', 1) == 1) :
-        
+
         $html  = '<div id="bottom-ad-widgets-sep" class="container text-center">';
         $html .= do_shortcode('[divider style="single" padding_bottom="0" padding_top="0"]');
         $html .= '</div>'."\n";
-        
+
         return $html;
     endif;
 }
@@ -3235,12 +3235,12 @@ function ts_bottom_ad_widgets_sep($show = true)
 function ts_custom_comment_list($comment, $args, $depth) {
 
     $GLOBALS['comment'] = $comment;
-    
+
     switch ($comment->comment_type) :
         case 'pingback'  :
-        case 'trackback' : 
+        case 'trackback' :
         ?>
-            <li class="pingback">  
+            <li class="pingback">
                 <p>
                     <?php _e('Pingback:', 'ThemeStockyard'); ?>
                     <?php comment_author_link(); ?>
@@ -3249,7 +3249,7 @@ function ts_custom_comment_list($comment, $args, $depth) {
             </li>
             <?php
             break;
-            
+
         default :
         ?>
             <li <?php comment_class('clearfix'); ?> id="comment-<?php comment_ID(); ?>">
@@ -3260,21 +3260,21 @@ function ts_custom_comment_list($comment, $args, $depth) {
                     </div><!-- end div .comment-avartar -->
 
                     <div class="comment-content-wrapper clearfix">
-                       
+
                         <div class="comment-head small">
                             <span class="comment-author"><?php echo get_comment_author_link(); ?></span>
                             <span class="sep">&bull;</span>
                             <span class="comment-date"><?php echo get_comment_date().' '.__('at', 'ThemeStockyard').' '.get_comment_time() ?></span>
-                            <?php 
+                            <?php
                             $comment_reply_link_before = '<span class="sep">&bull;</span><span class="comment-reply">';
                             $comment_reply_link_after = '</span>';
                             $comment_reply_link_args = array(
-                                'depth'     => $depth, 
+                                'depth'     => $depth,
                                 'max_depth' => $args['max_depth'],
                                 'before'    => $comment_reply_link_before,
                                 'after'     => $comment_reply_link_after
                             );
-                            comment_reply_link(array_merge($args, $comment_reply_link_args)); 
+                            comment_reply_link(array_merge($args, $comment_reply_link_args));
                             ?>
                             <?php edit_comment_link(__('Edit', 'ThemeStockyard'), ' <span class="sep">&bull;</span> <span class="comment-edit">', '</span>');?>
                         </div><!-- end div .comment-head -->
@@ -3282,14 +3282,14 @@ function ts_custom_comment_list($comment, $args, $depth) {
                         <div class="comment-message">
                             <?php comment_text(); ?>
                         </div><!-- end div .comment-message -->
-                        
+
                     </div><!-- end div.comment-authors -->
                 </div>
             <!--</li>-->
             <?php
             break;
     endswitch;
-    
+
 }
 
 /**
@@ -3312,34 +3312,34 @@ function ts_custom_comment_list($comment, $args, $depth) {
  * @return str|array
  */
 
-function aq_resize( $url = '', $width = null, $height = null, $crop = null, $single = true, $upscale = false, $id = null ) 
+function aq_resize( $url = '', $width = null, $height = null, $crop = null, $single = true, $upscale = false, $id = null )
 {
     $original_url = $url;
 
 	// Validate inputs.
 	if (( ! $width && ! $height ) || (!$url && !$id)) return false;
-	
+
 	if($id && !$url)
 	{
         $image_data = wp_get_attachment_image_src($id, 'large');
         $url = $original_url = $image_data[0];
-        
+
         if(!$url) return false;
 	}
-	
+
 	// slight detour... see if Jetpack's Photon is being used...
 	$photon_active = false;
 	if(preg_match('#^https?://i[0-9]{1,3}\.wp\.com#', $url))
         $photon_active = true;
-	
+
 	if(class_exists('Jetpack') && method_exists('Jetpack', 'get_active_modules') && in_array('photon', Jetpack::get_active_modules()))
         $photon_active = true;
-    
+
     if($photon_active)
     {
         // remove query string
         $newurl = current(explode('?', $url));
-        
+
         // create query string
         if($width && $height)
             $qs = '?resize='.$width.','.$height;
@@ -3349,31 +3349,31 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
             $qs = '?h='.$height;
         else
             $newurl = 'old';
-        
+
         $url = ($newurl == 'old') ? $url : $newurl . $qs;
-        
+
         if($single)
             $image = $url;
         else {
             if(!$width || !$height) {
                 list($width, $height) = getimagesize($url);
             }
-                
+
             $image = array (
                 0 => $url,
                 1 => $width,
                 2 => $height
             );
         }
-        
+
         return $image;
     }
-    
-    
+
+
 
 	// Caipt'n, ready to hook.
 	if ( true === $upscale ) add_filter( 'image_resize_dimensions', 'aq_upscale', 10, 6 ); // ignore themecheck - not a deprecated function/hook
-	
+
 	if(ts_option_vs_default('sharpen_resized_images', 1) == 1) {
         add_filter('image_make_intermediate_size', 'ts_sharpen_resized_files', 900);
 	}
@@ -3382,7 +3382,7 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
 	$upload_info = wp_upload_dir();
 	$upload_dir = $upload_info['basedir'];
 	$upload_url = $upload_info['baseurl'];
-	
+
 	if(substr($upload_url, 0, 5) == 'http:' && substr($url, 0, 6) == 'https:')
 	{
         $url = 'http:'.substr($url, 6);
@@ -3407,7 +3407,7 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
 	$dims = image_resize_dimensions( $orig_w, $orig_h, $width, $height, $crop );
 	$dst_w = $dims[4];
 	$dst_h = $dims[5];
-	
+
 	// added by Jarrod:
 	// if error occurs, return original image. This more closely resembles WordPress's default behavior when resizing.
 	$error_img = ($single) ? $url : array($url, $orig_w, $orig_h);
@@ -3436,7 +3436,7 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
 		else {
 
             $editor = wp_get_image_editor( $img_path );
-            
+
             $editor->set_quality(100);
 
             if ( is_wp_error( $editor ) || is_wp_error( $editor->resize( $width, $height, $crop ) ) ) {
@@ -3449,8 +3449,8 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
             if ( ! is_wp_error( $resized_file ) ) {
                 $resized_rel_path = str_replace( $upload_dir, '', $resized_file['path'] );
                 $img_url = $upload_url . $resized_rel_path;
-                
-                // right here is where we need to add postmeta to associate any newly created images with 
+
+                // right here is where we need to add postmeta to associate any newly created images with
                 // the original attachment id (if one was passed into the function)
                 if($id) {
                     $resized_versions = get_post_meta($id, '_aq_resize_versions', true);
@@ -3458,7 +3458,7 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
                     if(!is_array($resized_versions)) {
                         $resized_versions = array();
                     }
-                    
+
                     if(!in_array($resized_rel_path, $resized_versions)) {
                         $resized_versions[] = $resized_rel_path;
                         $resized_versions['last-update'] = date('Y-m-d H:i:s');
@@ -3477,12 +3477,12 @@ function aq_resize( $url = '', $width = null, $height = null, $crop = null, $sin
 
 	// Okay, leave the ship.
 	if ( true === $upscale ) remove_filter( 'image_resize_dimensions', 'aq_upscale' ); // ignore themecheck - not a deprecated function/hook
-    
+
     // ssl cleanup
     if(is_ssl() && substr($img_url, 0, 5) == 'http:') {
         $img_url = 'https:'.substr($img_url, 5);
     }
-    
+
 	// Return the output.
 	if ( $single ) {
 		// str return.
@@ -3504,7 +3504,7 @@ function ts_aq_resized_images_removal($id)
     $upload_info = wp_upload_dir();
 	$upload_dir = $upload_info['basedir'];
 	$upload_url = $upload_info['baseurl'];
-	
+
     $resized_versions = get_post_meta($id, '_aq_resize_versions', true);
     $resized_versions = maybe_unserialize($resized_versions);
     if(is_array($resized_versions)) {
@@ -3544,14 +3544,14 @@ function aq_upscale( $default, $orig_w, $orig_h, $dest_w, $dest_h, $crop ) {
 	return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 }
 
-function ts_sharpen_resized_files( $resized_file ) 
+function ts_sharpen_resized_files( $resized_file )
 {
-	
+
 	//$file_contents = wp_remote_retrieve_body(wp_remote_get($resized_file));
-	
+
 	$image = imagecreatefromstring( file_get_contents( $resized_file ) ); // safe!
 	//$image = imagecreatefromstring( $file_contents ); // safe!
-	
+
 	$size = @getimagesize( $resized_file );
 	if ( !$size )
 		return new WP_Error('invalid_image', __('Could not read image size','ThemeStockyard'), $resized_file);
@@ -3566,7 +3566,7 @@ function ts_sharpen_resized_files( $resized_file )
 			);
 
 			$divisor = array_sum(array_map('array_sum', $matrix));
-			$offset = 0; 
+			$offset = 0;
 			imageconvolution($image, $matrix, $divisor, $offset);
 			imagejpeg($image, $resized_file,apply_filters( 'jpeg_quality', 99, 'edit_image' ));
 			break;
@@ -3574,13 +3574,13 @@ function ts_sharpen_resized_files( $resized_file )
 			return $resized_file;
 		case IMAGETYPE_GIF:
 			return $resized_file;
-	}	
-	
+	}
+
 	// we don't need images in memory anymore
 	imagedestroy( $image );
-	
+
 	return $resized_file;
-}	
+}
 
 function ts_figure_thumb_name($width = null, $height = null)
 {
@@ -3596,18 +3596,18 @@ function ts_figure_thumb_name($width = null, $height = null)
 function ts_sharing_options_on_posts($postid = null)
 {
     global $post, $ts_page_id;
-    
+
     $postid = ($postid) ? $postid : (isset($post->ID) ? $post->ID : $ts_page_id);
-    
+
     $return = array();
-    
+
     $ts_sharing_options_position_option = ts_option_vs_default('sharing_options_position_on_post', 'top');
     $ts_sharing_options_position = ts_postmeta_vs_default($postid, '_p_sharing_options_position', $ts_sharing_options_position_option);
-    
+
     $return['position'] = (in_array($ts_sharing_options_position, array('left','right','hidden','top'))) ? $ts_sharing_options_position : 'top';
     $return['position_class'] = ($return['position'] == 'top') ? 'not-pulled' : 'pulled pull-'.$return['position'];
     $return['show'] = ($ts_sharing_options_position == 'hidden') ? false : true;
-    
+
     return ts_array2object($return);
 }
 
@@ -3615,64 +3615,64 @@ function ts_sharing_options_on_posts($postid = null)
 function ts_social_sharing($single = true)
 {
     global $smof_data, $post;
-    
+
     $html = '';
-    
+
     $share_text = (get_post_type() == 'portfolio') ? __('Share:', 'ThemeStockyard') : __('Share:', 'ThemeStockyard');
-    
+
     if($single) :
         // set defaults...
         $title = $facebook_title = $twitter_title = $google_plus_title = get_the_title();
         $link = get_permalink();
-        
+
         // accommodate for yoast
         if ( class_exists('WPSEO_Meta') && method_exists('WPSEO_Meta', 'get_value')) :
             $social_title = WPSEO_Meta::get_value('title');
             $title = (trim($social_title)) ? $social_title : $title;
             $social_link = WPSEO_Meta::get_value('canonical');
             $link = (trim($social_link)) ? $social_link : $link;
-            
+
             $_facebook_title = WPSEO_Meta::get_value('opengraph-title');
             $facebook_title = (trim($_facebook_title)) ? $_facebook_title : $title;
-            
+
             $_twitter_title = WPSEO_Meta::get_value('twitter-title');
             $twitter_title = (trim($_twitter_title)) ? $_twitter_title : $title;
-            
+
             $_google_plus_title = WPSEO_Meta::get_value('google-plus-title');
             $google_plus_title = (trim($_google_plus_title)) ? $_google_plus_title : $title;
         endif;
     endif;
-    
-    $default_sharing_options = array( 'facebook', 'twitter', 'google-plus', 'pinterest', 'tumblr', 'linkedin', 'reddit', 'email', 'print' );  
-   
+
+    $default_sharing_options = array( 'facebook', 'twitter', 'google-plus', 'pinterest', 'tumblr', 'linkedin', 'reddit', 'email', 'print' );
+
     $sharing_options = ts_option_vs_default('available_sharing_options', $default_sharing_options);
-    
+
     $html .= ($single) ? '<div class="share-options">' : '';
-    
-    $html .= (in_array('facebook', $sharing_options)) ? '<a href="'.esc_url('https://www.facebook.com/sharer.php?u='.urlencode($link).'&amp;t='.urlencode($facebook_title)).'" class="hover-facebook-color share-pop" title="Facebook" rel="nofollow"><i class="fa fa-facebook-square facebook-color"></i><span>Facebook</span></a>' : ''; 
-    
+
+    $html .= (in_array('facebook', $sharing_options)) ? '<a href="'.esc_url('https://www.facebook.com/sharer.php?u='.urlencode($link).'&amp;t='.urlencode($facebook_title)).'" class="hover-facebook-color share-pop" title="Facebook" rel="nofollow"><i class="fa fa-facebook-square facebook-color"></i><span>Facebook</span></a>' : '';
+
     $html .= (in_array('twitter', $sharing_options)) ? '<a href="'.esc_url('https://twitter.com/home?status='.urlencode($twitter_title.' '.$link)).'" class="hover-twitter-color share-pop" title="Twitter" rel="nofollow"><i class="fa fa-twitter-square twitter-color"></i><span>Twitter</span></a>' : '';
-    
+
     $html .= (in_array('google-plus', $sharing_options)) ? '<a href="'.esc_url('https://plus.google.com/share?url='.urlencode($link).'&amp;title='.urlencode($google_plus_title)).'" class="hover-gplus-color share-pop" title="Google+" rel="nofollow"><i class="fa fa-google-plus-square gplus-color"></i><span>Google+</span></a>' : '';
-    
+
     $html .= (in_array('pinterest', $sharing_options)) ? '<a href="'.esc_url('http://pinterest.com/pin/create/button/?url='.urlencode($link).'&amp;description='.urlencode($title)).'" class="hover-pinterest-color share-pop" title="Pinterest" rel="nofollow"><i class="fa fa-pinterest-square pinterest-color"></i><span>Pinterest</span></a>' : '';
-    
+
     $html .= (in_array('vk', $sharing_options)) ? '<a href="'.esc_url('http://vk.com/share.php?url='.urlencode($link).'&amp;name='.urlencode($title)).'" class="hover-vk-color share-pop" title="VK" rel="nofollow"><i class="fa fa-vk vk-color"></i><span>VK</span></a>' : '';
-    
+
     $html .= (in_array('tumblr', $sharing_options)) ? '<a href="'.esc_url('http://www.tumblr.com/share/link?url='.urlencode($link).'&amp;name='.urlencode($title)).'" class="hover-tumblr-color share-pop" title="Tumblr" rel="nofollow"><i class="fa fa-tumblr-square tumblr-color"></i><span>Tumblr</span></a>' : '';
-    
+
     $html .= (in_array('linkedin', $sharing_options)) ? '<a href="'.esc_url('http://linkedin.com/shareArticle?mini=true&amp;url='.urlencode($link).'&amp;title='.urlencode($title)).'" class="hover-linkedin-color share-pop" title="LinkedIn" rel="nofollow"><i class="fa fa-linkedin-square linkedin-color"></i><span>LinkedIn</span></a>' : '';
-    
+
     $html .= (in_array('reddit', $sharing_options)) ? '<a href="'.esc_url('http://www.reddit.com/submit?url='.urlencode($link).'&amp;title='.urlencode($title)).'" class="hover-reddit-color share-pop" title="Reddit" rel="nofollow"><i class="fa fa-reddit-square reddit-color"></i><span>Reddit</span></a>' : '';
-    
+
     $html .= (in_array('digg', $sharing_options)) ? '<a href="'.esc_url('http://www.digg.com/submit?url='.urlencode($link)).'" class="hover-digg-color share-pop" title="digg" rel="nofollow"><i class="fa fa-digg digg-color"></i><span>digg</span></a>' : '';
-    
+
     $html .= (in_array('stumbleupon', $sharing_options)) ? '<a href="'.esc_url('http://www.stumbleupon.com/submit?url='.urlencode($link)).'" class="hover-stumbleupon-color share-pop" title="StumbleUpon" rel="nofollow"><i class="fa fa-stumbleupon stumbleupon-color"></i><span>StumbleUpon</span></a>' : '';
-    
+
     $html .= ($single && in_array('email', $sharing_options)) ? '<a href="'.esc_url('mailto:?subject='.urlencode($title).'&amp;body='.urlencode($link)).'" class="email" title="'.__('Email','ThemeStockyard').'" rel="nofollow"><i class="fa fa-envelope"></i><span>'.__('Email','ThemeStockyard').'</span></a>' : '';
-    
+
     $html .= ($single && in_array('print', $sharing_options)) ? '<a href="javascript:print()" class="print" title="'.__('Print','ThemeStockyard').'"><i class="fa fa-print"></i><span>'.__('Print','ThemeStockyard').'</span></a>' : '';
-    
+
     $html .= ($single) ? '</div>' : '';
 
     return $html;
@@ -3680,57 +3680,57 @@ function ts_social_sharing($single = true)
 
 function ts_get_photo_caption($id)
 {
-    $caption = get_post($id)->post_excerpt;   
+    $caption = get_post($id)->post_excerpt;
     return ($caption) ? '<div class="fp-caption-wrap"><div class="fp-caption small">'.$caption.'</div></div>' : '';
 }
 
 function ts_sticky_badge($badge = true)
 {
     $html = '';
-    
+
     $wrap_class = ($badge) ? 'bg-primary' : '';
     $icon_class = ($badge) ? 'color-white' : 'color-primary';
-    
+
     if(is_sticky()) :
         $html .= '<span class="ts-sticky-badge '.esc_attr($wrap_class).'" title="'.esc_attr(__('Featured','ThemeStockyard')).'">';
         $html .= '<i class="fa fa-bookmark '.esc_attr($icon_class).'"></i>';
         $html .= '</span>';
     endif;
-    
+
     return $html;
 }
 
-function ts_get_featured_media($arg = array()) 
+function ts_get_featured_media($arg = array())
 {
     global $post, $smof_data, $ts_show_sidebar, $ts_page_id, $ts_within_blog_loop;
-    
+
     $defaults = array(
         'allow_audio' => false,
         'allow_videos' => true,
         'allow_galleries' => true,
     );
-    
+
     $arg = wp_parse_args($arg, $defaults);
-    
+
     $html = '';
     $ready = false;
     $within_slider = (isset($arg['within_slider']) && ts_attr_is_true($arg['within_slider'])) ? true : false;
     $is_single_featured_media = (isset($arg['is_single']) && $arg['is_single'] === true && $post->ID == $ts_page_id) ? true : false;
-    
+
     $posttype = get_post_type($post->ID);
     $post_meta_prefix = ($posttype == 'portfolio') ? '_portfolio_' : '_p_';
-    
+
     if($posttype == 'portfolio') :
         $crop_images = (ts_option_vs_default('crop_images_on_portfolio', 1)) ? true : false;
     else :
         $crop_images = (ts_option_vs_default('crop_images_on_blog', 1)) ? true : false;
     endif;
-    
+
     $get_alt_text_in_loop = (ts_option_vs_default('featured_image_alt_text_within_loop', 0)) ? true : false;
     $get_alt_text = ($is_single_featured_media || $get_alt_text_in_loop) ? true : false;
-    
+
     $video_id = $return_link = '';
-    
+
     if($ts_show_sidebar == 'yes') :
         if($crop_images) :
             $crop_width = 740;
@@ -3739,7 +3739,7 @@ function ts_get_featured_media($arg = array())
             $crop_width = 740;
             $crop_height = 0;
         endif;
-    else : 
+    else :
         if($crop_images) :
             $crop_width = 1100;
             $crop_height = 540;
@@ -3748,20 +3748,20 @@ function ts_get_featured_media($arg = array())
             $crop_height = 0;
         endif;
     endif;
-    
+
     if(isset($arg['media_height']) && $arg['media_height'] !== false && isset($arg['media_width']) && $arg['media_width'] !== false) :
         $crop_width = $arg['media_width'];
         $crop_height = $arg['media_height'];
     endif;
-    
+
     $seek_thumb_size_name = ($crop_width > 1024) ? 'full' : 'large';    //ts_figure_thumb_name($crop_width, $crop_height);
-    
+
     $allow_audio = (isset($arg['allow_audio']) && ts_attr_is_true($arg['allow_audio'])) ? true : false;
     $allow_videos = (isset($arg['allow_videos']) && ts_attr_is_false($arg['allow_videos'])) ? false : true;
     $allow_self_hosted_video = (isset($arg['allow_self_hosted_video']) && ts_attr_is_true($arg['allow_self_hosted_video'])) ? true : false;
     $allow_video_embed_code = (isset($arg['allow_video_embed_code']) && ts_attr_is_false($arg['allow_video_embed_code'])) ? false : true;
     $allow_galleries = (isset($arg['allow_galleries']) && ts_attr_is_false($arg['allow_galleries'])) ? false : true;
-    
+
     if(isset($arg['video_height']) && isset($arg['video_width'])) :
         $video_width = 'width="'.esc_attr($arg['video_width']).'"';
         $video_height = 'height="'.esc_attr($arg['video_height']).'"';
@@ -3769,14 +3769,14 @@ function ts_get_featured_media($arg = array())
         $video_width = '';
         $video_height = '';
     endif;
-    
+
     $audio_class = (isset($arg['audio_class'])) ? $arg['audio_class'] : '';
     $media_class = (isset($arg['media_class'])) ? $arg['media_class'] : '';
     $show_caption = (isset($arg['show_caption']) && $arg['show_caption'] === true) ? true : false;
-    
+
     $post_format = ($posttype == 'portfolio') ? get_post_meta($post->ID, $post_meta_prefix.'project_type', true) : get_post_format();
-    
-    if($allow_videos && in_array($post_format, array('video', 'youtube', 'vimeo', 'self_hosted_video'))) : 
+
+    if($allow_videos && in_array($post_format, array('video', 'youtube', 'vimeo', 'self_hosted_video'))) :
         $vine = ''; // not used for now
         $vimeo  = get_post_meta( $post->ID, $post_meta_prefix.'vimeo_id', true );
         $youtube = get_post_meta($post->ID, $post_meta_prefix.'youtube_id', true);
@@ -3799,14 +3799,14 @@ function ts_get_featured_media($arg = array())
     else :
         $post_format = 'standard';
     endif;
-    
+
     $preview = get_post_meta($post->ID, $post_meta_prefix.'preview_image', true);
     $preview_id = get_post_meta($post->ID, $post_meta_prefix.'preview_image_id', true);
     $post_format = ($preview && trim($preview) && $ts_page_id != $post->ID) ? 'standard' : $post_format;
-    
+
     $class = (isset($arg['class'])) ? $arg['class'] : '';
     $color = str_replace('#', '', ts_option_vs_default('primary_color',''));
-    
+
     if($post_format == 'video') :
         $html .= ($class) ? '<div class="'.esc_attr($class).'">' : '';
         if($vimeo) :
@@ -3832,7 +3832,7 @@ function ts_get_featured_media($arg = array())
             $video_id = 'ts-embed-'.mt_rand();
             $return_link = '';
             $html = '<div class="fluid-width-video-wrapper '.esc_attr($media_class).'">'.$embed_code.'</div>';
-        elseif($youtube) : 
+        elseif($youtube) :
             $qs_addons = ts_get_video_qs_addons($youtube, '&amp;');
             $video_id = ts_get_video_id($youtube);
             $return_link = 'https://www.youtube.com/watch?v='.$video_id;
@@ -3860,16 +3860,16 @@ function ts_get_featured_media($arg = array())
             $html .= '<div class="'.esc_attr($audio_class).' '.esc_attr($media_class).'">'.do_shortcode('[audio src="'.esc_url($self_hosted_audio).'"]').'</div>';
         endif;
         $html .= ($class) ? '</div>' : '';
-        
+
         $post_format = ($audio_url) ? 'audio' : 'standard';
         $ready = ($audio_url) ? true : false;
     endif;
-    if($post_format == 'gallery') : 
+    if($post_format == 'gallery') :
         $crop_width = (isset($arg['gallery_width'])) ? $arg['gallery_width'] : $crop_width;
         $crop_height = (isset($arg['gallery_height'])) ? $arg['gallery_height'] : $crop_height;
-        
+
         $gallery_type = (isset($arg['gallery_type']) && $post->ID == $ts_page_id) ? $arg['gallery_type'] : 'slider';
-        
+
         $photo1_id = get_post_meta( $post->ID, $post_meta_prefix.'image_1_id', true );
         $photo2_id = get_post_meta( $post->ID, $post_meta_prefix.'image_2_id', true );
         $photo3_id = get_post_meta( $post->ID, $post_meta_prefix.'image_3_id', true );
@@ -3879,9 +3879,9 @@ function ts_get_featured_media($arg = array())
         $photo7_id = get_post_meta( $post->ID, $post_meta_prefix.'image_7_id', true );
         $photo8_id = get_post_meta( $post->ID, $post_meta_prefix.'image_8_id', true );
         $photo9_id = get_post_meta( $post->ID, $post_meta_prefix.'image_9_id', true );
-        $photo10_id = get_post_meta( $post->ID, $post_meta_prefix.'image_10_id', true );        
-        
-        
+        $photo10_id = get_post_meta( $post->ID, $post_meta_prefix.'image_10_id', true );
+
+
         $photo1 = wp_get_attachment_image_src($photo1_id, $seek_thumb_size_name);
         $photo2 = wp_get_attachment_image_src($photo2_id, $seek_thumb_size_name);
         $photo3 = wp_get_attachment_image_src($photo3_id, $seek_thumb_size_name);
@@ -3891,10 +3891,10 @@ function ts_get_featured_media($arg = array())
         $photo7 = wp_get_attachment_image_src($photo7_id, $seek_thumb_size_name);
         $photo8 = wp_get_attachment_image_src($photo8_id, $seek_thumb_size_name);
         $photo9 = wp_get_attachment_image_src($photo9_id, $seek_thumb_size_name);
-        $photo10 = wp_get_attachment_image_src($photo10_id, $seek_thumb_size_name);  
-              
-        
-        
+        $photo10 = wp_get_attachment_image_src($photo10_id, $seek_thumb_size_name);
+
+
+
         $photo1 = (isset($photo1[0])) ? aq_resize($photo1[0], $crop_width, $crop_height, true, true, true, $photo1_id) : '';
         $photo2 = (isset($photo2[0])) ? aq_resize($photo2[0], $crop_width, $crop_height, true, true, true, $photo2_id) : '';
         $photo3 = (isset($photo3[0])) ? aq_resize($photo3[0], $crop_width, $crop_height, true, true, true, $photo3_id) : '';
@@ -3905,10 +3905,10 @@ function ts_get_featured_media($arg = array())
         $photo8 = (isset($photo8[0])) ? aq_resize($photo8[0], $crop_width, $crop_height, true, true, true, $photo8_id) : '';
         $photo9 = (isset($photo9[0])) ? aq_resize($photo9[0], $crop_width, $crop_height, true, true, true, $photo9_id) : '';
         $photo10 = (isset($photo10[0])) ? aq_resize($photo10[0], $crop_width, $crop_height, true, true, true, $photo10_id) : '';
-        
-        
+
+
         $all_photos =   array(
-                            'id_'.$photo1_id => $photo1, 'id_'.$photo2_id => $photo2, 'id_'.$photo3_id => $photo3, 
+                            'id_'.$photo1_id => $photo1, 'id_'.$photo2_id => $photo2, 'id_'.$photo3_id => $photo3,
                             'id_'.$photo4_id => $photo4, 'id_'.$photo5_id => $photo5, 'id_'.$photo6_id => $photo6,
                             'id_'.$photo7_id => $photo7, 'id_'.$photo8_id => $photo8, 'id_'.$photo9_id => $photo9,
                             'id_'.$photo10_id => $photo10
@@ -3953,9 +3953,9 @@ function ts_get_featured_media($arg = array())
                     $html .= '<li>'.$link_begin.'<img src="'.esc_url($img).'" alt="'.esc_attr($alt).'"/>'.$link_end.'</li>';
                     $i++;
                 }
-                $html .= '</ul></div>'; 
+                $html .= '</ul></div>';
                 $html .= ($class) ? '</div>' : '';
-            endif; 
+            endif;
         else :
             $post_format = 'standard';
         endif;
@@ -3966,7 +3966,7 @@ function ts_get_featured_media($arg = array())
         $thumb_photo_id = get_post_thumbnail_id($post->ID);
         $thumb_photo = wp_get_attachment_image_src($thumb_photo_id, $seek_thumb_size_name);
         $thumb_photo = (isset($thumb_photo[0])) ? $thumb_photo[0] : '';
-        
+
         if((trim($preview) && !$is_single_featured_media) || ($preview && !$thumb_photo)) :
             $photo_id = $preview_id;
             $photo = $return_link = $preview;
@@ -3974,7 +3974,7 @@ function ts_get_featured_media($arg = array())
             $photo_id = $thumb_photo_id;
             $photo = $return_link = $thumb_photo;
         endif;
-        
+
         if($photo) :
             $caption = '';
             $link_class = ($within_slider) ? 'ts-item-link' : 'featured-photo-link';
@@ -3988,21 +3988,21 @@ function ts_get_featured_media($arg = array())
             $photo = aq_resize($photo, $crop_width, $crop_height, true, true, true, $photo_id);
             $photo_class = ($within_slider) ? 'slider-photo' : 'featured-photo';
             $alt = ($get_alt_text) ? ts_get_attachment_alt_text($photo_id) : '';
-            $media = '<div class="'.esc_attr($photo_class).' '.esc_attr($media_class).' '.esc_attr($ts_within_blog_loop).'">'.$link_begin.'<img src="'.esc_url($photo).'" alt="'.esc_attr($alt).'" width="'.esc_attr($crop_width).'"/>'.$link_end.$caption.'</div>';     
+            $media = '<div class="'.esc_attr($photo_class).' '.esc_attr($media_class).' '.esc_attr($ts_within_blog_loop).'">'.$link_begin.'<img src="'.esc_url($photo).'" alt="'.esc_attr($alt).'" width="'.esc_attr($crop_width).'"/>'.$link_end.$caption.'</div>';
             $html .= ($class) ? '<div class="'.esc_attr($class).'">'.$media.'</div>'."\n" : $media."\n";
         endif;
     endif;
-    
+
     $wrap_class = array();
-    
+
     $wrap_class[] = ($within_slider) ? '' : 'ts-fade-in';
     $wrap_class[] = (isset($arg['wrap_class'])) ? $arg['wrap_class'] : '';
     $wrap_class[] = 'ts-featured-media-'.$post_format;
-    
+
     $wrap_class = implode(' ', $wrap_class);
-    
+
     $final_html = '<div class="featured-media-wrap '.esc_attr($wrap_class).'">'.$html.'</div>';
-    
+
     if(isset($arg['return']) && $arg['return'] == 'link') :
         return $return_link;
     elseif(isset($arg['return']) && $arg['return'] == 'array') :
@@ -4035,9 +4035,9 @@ function ts_oembed_html_api_fix($html = '')
     $src = $tag->getAttribute('src');
     $src_parts = explode('?', $src);
     $connector = (isset($src_parts[1])) ? '&amp;' : '?';
-    
+
     $class = '';
-    
+
     if(strpos($src_parts[0], 'vimeo') !== false) :
         $src = $src.$connector.'api=1&amp;player_id='.$iframe_id;
         $class = "ts-vimeo-player";
@@ -4047,11 +4047,11 @@ function ts_oembed_html_api_fix($html = '')
     else :
         return $html;
     endif;
-    
+
     $tag->setAttribute('src', $src);
     $tag->setAttribute('id', $iframe_id);
     $tag->setAttribute('class', $class);
-    
+
     return $dom->saveHTML($tag);
 }
 
@@ -4080,11 +4080,11 @@ function ts_full_url($include_port = false)
 function ts_clean_tweet($tweet, $links_in_new_tab = false)
 {
     global $ts_open_tweet_links_in_new_tab;
-    
+
     $ts_open_tweet_links_in_new_tab = ($links_in_new_tab) ? 1 : 0;
-    
+
     $tweet = trim($tweet);
-    
+
 	$regexps = array
 	(
 		"link"  => '/[a-z]+:\/\/[a-z0-9-_]+\.[a-z0-9-_@:~%&\?\+#\/.=]+[^:\.,\)\s*$]/i',
@@ -4096,7 +4096,7 @@ function ts_clean_tweet($tweet, $links_in_new_tab = false)
 	{
 		$tweet = preg_replace_callback($re, 'ts_parse_tweet_'.$name, $tweet);
 	}
-	
+
 	unset($GLOBALS['ts_open_tweet_links_in_new_tab']);
 
 	return $tweet;
@@ -4128,7 +4128,7 @@ function ts_parse_tweet_at($m)
  * Wrap a link element around hashtags matched via preg_replace()
  */
 function ts_parse_tweet_hash($m)
-{   
+{
     global $ts_open_tweet_links_in_new_tab;
     $target = ($ts_open_tweet_links_in_new_tab == 1) ? '_blank' : '_self';
     $url = 'https://twitter.com/search?q=%23'.$m[2];
@@ -4200,15 +4200,15 @@ function ts_remove_parent_classes($class)
 function ts_add_class_to_wp_nav_menu($classes)
 {
     global $ts_page_id;
-    
+
     $post_type = get_post_type($ts_page_id);
-    
+
     if(in_array($post_type, array('slider','portfolio')) || is_post_type_archive(array('slider','portfolio')) || is_404())
     {
         // we're viewing a custom post type, so remove the 'current_page_xxx and current-menu-item' from all menu items.
         $classes = array_filter($classes, "ts_remove_parent_classes");
     }
-    
+
     switch (get_post_type($ts_page_id))
     {
         case 'slider':
@@ -4247,7 +4247,7 @@ function ts_cookie($args)
         return (isset($_COOKIE[$args])) ? $_COOKIE[$args] : '';
 }
 
-function ts_encode_all($str = '') 
+function ts_encode_all($str = '')
 {
     $str = mb_convert_encoding($str , 'UTF-32', 'UTF-8'); //big endian
     $split = str_split($str, 4);
@@ -4279,92 +4279,92 @@ function ts_query_var($var = '', $default = '')
 function ts_body_bg_class()
 {
     $bg_pattern = ts_option_vs_default('background_pattern', null);
-    
+
     return (trim($bg_pattern)) ? 'bg_'.$bg_pattern : '';
 }
 
 function ts_body_class($classes = '')
-{    
+{
     $classes = (is_array($classes)) ? $classes : array();
-    
+
     /* is responsive on (default for now)*/
     $classes[] = 'ts-responsive';
-    
+
     /* has at least partial top bar */
     if(in_array(ts_option_vs_default('show_top_bar', 'yes'), array('yes','social'))) :
         $classes[] = 'ts-partial-top-bar';
     endif;
-    
+
     /* has full top bar */
     if(ts_option_vs_default('show_top_bar', 'yes') == 'yes') :
         $classes[] = 'ts-full-top-bar';
     endif;
-    
+
     /* has only social top bar */
     if(ts_option_vs_default('show_top_bar', 'yes') == 'social') :
         $classes[] = 'ts-social-top-bar';
     endif;
-    
+
     /* RTL mode */
     if(ts_option_vs_default('rtl', 0) == 1) :
         $classes[] = 'rtl';
     endif;
-    
+
     /* is single post */
     $classes[] = (is_single()) ? 'ts-is-single' : 'ts-is-not-single';
-    
+
     /* body has retina logo? */
     $logo = ts_option_vs_default('logo_upload', null);
     $retina_logo = ts_option_vs_default('retina_logo', null);
-    
+
     if(!trim($logo) && trim($retina_logo)) $retina_logo = ''; // because $logo becomes $retina_logo in this case.
-    
+
     if($retina_logo) :
         $classes[] = 'has-retina-logo';
     endif;
-    
+
     /* "back to top" is in use (or not) */
     $classes[] = (ts_option_vs_default('show_back_to_top', 0) == 1) ? 'ts-back-to-top' : 'ts-no-back-to-top';
-    
+
     /* "back to top" is in use (or not) on mobile devices */
     $classes[] = (ts_option_vs_default('show_back_to_top_on_mobile', 0) == 1) ? 'ts-back-to-top-mobile' : 'ts-no-back-to-top-mobile';
-    
+
     /* sticky nav is in use (or not) */
     $classes[] = (ts_option_vs_default('sticky_nav', 1) == 1) ? 'ts-has-sticky-nav' : 'ts-no-sticky-nav';
-    
+
     /* fullwidth layout is on (or not) */
     $classes[] = (ts_option_vs_default('layout', 1) == 1) ? 'wall-to-wall' : 'not-wall-to-wall';
-    
+
     /* add shadow to page content? */
     $classes[] = (ts_option_vs_default('layout', 1) != 1 && ts_option_vs_default('layout_shadow', 1) == 1) ? 'shadow' : '';
-    
+
     /* body bg pattern */
     $bg_pattern = ts_option_vs_default('background_pattern', null);
     if(trim($bg_pattern)) :
         $classes[] = 'bg_'.$bg_pattern;
     endif;
-    
+
     /* sidebar placement on tablet-sized devices */
     $sidebar_placement = ts_option_vs_default('tablet_sidebar_placement', 'beside-content');
     $classes[] = 'ts-sidebar-'.$sidebar_placement;
-    
+
     /* body has *custom* bg image */
     if(ts_option_vs_default('use_custom_background_image', 0) && ts_option_vs_default('custom_background_image', null)) :
         $classes[] = 'has-custom-bg-image';
     endif;
-    
+
     /* body has bg image (or not) */
     if(in_array('not-wall-to-wall', $classes) && (in_array('has-custom-bg-image', $classes) || trim($bg_pattern))) :
         $classes[] = 'has-bg-image';
     else :
         $classes[] = 'no-bg-image';
     endif;
-    
+
     /* smooth scroll is turned on */
     if(ts_option_vs_default('smooth_page_scroll', 1) == 1) :
         $classes[] = 'smooth-page-scroll';
     endif;
-    
+
     /* body has woocommerce plus/minus buttons */
     if(!ts_woocommerce_version_check('2.3.0')) :
         $classes[] = 'woocommerce-plus-minus-buttons';
@@ -4372,39 +4372,39 @@ function ts_body_class($classes = '')
     else :
         $classes[] = 'woocommerce-2dot3-plus';
     endif;
-    
+
     /* body has centered logo */
     //if(ts_option_vs_default('logo_alignment_layout') == 'centered') :
         $classes[] = 'ts-logo-centered';
     //endif;
-    
+
     /* body has centered main menu */
     $classes[] = (ts_option_vs_default('main_nav_align') == 'centered') ? 'ts-main-nav-centered' : 'ts-main-nav-standard';
-    
+
     /* body has centered breadcrumbs */
     /*
     if(ts_option_vs_default('breadcrumbs_alignment_layout') == 'centered') :
         $classes[] = 'ts-breadcrumbs-centered';
     endif;
     */
-    
+
     /* body has centered title bar */
     /*
     if(ts_option_vs_default('titlebar_layout') == 'centered') :
         $classes[] = 'ts-titlebar-centered';
     endif;
     */
-    
+
     /* body has footer widgets */
     if(ts_option_vs_default('show_footer_widgets', 1) == 1 && ts_option_vs_default('footer_layout', 'footer-2')) :
         $classes[] = 'has-footer-widgets';
     else :
         $classes[] = 'has-no-footer-widgets';
     endif;
-    
+
     /* filter out any duplicates */
     $classes = array_filter(get_body_class($classes));
-    
+
     /* return it all */
     echo 'class="'.esc_attr(implode(' ', $classes)).'"';
 }
@@ -4412,7 +4412,7 @@ function ts_body_class($classes = '')
 function ts_loop_class()
 {
     $args = func_get_args();
-        
+
     if(func_num_args() == 2)
     {
         $atts = (is_array($args[0])) ? $args[0] : $args[1];
@@ -4423,26 +4423,26 @@ function ts_loop_class()
         $atts = null;
         $addons = (isset($args[0]) && is_string($args[0])) ? $args[0] : '';
     }
-    
+
     $classes = array();
-    
+
     if(!is_null($atts) && is_array($atts))
     {
-        
+
         if(isset($atts['category_name']) && trim($atts['category_name'])) {
             $category_names = str_replace(' ', '', $atts['category_name']);
             $category_names = explode(',', $category_names);
             $category_names = (count($category_names) > 0) ? 'category-'.implode(' category-', $category_names) : '';
             $classes[] = $category_names;
         }
-        
+
         if(isset($atts['cat']) && trim($atts['cat'])) {
             $cats = str_replace(' ', '', $atts['cat']);
             $cats = explode(',', $cats);
             $cats = (count($cats) > 0) ? 'category-'.implode(' category-', $cats) : '';
             $classes[] = $cats;
         }
-        
+
         if(isset($atts['layout']) && $atts['layout'] == 'banner') {
             $text_position = 'alternate';
             if(isset($atts['text_position']) && in_array($atts['text_position'], array('left','right'))) {
@@ -4450,7 +4450,7 @@ function ts_loop_class()
             }
             $classes[] = 'loop-banner-'.$text_position.'-text-pos';
         }
-        
+
         if(isset($atts['layout']) && $atts['layout'] == 'banner') {
             if(isset($atts['fullwidth']) && ts_attr_is_true($atts['fullwidth'])) {
                 $classes[] = 'ts-edge-to-edge ts-color-section-fullwidth';
@@ -4459,30 +4459,30 @@ function ts_loop_class()
             }
         }
     }
-    
+
     $classes[] = $addons;
-        
+
     $classes = implode(' ', $classes);
-    
+
     return $classes;
 }
 
 function ts_loop_wrap_class()
 {
     $args = func_get_args();
-        
+
     if(func_num_args() == 2)
     {
         $atts = (is_array($args[0])) ? $args[0] : $args[1];
         $addons = (is_string($args[0])) ? $args[0] : $args[1];
-        
+
         return ts_loop_class($atts, $addons);
     }
     else
     {
         $atts = (isset($args[0]) && is_array($args[0])) ? $args[0] : array();
         $addons = (isset($args[0]) && is_string($args[0])) ? $args[0] : '';
-        
+
         return ts_loop_class($atts, $addons);
     }
 }
@@ -4490,24 +4490,24 @@ function ts_loop_wrap_class()
 function ts_get_top_layout()
 {
     $layout = ts_option_vs_default('top_layout','normal');
-    
+
     return $layout;
 }
 
 function ts_wide_layout()
 {
     $is_wide = (ts_option_vs_default('layout', 1) == 1) ? true : false;
-    
+
     return $is_wide;
 }
 
 
-add_filter( 'wp_nav_menu_items', 'ts_add_main_menu_links', 10, 2); 
+add_filter( 'wp_nav_menu_items', 'ts_add_main_menu_links', 10, 2);
 function ts_add_main_menu_links($menu, $args)
 {
     $main_nav_addons = '';
-    
-    if($args->theme_location == 'main_nav') :  
+
+    if($args->theme_location == 'main_nav') :
         /*
         if(ts_option_vs_default('include_main_nav_search_link', 0) == 1) :
             $main_nav_search_link  = '<li id="main-nav-search-link" class="main-nav-search-link menu-item ubermenu-item">';
@@ -4517,7 +4517,7 @@ function ts_add_main_menu_links($menu, $args)
             $main_nav_search_link .= '</a>';
             $main_nav_search_link .= '<div id="main-nav-search-sub-menu" class="ts-hover-menu invert main-nav-search-sub-menu">';
             $main_nav_search_link .= ts_html5_search_form().'</div>';
-            $main_nav_search_link .= '</li>';                                        
+            $main_nav_search_link .= '</li>';
             $main_nav_addons .= $main_nav_search_link;
         endif;
         */
@@ -4529,11 +4529,11 @@ function ts_add_main_menu_links($menu, $args)
             $main_nav_shop_link .= '<i class="fa fa-shopping-cart"></i> ';
             $main_nav_shop_link .= '(<span id="ts-top-nav-shop-total">'.strip_tags($woocommerce->cart->get_cart_total()).'</span>)';
             $main_nav_shop_link .= '</a>';
-            $main_nav_shop_link .= '</li>';                                        
+            $main_nav_shop_link .= '</li>';
             $main_nav_addons .= $main_nav_shop_link;
         endif;
-    endif; 
-        
+    endif;
+
     return $menu . $main_nav_addons;
 }
 
@@ -4579,7 +4579,7 @@ function ts_is_woo_checkout()
 function ts_reload_mini_cart()
 {
     echo ts_get_woo_mini_cart();
-    
+
     exit;
 }
 
@@ -4598,25 +4598,25 @@ function ts_update_postviews()
 {
     if ( !wp_verify_nonce( $_REQUEST['nonce'], "ts_update_postviews_nonce")) {
         exit('no funny business');
-    } 
-    
+    }
+
     if(ts_option_vs_default('show_titlebar_post_view_count', 0) == 1)
     {
         $post = get_post($_POST['pid']);
-        
+
         if(is_object($post) && isset($post->ID))
         {
             $post_view_count = ts_postmeta_vs_default($post->ID, '_p_ts_postviews', 0);
             $post_view_count_text = sprintf(_n( '1 view', '%s views', $post_view_count, 'ThemeStockyard'), $post_view_count);
-            
+
             $post_view_count++;
-            
+
             update_post_meta($post->ID, '_p_ts_postviews', $post_view_count);
-            
+
             return $post_view_count_text;
         }
     }
-    
+
     exit;
 }
 
@@ -4649,14 +4649,14 @@ function ts_filter_wp_title( $title, $sep ) {
 	global $page, $paged;
 
 	if ( is_feed() )
-		return $title;	
-	
+		return $title;
+
 	$filtered_title = '';
-    
+
     $blog_name = get_bloginfo( 'name' );
     $site_description = get_bloginfo( 'description' );
     $paged_addon = ( 2 <= $paged || 2 <= $page ) ? sprintf( __( 'Page %s', 'ThemeStockyard' ), max( $paged, $page ) ) : '';
-    
+
     if(is_front_page()) :
         $filtered_title .= $blog_name;
         $filtered_title .= (trim($site_description)) ? $sep . $site_description : '';
@@ -4666,7 +4666,7 @@ function ts_filter_wp_title( $title, $sep ) {
         $filtered_title .= (trim($paged_addon) && !is_home()) ? $sep . $paged_addon : '';
         $filtered_title .= $sep . $blog_name;
     endif;
-    
+
 	return trim(trim($filtered_title), $sep);
 }
 
@@ -4697,9 +4697,9 @@ function ts_join_comments_from_30_days_ago($sql) {
 	global $wpdb;
 	if(get_query_var('orderby_comments_30_days')) {
 		$sql .= '
-			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count 
-                FROM '.esc_sql($wpdb->comments).' 
-                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -30 days'))).'" 
+			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count
+                FROM '.esc_sql($wpdb->comments).'
+                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -30 days'))).'"
                 GROUP BY post) AS recent_comments
             ON recent_comments.post = '.esc_sql($wpdb->posts).'.ID
 		';
@@ -4711,9 +4711,9 @@ function ts_join_comments_from_7_days_ago($sql) {
 	global $wpdb;
 	if(get_query_var('orderby_comments_7_days')) {
 		$sql .= '
-			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count 
-                FROM '.esc_sql($wpdb->comments).' 
-                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -7 days'))).'" 
+			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count
+                FROM '.esc_sql($wpdb->comments).'
+                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -7 days'))).'"
                 GROUP BY post) AS recent_comments
             ON recent_comments.post = '.esc_sql($wpdb->posts).'.ID
 		';
@@ -4725,9 +4725,9 @@ function ts_join_comments_from_24_hours_ago($sql) {
 	global $wpdb;
 	if(get_query_var('orderby_comments_24_hours')) {
 		$sql .= '
-			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count 
-                FROM '.esc_sql($wpdb->comments).' 
-                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -24 hours'))).'" 
+			LEFT JOIN (SELECT COUNT(comment_post_ID) AS recent_comment_count
+                FROM '.esc_sql($wpdb->comments).'
+                WHERE comment_approved="1" && comment_date_gmt >= "'.esc_sql(date('Y-m-d H:i:s', strtotime(current_time('mysql').' -24 hours'))).'"
                 GROUP BY post) AS recent_comments
             ON recent_comments.post = '.esc_sql($wpdb->posts).'.ID
 		';
@@ -4746,10 +4746,10 @@ function ts_orderby_most_comments($sql) {
 /////////////////////////////////////////////////////////
 // Font list. Used within the Theme Options
 /////////////////////////////////////////////////////////
-function ts_standard_fonts($return = false) 
+function ts_standard_fonts($return = false)
 {
     global $ts_standard_fonts;
-    
+
     $ts_standard_fonts = array(
                     'Select a font...' => 'Select a font...',
                     '----------Standard Fonts----------' => '----------Standard Fonts----------',
@@ -4772,14 +4772,14 @@ function ts_standard_fonts($return = false)
                     "Verdana" => "Verdana",
                     //"" => "",
                 );
-    
+
     if($return) return $ts_standard_fonts;
 }
 
 function ts_google_fonts($return = false)
 {
     global $ts_google_fonts;
-    
+
     $ts_google_fonts = array(
                 "----------Google Fonts----------" => "----------Google Fonts----------",
                 "Abel" => "Abel",
@@ -5319,11 +5319,11 @@ function ts_google_fonts($return = false)
 function ts_all_fonts($return = false)
 {
     global $ts_all_fonts, $ts_standard_fonts, $ts_google_fonts;
-    
+
     ts_standard_fonts();
     ts_google_fonts();
-    
+
     $ts_all_fonts = array_merge($ts_standard_fonts, $ts_google_fonts);
-    
+
     if($return) return $ts_all_fonts;
 }
