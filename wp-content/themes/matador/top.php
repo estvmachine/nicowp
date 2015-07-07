@@ -19,13 +19,13 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 
 
                             <div id="logo-nav-wrap">
-                                <!--<div id="logo-tagline-wrap" class="container logo-tagline-wrap">
-                                    <div id="logo" class="main-logo">-->
+                                <div id="logo-tagline-wrap" class="container logo-tagline-wrap">
+                                    <div id="logo" class="main-logo">
                                         <?php
-                                      //  echo ts_theme_logo();
-                                      //  echo ts_theme_logo_tagline();
+                                          echo ts_theme_logo();
+                                          echo ts_theme_logo_tagline();
                                         ?>
-                                    <!--</div>
+                                    </div>
                                 </div>-->
 
 
@@ -34,7 +34,8 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                   <div class="row" id="barra-nav-custom">
 
                                       <a class="col-md-1" href="http://localhost/nico/">
-                                        <img src="./wp-content/themes/matador/images/logos/logo_navbar.jpg" style='width:auto;'/>
+                                        <!--<img src="./wp-content/themes/matador/images/logos/logo_navbar.jpg" style='width:auto;'/>-->
+                                        <img src="http://i197.photobucket.com/albums/aa275/estv/11714429_943994605622967_1169464049_n_zpszgcgengb.jpg" style='width:auto;'/>
                                       </a>
 
                                       <div class="row col-md-11">
