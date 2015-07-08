@@ -1,0 +1,13 @@
+/*
+Theme Name:     Matador Child
+Theme URI:      http://themestockyard.com/matador
+Description:    Child theme for the Matador theme
+Author:         themestockyard
+Author URI:     http://themestockyard.com/
+Template:       matador                             
+Version:        1.0
+*/
+@import url("../matador/style.css");
+/*------------------------------------------
+Do not put any css rules above this point!!!
+------------------------------------------*/
