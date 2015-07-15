@@ -1,6 +1,6 @@
 <?php
 /**
-*Template Name: Page con header-explicacion
+*Template Name: Page con pregunta
 **/
 
 global $smof_data, $ts_previous_posts, $ts_page_id, $ts_show_top_ticker;
@@ -86,11 +86,10 @@ endif;
                                 </div>
                                 <?php ts_get_content_sidebar(); ?>
                             </div>
-
-
-
-
                         </div>
+
+                                    <?php if( dynamic_sidebar('form-widget-area') ) : else : endif; ?>
+
                     </div>
 
 <?php if(!post_password_required()) ts_get_sidebar(); ?>
