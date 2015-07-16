@@ -4,6 +4,8 @@
 **/
 
 global $smof_data, $ts_previous_posts, $ts_page_id, $ts_show_top_ticker;
+global $wpdb;
+
 
 $ts_page_object = get_queried_object();
 $ts_page_id     = (is_single()) ? $post->ID : get_queried_object_id();
@@ -36,7 +38,23 @@ if(isset($featured_media) && trim($featured_media)) :
 endif;
 ?>
 
-            <div id="main-container-wrap" class="<?php echo esc_attr(ts_main_container_wrap_class('page')).' '.esc_attr($main_container_wrap_class);?>">
+        <div id="main-container-wrap" class="<?php echo esc_attr(ts_main_container_wrap_class('page')).' '.esc_attr($main_container_wrap_class);?>">
+
+          <div class='dropdown'>qwq
+              <a class='dropdown-toggle' data-hover='dropdown' data-toggle='dropdown' href='#'>
+
+                <i class='fa fa-angle-down'></i>
+              </a>
+              <ul class='dropdown-menu'>
+
+             <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
+               for ($i = 0; $i < count($results); ++$i) {
+                        echo "<li><a href=''>". print_r($results[$i]). "</a></li>";
+                     }
+              ?>
+              </ul>
+          </div>
+
             <?php
             if (have_posts()) :
                 while (have_posts()) : the_post();
