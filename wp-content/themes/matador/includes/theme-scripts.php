@@ -37,6 +37,7 @@ function ts_dequeue_woocommerce_styles( $enqueue_styles ) {
 add_filter( 'woocommerce_enqueue_styles', 'ts_dequeue_woocommerce_styles' );
 
 function load_custom_wp_admin_style() {
+  //https://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
         wp_register_style( 'bootstrap-css', get_template_directory_uri() . get_template_directory_uri().'/includes/plugins/bootstrap/css/bootstrap.min.css', false,  '3.3.5' );
         wp_enqueue_style( 'bootstrap-css' );
 
