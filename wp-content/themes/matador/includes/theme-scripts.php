@@ -36,13 +36,22 @@ function ts_dequeue_woocommerce_styles( $enqueue_styles ) {
 }
 add_filter( 'woocommerce_enqueue_styles', 'ts_dequeue_woocommerce_styles' );
 
+function load_custom_wp_admin_style() {
+        wp_register_style( 'bootstrap-css', get_template_directory_uri() . get_template_directory_uri().'/includes/plugins/bootstrap/css/bootstrap.min.css', false,  '3.3.5' );
+        wp_enqueue_style( 'bootstrap-css' );
+
+        wp_enqueue_script( 'bootstrap-js', get_template_directory_uri(). '/includes/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', true );
+
+}
+add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
+
 function ts_theme_scripts()
 {
     global $smof_data;
     wp_enqueue_script( 'jquery');
 
     /*Bootstrap*/
-   wp_enqueue_script( 'bootstrap-js', get_template_directory_uri(). '/includes/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', true );
+  wp_enqueue_script( 'bootstrap-js', get_template_directory_uri(). '/includes/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', true );
 
     wp_enqueue_script( 'device', get_template_directory_uri().'/js/device.js', array('jquery'), '', true);
 	wp_enqueue_script( 'superfish', get_template_directory_uri().'/js/superfish.js', array('jquery'), '', true);
