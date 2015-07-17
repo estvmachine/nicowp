@@ -39,27 +39,10 @@ endif;
 ?>
 
         <div id="main-container-wrap" class="<?php echo esc_attr(ts_main_container_wrap_class('page')).' '.esc_attr($main_container_wrap_class);?>">
-
-          <div class='dropdown'>qwq
-              <a class='dropdown-toggle' data-hover='dropdown' data-toggle='dropdown' href='#'>
-
-                <i class='fa fa-angle-down'></i>
-              </a>
-              <ul class='dropdown-menu'>
-
-             <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
-               for ($i = 0; $i < count($results); ++$i) {
-                        echo "<li><a href=''>". print_r($results[$i]). "</a></li>";
-                     }
-              ?>
-              </ul>
-          </div>
-
             <?php
             if (have_posts()) :
                 while (have_posts()) : the_post();
             ?>
-
                 <div id="main-container" class="container clearfix">
                     <div id="main" class="<?php echo esc_attr(ts_main_div_class());?> clearfix">
                         <div class="entry single-entry clearfix">

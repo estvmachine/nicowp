@@ -38,17 +38,23 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 
                                        <div class="row">
                                          <!--Pregunta dropdown -->
-                                          <div class='dropdown col-md-1'>
-                                              <a class='dropdown-toggle' data-close-others='false' data-delay='0' data-hover='dropdown' data-toggle='dropdown' href='#'>
+                                         <!--Pregunta dropdown -->
+                                         <div class='dropdown col-md-1'>
+                                             <a class='dropdown-toggle' data-hover='dropdown' data-toggle='dropdown' href='#'>
 
-                                                <i class='fa fa-angle-down'></i>
-                                              </a>
-                                              <ul class='dropdown-menu'>
-                                                <li>
-                                                  <a href='nosotros.html'>¿Cómo será tener sexo oral con alguien peludo?</a>
-                                                </li>
-                                              </ul>
-                                          </div>
+                                               <i class='fa fa-angle-down'></i>
+                                             </a>
+                                             <ul class='dropdown-menu'>
+
+                                            <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
+                                              for ($i = 0; $i < count($results); ++$i) {
+                                                       echo "<li><a href=''>";
+                                                       print_r($results[$i]);
+                                                       echo "</a></li>";
+                                                    }
+                                             ?>
+                                             </ul>
+                                         </div>
                                           <div class="col-md-11" align="left" style="background-color:black;">
                                             <font color="white">¿Cómo será tener sexo oral con alguien peludo?</font>
                                           </div>

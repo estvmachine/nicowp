@@ -11,7 +11,7 @@ function ts_theme_styles()
     wp_enqueue_style( 'theme-css', get_stylesheet_uri(), '', TS_THEME_VERSION);
 
       /*Bootstrap*/
-    wp_enqueue_style( 'bootstrap-css', '/wp-includes/bootstrap/css/bootstrap.min.css', array(), '3.3.5', 'all' );
+    wp_enqueue_style( 'bootstrap-css',  get_template_directory_uri().'/includes/plugins/bootstrap/css/bootstrap.min.css', array(), '3.3.5', 'all' );
 
     if(ts_enable_style_selector()) :
         wp_enqueue_style( 'style-selector', get_template_directory_uri().'/css/style_selector.css', '', TS_THEME_VERSION);
@@ -42,7 +42,7 @@ function ts_theme_scripts()
     wp_enqueue_script( 'jquery');
 
     /*Bootstrap*/
-    wp_enqueue_script( 'bootstrap-js', '/wp-includes/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', true );
+   wp_enqueue_script( 'bootstrap-js', get_template_directory_uri(). '/includes/plugins/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', true );
 
     wp_enqueue_script( 'device', get_template_directory_uri().'/js/device.js', array('jquery'), '', true);
 	wp_enqueue_script( 'superfish', get_template_directory_uri().'/js/superfish.js', array('jquery'), '', true);
