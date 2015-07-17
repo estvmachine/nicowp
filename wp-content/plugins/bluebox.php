@@ -1,9 +1,9 @@
 <?php
-/* Plugin Name: [Enter name of your plugin here]
+/* Plugin Name: BlueBox
 Plugin URI: [Enter your website URL]
-Description: [Enter brief description of plugin]
-Version: [Enter version number of plugin (probably 1.0)]
-Author: [Enter your name]
+Description: Despliega una ventana de color azul con informacion
+Version: 0.0.1
+Author: Stevmachine
 Author URI: [Enter your website URL]
 */
 
