@@ -1,5 +1,7 @@
 <?php
 //http://codex.wordpress.org/Class_Reference/wpdb
+//http://techslides.com/creating-a-wordpress-plugin-admin-page
+//http://techslides.com/a-z-category-index-wordpress-plugin
 global $wpdb;
 
 echo "<h2>Preguntas Semana Enpelootas</h2>";
