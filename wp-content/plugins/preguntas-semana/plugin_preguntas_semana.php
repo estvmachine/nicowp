@@ -21,9 +21,9 @@ function my_enqueue($hook) {
     return;
 
   //wp_register_style('dbexplorer', plugins_url('dbexplorer/pluginpage.css'));
-//  wp_enqueue_style('dbexplorer');
+  //wp_enqueue_style('dbexplorer');
 
-//  wp_enqueue_script('pluginscript', plugins_url('pluginpage.js', __FILE__ ), array('jquery'));
+  wp_enqueue_script('pluginscript', plugins_url('plugin_page_home.js', __FILE__ ), array('jquery'));
 }
 
   add_action( 'admin_enqueue_scripts', 'my_enqueue' );
