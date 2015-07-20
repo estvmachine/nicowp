@@ -39,31 +39,21 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 
                                        <div class="row">
                                          <!--Pregunta dropdown -->
-                                          <div class='col-md-12' style="width:100%;">
-                                            <!--Pregunta dropdown -->
-                                               <select class='col-md-12' style='background-color:white;
-                                                                                width:100%;
-                                                                                -webkit-appearance: none;
-                                                                                -moz-appearance: none;
-                                                                                appearance: none;
-                                                                                padding: 2px 2px 2px 20px;
-                                                                                border: none;
-                                                                                background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;'>
-                                                 <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
-                                                   for ($i = 0; $i < count($results); ++$i) {
-                                                     foreach ($results[$i] as $k => $v) {
+                                            <select class="col-md-12">
+                                              <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
+                                                for ($i = 0; $i < count($results); ++$i) {
+                                                  foreach ($results[$i] as $k => $v) {
 
-                                                             if($k == 'contenido_pregunta'){
-                                                               echo '<option class="level-0" value='.$i.'><li><a href="">';
-                                                               echo($v);
-                                                               echo "</a></li></option>";
-                                                             }
+                                                          if($k == 'contenido_pregunta'){
+                                                            echo '<option class="level-0" value='.$i.'><li><a href="">';
+                                                            echo($v);
+                                                            echo "</a></li></option>";
+                                                          }
 
-                                                     }
-                                                    }
-                                                  ?>
-                                               </select>
-                                          </div>
+                                                  }
+                                                 }
+                                               ?>
+                                            </select>
 
                                         </div> <!-- Parte superior de NAVBAR-->
 
