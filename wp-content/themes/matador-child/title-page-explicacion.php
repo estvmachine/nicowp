@@ -126,11 +126,12 @@ if($ts_show_title_bar == 'yes' || $ts_show_title_bar == 1 || $ts_show_title_bar_
                                     endif;
                                 ?></<?php echo tag_escape($title_tag);?>>
                                 <?php
-                                    echo (trim($ts_caption)) ? '<p class="title-bar-caption">'.wp_kses_post($ts_caption).'</p>' : '';
+                                    //Muestra descripcion de la categoria
+                                    //echo (trim($ts_caption)) ? '<p class="title-bar-caption">'.wp_kses_post($ts_caption).'</p>' : '';
                                 endif;
                                 ?>
                             </div> <!--  <div class="span8"> -->
-                            <div class="span7">
+                            <div class="span7" id="descripcion_seccion">
                                 <?php
                                 /*$has_yoast_breadcrumbs = false;
                                 if(function_exists('yoast_breadcrumb')) :
@@ -143,10 +144,12 @@ if($ts_show_title_bar == 'yes' || $ts_show_title_bar == 1 || $ts_show_title_bar_
                                     echo dimox_breadcrumbs();
                                 endif;*/
                                 ?>
-                                  <h3>Esta seccion consiste en Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha
-                                    sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)
-                                    desconocido usó una galería de textos y los mezcló de tal manera</h3>
-                                    
+
+                                <?php   echo (trim($ts_caption)) ? '<h4>'.wp_kses_post($ts_caption).'</h4>' :
+
+                                 '<h4>Le paso a un amig@ consiste en Lorem Ipsum Lorem Ipsum vLorem IpsumLorem
+                                 IpsumLorem IpsumLorem </h4>'; ?>
+
                             </div>
                         </div> <!--   <div class="row"> -->
                     </div> <!-- <div id="title-bar-text" class="container"> -->
