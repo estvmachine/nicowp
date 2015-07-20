@@ -41,7 +41,7 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                          <!--Pregunta dropdown -->
                                           <div class='col-md-12' style="width:100%;">
                                             <!--Pregunta dropdown -->
-                                               <select class='col-md-12' style='background-color:white;
+                                               <select id="select-pregunta" class='col-md-12' style='background-color:white;
                                                                                 width:100%;
                                                                                 -webkit-appearance: none;
                                                                                 -moz-appearance: none;
@@ -54,9 +54,9 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                                      foreach ($results[$i] as $k => $v) {
 
                                                              if($k == 'contenido_pregunta'){
-                                                               echo '<option class="level-0" value='.$i.'><li><a href="">';
+                                                               echo '<option class="level-0" value='.$i.'>';
                                                                echo($v);
-                                                               echo "</a></li></option>";
+                                                               echo "</option>";
                                                              }
 
                                                      }
@@ -104,3 +104,17 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                     <!-- / #top -->
                 </div>
                 <!-- / #top-wrap -->
+
+                <script type="text/javascript">
+                jQuery(document).ready(function($) {
+
+                    $('#select-pregunta option:selected').on('change', function (e) {
+                      var optionSelected = $("option:selected", this);
+                      var valueSelected = this.value;
+                      alert('works');
+                      alert($( "#select-pregunta option:selected" ).text());
+                  });
+
+
+                });
+                </script>
