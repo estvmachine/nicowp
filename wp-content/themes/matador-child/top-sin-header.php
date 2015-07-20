@@ -1,6 +1,40 @@
 <?php
 global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 ?>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+    //Detectar si se encuentra con algun id_pregunta activo
+    var id_pregunta= getUrlParameter('id_pregunta');
+    if(typeof id_pregunta!== 'undefined'){
+      console.log(id_pregunta);
+      $("#select-pregunta").val(id_pregunta).change();
+    }
+
+    //Detectar cuando se selecciona una pregunta diferente
+    $('#select-pregunta').on('change', function (e) {
+      var conceptName = $(this).find(":selected").text();
+      var value= $(this).find(":selected").val();
+      window.location.href = window.location.pathname+"?id_pregunta="+value;
+  });
+
+
+});
+
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+    }
+}
+</script>
                 <div id="top-wrap" class="<?php echo ts_top_class();?>">
                     <!-- Top -->
                     <div id="top-container" class="top-default">
@@ -50,18 +84,25 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                                                                 border: none;
                                                                                 background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;'>
                                                  <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
+
+                                                   $id_;
                                                    for ($i = 0; $i < count($results); ++$i) {
                                                      foreach ($results[$i] as $k => $v) {
 
+                                                             if($k == 'id_pregunta'){
+                                                                 $id_= $v;
+                                                             }
                                                              if($k == 'contenido_pregunta'){
-                                                               echo '<option class="level-0" value='.$i.'>';
+                                                               echo '<option class="level-0" value='.$id_.'>';
                                                                echo($v);
                                                                echo "</option>";
                                                              }
 
                                                      }
                                                     }
+
                                                   ?>
+                                                  <option class="leve-0" value="100">Holooo</option>
                                                </select>
                                           </div>
 
@@ -104,17 +145,3 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                     <!-- / #top -->
                 </div>
                 <!-- / #top-wrap -->
-
-                <script type="text/javascript">
-                jQuery(document).ready(function($) {
-
-                    $('#select-pregunta option:selected').on('change', function (e) {
-                      var optionSelected = $("option:selected", this);
-                      var valueSelected = this.value;
-                      alert('works');
-                      alert($( "#select-pregunta option:selected" ).text());
-                  });
-
-
-                });
-                </script>
