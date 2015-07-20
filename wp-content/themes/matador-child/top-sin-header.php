@@ -1,5 +1,13 @@
 <?php
 global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
+
+if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
+   $slide = trim($_GET["id_pregunta"]);
+}
+else{
+   $slide = '';
+}
+
 ?>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
