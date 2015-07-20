@@ -5,8 +5,14 @@ else :
     $entries_class = 'no-sidebar';
 endif;
 
+
+print_r($atts);
 $ts_query = (isset($atts) && ($atts['default_query'] === false)) ? new WP_Query($atts) : $wp_query;
 $atts = (isset($atts)) ? $atts : array();
+
+//print_r($atts);
+//print_r($ts_query);
+
 ?>
                 <div class="loop-wrap loop-4-column-wrap <?php echo esc_attr(ts_loop_wrap_class($atts));?>">
                     <div class="hfeed entries blog-entries loop loop-4-column <?php echo esc_attr($entries_class);?> clearfix">

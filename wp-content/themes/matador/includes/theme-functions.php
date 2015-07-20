@@ -1017,6 +1017,7 @@ function ts_blog()
 
 
     $atts = shortcode_atts( array(
+            //'date_query'        => '',
             'meta_query'          => '',
             'author'              => '',
             'author_name'		  => '',
