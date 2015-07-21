@@ -1,6 +1,12 @@
 <?php
 global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 
+$wp_session = WP_Session::get_instance();
+if (get_query_var('id_pregunta')){
+  //print "id_pregunta = $id_pregunta";
+  $wp_session['id_pregunta'] = $id_pregunta;
+}
+echo $wp_session['id_pregunta'];
 
 if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
    $slide = trim($_GET["id_pregunta"]);
@@ -20,6 +26,12 @@ jQuery(document).ready(function($) {
     if(typeof id_pregunta!== 'undefined'){
       console.log(id_pregunta);
       $("#select-pregunta").val(id_pregunta).change();
+    }
+    else{
+      //var last_id = $GLOBALS['wpdb']->get_results( 'SELECT id_pregunta FROM `wp_pregunta_semana` ORDER BY id_pregunta DESC LIMIT 1', ARRAY_A   );
+      //console.log(last_id);
+    //  window.location.href = window.location.pathname+"?id_pregunta="+3;
+
     }
 
     //Detectar cuando se selecciona una pregunta diferente

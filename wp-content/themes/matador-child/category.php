@@ -3,7 +3,7 @@
 //https://codex.wordpress.org/Category_Templates
 
 //Utilizar https://codex.wordpress.org/Class_Reference/WP_Query
-global $smof_data, $ts_page_id, $ts_page_title, $id_pregunta;
+global $smof_data, $ts_page_id, $ts_page_title;
 
 //Obtener el id de categoria
 $category = get_category( get_query_var( 'cat' ) );
@@ -48,34 +48,6 @@ get_header();
 get_template_part('top-sin-header');
 get_template_part('title-page-explicacion');
 ?>
-
-<?php
-if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
-   $temp = trim($_GET["id_pregunta"]);
-   //echo "<script type='text/javascript'>alert('$slide');</script>";
-
-   //Verifico si es de verdad un id existente de pregunta
-   $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
-
-     for ($i = 0; $i < count($results); ++$i) {
-       foreach ($results[$i] as $k => $v) {
-
-               if($k == 'id_pregunta'){
-                 if($v == $temp){
-                   $id_pregunta= $temp;
-                   //echo "<script type='text/javascript'>alert('es pregunta');</script>";
-                 }
-
-               }
-
-       }
-    }
-}
-else{
-   $id_pregunta = '-1';
-}
-
-?>
             <div id="main-container-wrap" class="<?php echo esc_attr(ts_main_container_wrap_class('page'));?>">
                 <div id="main-container" class="container clearfix" data-wut="archive">
                     <div id="main" class="clearfix <?php echo esc_attr($ts_show_sidebar_class);?>">
@@ -92,7 +64,6 @@ else{
                                                        'layout' => $ts_loop,
                                                 'default_query' => false,
                                                           'pid' => $ts_page_id,
-                                                   'id_pregunta'=> $id_pregunta,
                                                    'cat'        => $category->cat_ID,
                                               );
                                 //echo $category->cat_ID;

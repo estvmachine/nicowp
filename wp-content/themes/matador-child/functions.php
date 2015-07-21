@@ -28,3 +28,13 @@ function matador_child_register_menu(){
 }
 
 add_action('init', 'matador_child_register_menu');
+
+
+
+/********Agregando variables para detectar por wordpress***********/
+
+function add_query_vars_filter( $vars ){
+  $vars[] = "id_pregunta";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
