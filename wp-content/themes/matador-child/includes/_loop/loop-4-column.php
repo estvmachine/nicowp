@@ -5,9 +5,19 @@ else :
     $entries_class = 'no-sidebar';
 endif;
 
-
-print_r($atts);
-$ts_query = (isset($atts) && ($atts['default_query'] === false)) ? new WP_Query($atts) : $wp_query;
+$args = array(
+		  'post_type' => 'post',
+		  'posts_per_page' => 5,
+		  'cat' => 7,
+      'date_query' => array(
+              array(
+              'inclusive' => true
+              )
+      )
+	);
+print_r($args);
+//print_r($atts);
+$ts_query = (isset($atts) && ($atts['default_query'] === false)) ? new WP_Query($args) : new WP_Query($args);//$wp_query;
 $atts = (isset($atts)) ? $atts : array();
 
 //print_r($atts);
@@ -45,9 +55,9 @@ $atts = (isset($atts)) ? $atts : array();
 
                         <div id="post-<?php echo esc_attr($ts_query->post->ID);?>" class="hentry entry span3">
                             <div class="post-content">
-                                <!--<div class="post-category post-category-heading mimic-small uppercase">
-                                    <a href="<?php //echo get_category_link($category[0]['term_id']);?>"><strong><?php //echo esc_html($category[0]['name']);?></strong></a>
-                                </div>-->
+                                <div class="post-category post-category-heading mimic-small uppercase">
+                                    <a href="<?php echo get_category_link($category[0]['term_id']);?>"><strong><?php echo esc_html($category[0]['name']);?></strong></a>
+                                </div>
                                 <div class="ts-meta-wrap <?php echo ($ts_show->media && trim($media)) ? 'media-meta-wrap' : 'meta-wrap';?>">
                                     <?php
                                     if($ts_show->media && trim($media)) :

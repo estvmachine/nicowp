@@ -5,6 +5,10 @@
 //Utilizar https://codex.wordpress.org/Class_Reference/WP_Query
 global $smof_data, $ts_page_id, $ts_page_title, $id_pregunta;
 
+//Obtener el id de categoria
+$category = get_category( get_query_var( 'cat' ) );
+//echo $category->cat_ID;
+
 $ts_page_id        = get_option('page_for_posts');
 
 $ts_show_sidebar = (ts_option_vs_default('show_archive_sidebar', 1) != 1) ? 'no' : 'yes';
@@ -86,17 +90,12 @@ else{
                                 //Atributos que se usaran, layout se refiere al template. Ej:loop-4-column.php
                                 $atts = array('infinite_scroll' => $ts_infinite_scroll,
                                                        'layout' => $ts_loop,
-                                                'default_query' => true,
+                                                'default_query' => false,
                                                           'pid' => $ts_page_id,
                                                    'id_pregunta'=> $id_pregunta,
-                                                   'date_query' => array(
-                                                   		array(
-                                                   			'year'  => 2015,
-                                                   			'month' => 05,
-                                                   			'day'   => 03
-                                                   		)
-                                                   	)
+                                                   'cat'        => $category->cat_ID
                                               );
+                                //echo $category->cat_ID;
                                 //print_r($atts);
                                 ts_blog($atts, $ts_loop);
                                 ?>
