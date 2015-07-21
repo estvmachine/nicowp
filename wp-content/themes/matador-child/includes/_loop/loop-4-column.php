@@ -10,10 +10,11 @@ $args = array(
 		  'posts_per_page' => 5,
 		  'cat' => 7,
       'date_query' => array(
-              array(
-              'inclusive' => true
-              )
-      )
+        'after' => '2015-05-02',
+        'before' => '2015-05-03',
+        'inclusive' => true
+      ),
+      'post_status' => 'publish'
 	);
 print_r($args);
 //print_r($atts);
