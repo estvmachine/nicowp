@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Preguntas Plugin
+Plugin Name: Preguntas Plugin v0.2
 Plugin URI:
 Description: Plugin para poder administrar preguntas
 Version: 0.0.1
@@ -451,6 +451,7 @@ class TT_Preguntas_List_Table extends WP_List_Table {
  */
 function tt_add_menu_items(){
     add_menu_page('Preguntas Enpelootas', 'Admin. Preguntas', 'activate_plugins', 'tt_list', 'tt_render_list_page');
+    add_submenu_page('tt_list','Preguntas Enpelootas', 'Agregar Preguntas', 'activate_plugins','tt_add','tt_add_pregunta');
 } add_action('admin_menu', 'tt_add_menu_items');
 
 
@@ -495,4 +496,58 @@ function tt_render_list_page(){
 
     </div>
     <?php
+}
+
+
+function tt_add_pregunta(){
+
+?>
+  <div class="col-wrap">
+    <div class="form-wrap">
+      <h3>Añadir nueva Pregunta</h3>
+      <form id="addpregunta" method="post" action="preguntas/add-preguntas.php" class="validate">
+
+        <div class="form-field form-required">
+          <label for="contenido_pregunta">Pregunta</label>
+          <input name="contenido_pregunta" id="contenido_pregunta" type="text" value="" size="40" aria-required="true">
+          <p>El contenido de la pregunta.</p>
+        </div>
+
+        <div class="form-field form-required">
+          <label for="fecha_inicio">Fecha Inicio</label>
+          <input name="fecha_inicio" id="fecha_inicio" type="date" value="" size="40">
+          <p>La fecha inicio que contempla la pregunta.</p>
+        </div>
+
+        <div class="form-field form-required">
+          <label for="fecha_fin">Fecha Fin</label>
+          <input name="fecha_fin" id="fecha_fin" type="date" value="" size="40">
+          <p>La fecha fin que contempla la pregunta.</p>
+        </div>
+
+        <!--<div class="form-field term-parent-wrap">
+          <label for="parent">Superior</label>
+          <select name="parent" id="parent" class="postform">
+          <option value="-1">Ninguna</option>
+          <option class="level-0" value="2">Calentometro</option>
+          <option class="level-0" value="3">El Dato Duro</option>
+          <option class="level-0" value="4">Enpeloota</option>
+          <option class="level-0" value="7">Le paso a un amig@</option>
+          <option class="level-0" value="1">Sin categoría</option>
+          </select>
+          <p>Las categorías, a diferencia de las etiquetas, pueden tener jerarquías. Podrías tener una categoría de Jazz, y por debajo las categorías Bebop y Big Band. Totalmente opcional.</p>
+        </div>-->
+
+        <div class="form-field term-description-wrap">
+          <label for="descripcion_pregunta">Descripción</label>
+          <textarea name="descripcion_pregunta" id="descripcion_pregunta" rows="5" cols="40"></textarea>
+          <p>La descripción de la pregunta, se considera que ira en algun sidebar o en cabecera</p>
+        </div>
+
+        <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Añadir nueva pregunta"></p>
+      </form>
+    </div>
+
+  </div>
+<?php
 }

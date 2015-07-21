@@ -1,5 +1,5 @@
 <?php
-/* Plugin Name: Preguntas Enpelootas
+/* Plugin Name: Preguntas Plugin v0.1
 Plugin URI: [Enter your website URL]
 Description: Plugin admin para editar preguntas de Enpelootas
 Version: 0.0.1
