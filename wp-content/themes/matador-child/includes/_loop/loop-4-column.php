@@ -1,3 +1,34 @@
+
+<?php
+global $id_pregunta, $wpdb;
+if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
+   $temp = trim($_GET["id_pregunta"]);
+   //echo "<script type='text/javascript'>alert('$slide');</script>";
+
+   //Verifico si es de verdad un id existente de pregunta
+   $results = $wpdb->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
+
+     for ($i = 0; $i < count($results); ++$i) {
+       foreach ($results[$i] as $k => $v) {
+
+               if($k == 'id_pregunta'){
+                 if($v == $temp){
+                   $id_pregunta= $temp;
+                   //echo "<script type='text/javascript'>alert('es pregunta');</script>";
+                 }
+
+               }
+
+       }
+    }
+}
+else{
+   $id_pregunta = '-1';
+}
+
+?>
+
+
 <?php
 if($ts_show_sidebar == 'yes') :
     $entries_class = 'has-sidebar';
@@ -5,24 +36,75 @@ else :
     $entries_class = 'no-sidebar';
 endif;
 
+//http://www.if-not-true-then-false.com/2009/php-tip-convert-stdclass-object-to-multidimensional-array-and-convert-multidimensional-array-to-stdclass-object/
+function objectToArray($d) {
+    if (is_object($d)) {
+    // Gets the properties of the given object
+    // with get_object_vars function
+    $d = get_object_vars($d);
+    }
+
+    if (is_array($d)) {
+    /*
+    * Return array converted to object
+    * Using __FUNCTION__ (Magic constant)
+    * for recursive call
+    */
+    return array_map(__FUNCTION__, $d);
+    }
+    else {
+    // Return array
+    return $d;
+    }
+}
+
+function arrayToObject($d) {
+  if (is_array($d)) {
+  /*
+  * Return array converted to object
+  * Using __FUNCTION__ (Magic constant)
+  * for recursive call
+  */
+  return (object) array_map(__FUNCTION__, $d);
+  }
+  else {
+  // Return object
+  return $d;
+  }
+}
+
+
+$obj= objectToArray($atts);
+
+//Obtengo la fecha que se considera para una pregunta
+$results = $wpdb->get_results( 'SELECT * FROM `wp_pregunta_semana` WHERE `id_pregunta`='.$id_pregunta, ARRAY_A);
+print_r($results[0][fecha_inicio]);
+echo '-';
+print_r($results[0][fecha_fin]);
+
+//Genero el array de query
 $args = array(
-		  'post_type' => 'post',
-		  'posts_per_page' => 5,
-		  'cat' => 7,
+		  'post_type' => $obj[post_type], //post_type=post
+		  'posts_per_page' => $obj[posts_per_page],
+		  'cat' => $obj[cat],
       'date_query' => array(
-        'after' => '2015-05-02',
-        'before' => '2015-05-03',
+        'after' => $results[0][fecha_inicio],//'2015-01-01',
+        'before' => $results[0][fecha_fin],//'2015-12-03',
         'inclusive' => true
       ),
-      'post_status' => 'publish'
+      'post_status' => $obj[post_status], //post_status=publish
+      'show_pagination'=> $obj[show_pagination],
+      'order' => $obj[order],
+      'orderby'=> $obj[orderby],
+      'paged'=> $obj[paged]
+
 	);
-print_r($args);
-//print_r($atts);
-$ts_query = (isset($atts) && ($atts['default_query'] === false)) ? new WP_Query($args) : new WP_Query($args);//$wp_query;
-$atts = (isset($atts)) ? $atts : array();
 
 //print_r($atts);
-//print_r($ts_query);
+//print_r($args);
+
+$ts_query = (isset($atts) && ($atts['default_query'] === true)) ? new WP_Query($atts) : new WP_Query($args);//$wp_query;
+$atts = (isset($atts)) ? $atts : array();
 
 ?>
                 <div class="loop-wrap loop-4-column-wrap <?php echo esc_attr(ts_loop_wrap_class($atts));?>">

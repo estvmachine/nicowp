@@ -93,7 +93,7 @@ else{
                                                 'default_query' => false,
                                                           'pid' => $ts_page_id,
                                                    'id_pregunta'=> $id_pregunta,
-                                                   'cat'        => $category->cat_ID
+                                                   'cat'        => $category->cat_ID,
                                               );
                                 //echo $category->cat_ID;
                                 //print_r($atts);
