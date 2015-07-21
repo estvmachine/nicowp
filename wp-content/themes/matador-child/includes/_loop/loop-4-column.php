@@ -1,7 +1,7 @@
 
 <?php
 global $id_pregunta, $wpdb;
-if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
+/*if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
    $temp = trim($_GET["id_pregunta"]);
    //echo "<script type='text/javascript'>alert('$slide');</script>";
 
@@ -24,7 +24,7 @@ if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
 }
 else{
    $id_pregunta = '-1';
-}
+}*/
 
 ?>
 
@@ -77,6 +77,8 @@ function arrayToObject($d) {
 $obj= objectToArray($atts);
 
 //Obtengo la fecha que se considera para una pregunta
+$wp_session = WP_Session::get_instance();
+$id_pregunta = $wp_session['id_pregunta'];
 $results = $wpdb->get_results( 'SELECT * FROM `wp_pregunta_semana` WHERE `id_pregunta`='.$id_pregunta, ARRAY_A);
 print_r($results[0][fecha_inicio]);
 echo '-';
