@@ -331,28 +331,9 @@ class TT_Preguntas_List_Table extends WP_List_Table {
          */
         $this->process_bulk_action();
 
-
-        /**
-         * Instead of querying a database, we're going to fetch the example data
-         * property we created for use in this plugin. This makes this example
-         * package slightly different than one you might build on your own. In
-         * this example, we'll be using array manipulation to sort and paginate
-         * our data. In a real-world implementation, you will probably want to
-         * use sort and pagination data to build a custom query instead, as you'll
-         * be able to use your precisely-queried data immediately.
-         */
-
-
-      /*  $example_data = array(
-                     array(
-                         'id_pregunta'        => 1,
-                         'contenido_pregunta'     => '300',
-                         'fecha_inicio'    => '2015-07-16 17:18:51',
-                         'fecha_fin'  => ''
-                     )
-        );
-
-        $data = $example_data;*/
+     /*****************************************************************************/
+     /********************PREPARO LA LISTA DE PREGUNTAS****************************/
+     /*****************************************************************************/
 
       $raw_data =$wpdb->get_results("SELECT * FROM `wp_pregunta_semana`");
       $matrix = array();
@@ -471,6 +452,17 @@ function tt_render_list_page(){
     $testListTable->prepare_items();
 
     ?>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+
+      $('#add-pregunta').click(function(){
+        console.log(window.location.pathname);
+         window.location.assign(window.location.pathname+'?page=tt_add');
+      });
+
+    });
+    </script>
+
     <div class="wrap">
 
         <div id="icon-users" class="icon32"><br/></div>
@@ -524,19 +516,6 @@ function tt_add_pregunta(){
           <input name="fecha_fin" id="fecha_fin" type="date" value="" size="40">
           <p>La fecha fin que contempla la pregunta.</p>
         </div>
-
-        <!--<div class="form-field term-parent-wrap">
-          <label for="parent">Superior</label>
-          <select name="parent" id="parent" class="postform">
-          <option value="-1">Ninguna</option>
-          <option class="level-0" value="2">Calentometro</option>
-          <option class="level-0" value="3">El Dato Duro</option>
-          <option class="level-0" value="4">Enpeloota</option>
-          <option class="level-0" value="7">Le paso a un amig@</option>
-          <option class="level-0" value="1">Sin categoría</option>
-          </select>
-          <p>Las categorías, a diferencia de las etiquetas, pueden tener jerarquías. Podrías tener una categoría de Jazz, y por debajo las categorías Bebop y Big Band. Totalmente opcional.</p>
-        </div>-->
 
         <div class="form-field term-description-wrap">
           <label for="descripcion_pregunta">Descripción</label>
