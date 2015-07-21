@@ -1,25 +1,39 @@
 <?php
 global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
 
+
+//Si se escoge una pregunta desde dropdown guardo esa preferencia en php, y se guarda en session
 $wp_session = WP_Session::get_instance();
 if (get_query_var('id_pregunta')){
   //print "id_pregunta = $id_pregunta";
   $wp_session['id_pregunta'] = $id_pregunta;
 }
-echo $wp_session['id_pregunta'];
 
 if(isset($_GET["id_pregunta"]) && trim($_GET["id_pregunta"]) !== ''){
    $slide = trim($_GET["id_pregunta"]);
    //echo "<script type='text/javascript'>alert('$slide');</script>";
-   //echo $smof_data['id_pregunta'];
 }
 else{
    $slide = '';
 }
 
 ?>
+<!--************************** snip *************************-->
+<div id="dom-target" style="display: none;" >
+    <?php
+        $output = $wp_session['id_pregunta']; //Again, do some operation, get the output.
+        echo htmlspecialchars($output); /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
+</div>
+<!-- **************************snip***************************** -->
+
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+
+    //Se guarda la variable de session: id_pregunta en un div llamado dom-target
+    var div = document.getElementById("dom-target");
+    var id_pregunta_session = div.textContent;
 
     //Detectar si se encuentra con algun id_pregunta activo
     var id_pregunta= getUrlParameter('id_pregunta');
@@ -27,11 +41,16 @@ jQuery(document).ready(function($) {
       console.log(id_pregunta);
       $("#select-pregunta").val(id_pregunta).change();
     }
+    else if(typeof id_pregunta_session !== 'undefined'){
+      id_pregunta_session= id_pregunta_session.replace(/ /g,'');
+      id_pregunta_session= id_pregunta_session.replace(/\n/g, '');
+        console.log(id_pregunta_session);
+      $("#select-pregunta").val(id_pregunta_session).change();
+    }
     else{
       //var last_id = $GLOBALS['wpdb']->get_results( 'SELECT id_pregunta FROM `wp_pregunta_semana` ORDER BY id_pregunta DESC LIMIT 1', ARRAY_A   );
       //console.log(last_id);
-    //  window.location.href = window.location.pathname+"?id_pregunta="+3;
-
+      //  window.location.href = window.location.pathname+"?id_pregunta="+3;
     }
 
     //Detectar cuando se selecciona una pregunta diferente
@@ -58,6 +77,9 @@ function getUrlParameter(sParam)
     }
 }
 </script>
+
+
+
                 <div id="top-wrap" class="<?php echo ts_top_class();?>">
                     <!-- Top -->
                     <div id="top-container" class="top-default">
