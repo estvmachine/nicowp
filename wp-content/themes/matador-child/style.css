@@ -4,10 +4,27 @@ Theme URI:      http://themestockyard.com/matador
 Description:    Child theme for the Matador theme
 Author:         themestockyard
 Author URI:     http://themestockyard.com/
-Template:       matador                             
+Template:       matador
 Version:        1.0
 */
 @import url("../matador/style.css");
 /*------------------------------------------
 Do not put any css rules above this point!!!
 ------------------------------------------*/
+
+/* 9d. Sticky Nav */
+#nav.ts-contains-sticky-nav { content: " "; }
+#ts-main-nav-inner-wrap.stickied { z-index: 100; top: 0px; }
+#ts-main-nav-inner-wrap.stickied .barra-nav-custom { border-top: 0px;
+                                                     border-bottom: 0px;
+                                                     padding-right: 15px;
+                                                      padding-left: 15px;
+                                                      margin-right: auto;
+                                                      margin-left: auto;
+                                                   }
+#ts-main-nav-inner-wrap.stickied #content-new{
+                                              max-width: 1000px;
+                                              width:600px;
+                                              margin-right: auto;
+                                              margin-left: auto;
+                                            }
