@@ -272,12 +272,19 @@ class TT_Preguntas_List_Table extends WP_List_Table {
      **************************************************************************/
     function process_bulk_action() {
         global $wpdb;
+
+        function redirect($url, $statusCode = 303)
+        {
+           header('Location: ' . $url, true, $statusCode);
+           die();
+        };
+
         //Detect when a bulk action is being triggered...
         if( 'delete'===$this->current_action() ) {
 
             //Parseo los parametros de query, los que me interesan viene con pregunta
             parse_str($_SERVER['QUERY_STRING'], $output);
-            print_r($output[pregunta] );
+            //print_r($output[pregunta] );
 
             $filter='';
             foreach ($output[pregunta] as $valor) {
@@ -286,7 +293,11 @@ class TT_Preguntas_List_Table extends WP_List_Table {
 
             $wpdb->get_results('DELETE FROM `wp_pregunta_semana` WHERE 1 '.$filter);
 
-            wp_die('Items deleted!');
+            //wp_die('Items deleted!');
+            redirect('/admin.php?page=tt_list');
+
+
+
         }
 
     }
