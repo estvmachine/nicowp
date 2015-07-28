@@ -20,7 +20,7 @@ global $smof_data, $ts_options;
                     <div id="copyright-nav" class="container">
                         <div class="row">
 
-                            <div class="span5">
+                            <div class="span6">
                                 <a href="http://enpelootas.dreamhosters.com" title="">
                                   <img src="http://enpelootas.dreamhosters.com/wp-content/uploads/2015/01/Untitled.png"
                                        alt="Enpelootas"
@@ -29,7 +29,7 @@ global $smof_data, $ts_options;
                             </div>
                             <div class="nav mimic-smaller uppercase span6">
                                 <?php
-                                
+
                                 wp_nav_menu(array('container' => false, 'theme_location' => 'footer_nav', 'echo' => 1, 'depth' => 1));
                                 ?>
                             </div>

@@ -43,3 +43,17 @@ Do not put any css rules above this point!!!
   display: list-item;
   list-style-type: none;
 }
+
+/*Sidebar Blue Box*/
+
+#sidebar .Bluebox p {
+  padding: 10px;
+  text-align: justify;
+   text-justify: inter-word;
+}
+
+#sidebar .Bluebox h2 {
+  padding: 10px;
+  text-align: justify;
+   text-justify: inter-word;
+}

@@ -80,9 +80,9 @@ $obj= objectToArray($atts);
 $wp_session = WP_Session::get_instance();
 $id_pregunta = $wp_session['id_pregunta'];
 $results = $wpdb->get_results( 'SELECT * FROM `wp_pregunta_semana` WHERE `id_pregunta`='.$id_pregunta, ARRAY_A);
-print_r($results[0][fecha_inicio]);
+/*print_r($results[0][fecha_inicio]);
 echo '-';
-print_r($results[0][fecha_fin]);
+print_r($results[0][fecha_fin]);*/
 
 //Genero el array de query
 $args = array(

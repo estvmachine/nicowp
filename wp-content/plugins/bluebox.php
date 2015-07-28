@@ -1,11 +1,10 @@
 <?php
-/* Plugin Name: BlueBox
-Plugin URI: [Enter your website URL]
-Description: Despliega una ventana de color azul con informacion
-Version: 0.0.1
-Author: Stevmachine
-Author URI: [Enter your website URL]
+/* Plugin Name: EnPelootas-BlueBox
+Description: Caja azul con contenido para EnPelootas
+Version: v0.0.1
+Author: stevmachine
 */
+global $wpdb;
 
 class BlueBox extends WP_Widget {
           function BlueBox() {
