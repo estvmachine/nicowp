@@ -24,7 +24,7 @@ class BlueBox extends WP_Widget {
                     global $wpdb;
                     $wp_session = WP_Session::get_instance();
                     $id_pregunta= $wp_session['id_pregunta'];
-                    $response= $wpdb->get_results("SELECT `sidebar_content` FROM `wp_pregunta_semana` "
+                    $response= $wpdb->get_results("SELECT * FROM `wp_pregunta_semana` "
                                       ."WHERE  id_pregunta='".$id_pregunta."'");
 
                     extract($args, EXTR_SKIP);
@@ -35,7 +35,7 @@ class BlueBox extends WP_Widget {
         align="left"
         style="background-color:hsla(202, 89%, 56%, 0.77); <?php if(!$response) echo 'display:none;' ?>" >
      <span>
-     <h2 style="color:white;">Esta semana se nos viene peluda</h2>
+     <h2 style="color:white;"> <?php  print_r( $response[0]->contenido_pregunta);  ?></h2>
      <p>
      <font color="white">
 
