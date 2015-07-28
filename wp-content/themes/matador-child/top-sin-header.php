@@ -106,8 +106,9 @@ function getUrlParameter(sParam)
 
 
                                 <div id="nav" class="main-nav-wrap ts-main-nav-wrap container">
-
-                                  <div class="row" id="barra-nav-custom">
+                                <div id="ts-main-nav-inner-wrap" >
+                                  <div class="barra-nav-custom">
+                                      <div class="row" id="content-new">
 
                                       <a class="col-md-1" href=<?php echo home_url();?> >
                                         <!--<img src="./wp-content/themes/matador/images/logos/logo_navbar.jpg" style='width:auto;'/>-->
@@ -155,7 +156,7 @@ function getUrlParameter(sParam)
 
                                         </div> <!-- Parte superior de NAVBAR-->
 
-                                        <div id="ts-main-nav-inner-wrap">
+
                                             <div id="main-nav-mobile" class="mobile-nav"><a id="ts-top-mobile-menu" class="mobile-menu"><strong class="mobile-menu-icon"></strong><span class="mobile-menu-sep"></span><?php _e('Menu','ThemeStockyard');?></a></div>
                                             <div id="main-nav" class="main-nav normal">
                                                 <?php
@@ -178,9 +179,11 @@ function getUrlParameter(sParam)
                                             </div>
                                         </div> <!-- Parte inferior de NAVBAR -->
 
-                                      </div> <!--NAV BAR SIN LOGO -->
 
-                                    </div> <!-- <div class="row" id="barra-nav-custom"> -->
+                                        </div> <!--  <div class="row" id="content-new"> -->
+                                      </div> <!--<div class="barra-nav-custom"> -->
+
+                                    </div> <!--   <div id="ts-main-nav-inner-wrap" >-->
                                 </div>  <!--<div id="nav" class="main-nav-wrap ts-main-nav-wrap container"> -->
                             </div> <!--<div id="logo-nav-wrap"> -->
 

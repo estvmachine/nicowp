@@ -93,15 +93,15 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                              <?php echo ts_get_ticker('top');?>
                             <!-- /ticker: top -->
 
-                            <!--<div id="logo-nav-wrap">
+                            <div id="logo-nav-wrap">
                                 <div id="logo-tagline-wrap" class="container logo-tagline-wrap">
                                     <div id="logo" class="main-logo">
                                         <?php
-                                          //echo ts_theme_logo();
-                                        //  echo ts_theme_logo_tagline();
+                                          echo ts_theme_logo();
+                                          echo ts_theme_logo_tagline();
                                         ?>
                                     </div>
-                                </div>-->
+                                </div>
 
 
                                 <div id="nav" class="main-nav-wrap ts-main-nav-wrap container">
