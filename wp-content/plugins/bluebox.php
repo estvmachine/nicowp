@@ -4,7 +4,7 @@ Description: Caja azul con contenido para EnPelootas
 Version: v0.0.1
 Author: stevmachine
 */
-global $wpdb;
+
 
 class BlueBox extends WP_Widget {
           function BlueBox() {
@@ -21,31 +21,34 @@ class BlueBox extends WP_Widget {
 }
 
           function widget($args, $instance) { // widget sidebar output
+                    global $wpdb;
+                    $wp_session = WP_Session::get_instance();
+                    $id_pregunta= $wp_session['id_pregunta'];
+                    $response= $wpdb->get_results("SELECT `sidebar_content` FROM `wp_pregunta_semana` "
+                                      ."WHERE  id_pregunta='".$id_pregunta."'");
+
                     extract($args, EXTR_SKIP);
                     echo $before_widget; // pre-widget code from theme
-print <<<EOM
 
-
-   <div class="container-large" align="left" style="background-color:hsla(202, 89%, 56%, 0.77);">
+?>
+   <div class="container-large"
+        align="left"
+        style="background-color:hsla(202, 89%, 56%, 0.77); <?php if(!$response) echo 'display:none;' ?>" >
      <span>
      <h2 style="color:white;">Esta semana se nos viene peluda</h2>
      <p>
-     <font color="white">  Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-               Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500,
-               cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó
-               una galería de textos y los mezcló de tal manera que logró hacer un libro de textos
-                especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno
-                 en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado
-                  en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de
-                  Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus
-                  PageMaker, el cual incluye versiones de Lorem Ipsum.
+     <font color="white">
+
+       <?php
+
+               print_r( $response[0]->sidebar_content);
+       ?>
     </font>
 
      </span>
    </div>
 
-
-EOM;
+<?php
                     echo $after_widget; // post-widget code from theme
           }
 }
