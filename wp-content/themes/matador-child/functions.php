@@ -51,9 +51,9 @@ function character_length_validation_filter( $result, $tag ) {
 	if ( ! $result['valid'] )
 		return $result;
 
-	if ( 400 < strlen( $_POST[$name] ) ) {
+	if ( 2200 < strlen( $_POST[$name] ) ) {
 		$result['valid'] = false;
-		$result['reason'][$name] = "Too long.";
+		$result['reason'][$name] = "Texto es muy largo.";
 	}
 
 	return $result;

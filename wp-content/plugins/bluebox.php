@@ -1,7 +1,7 @@
 <?php
 /* Plugin Name: EnPelootas-BlueBox
 Description: Caja azul con contenido para EnPelootas
-Version: v0.0.1
+Version: v0.0.2
 Author: stevmachine
 */
 
@@ -22,6 +22,9 @@ class BlueBox extends WP_Widget {
 
           function widget($args, $instance) { // widget sidebar output
                     global $wpdb;
+                    $categorys = wp_get_post_categories( $post_id, $args );
+                    $ts_page_id = (is_single()) ? $post->ID : get_queried_object_id();
+
                     $wp_session = WP_Session::get_instance();
                     $id_pregunta= $wp_session['id_pregunta'];
                     $response= $wpdb->get_results("SELECT * FROM `wp_pregunta_semana` "
@@ -39,10 +42,36 @@ class BlueBox extends WP_Widget {
      <p>
      <font color="white">
 
-       <?php
+       <span>
+        <?php $categories = get_the_category();
+            foreach($categories as $category) {
+               $cat_name = $category->name;
+               if($cat_name != 'featured')
+               echo get_cat_ID($cat_name);
+               echo $cat_name;
+               if(get_cat_ID($cat_name) == 104  ||  $cat_name=='El Chat')
+                echo $response[0]->sidebar_elchat;
 
-               print_r( $response[0]->sidebar_content);
-       ?>
+               if(get_cat_ID($cat_name) == 105  ||  $cat_name=='El Dato Duro')
+                echo $response[0]->sidebar_eldatoduro;
+
+               if(get_cat_ID($cat_name) == 100  ||  $cat_name=='Le pasó a un@ amig@')
+                 echo $response[0]->sidebar_lepaso;
+            }
+        ?>
+      </span>
+
+        <span><?php if(is_int ($ts_page_id)) {
+            if($ts_page_id ==1831)  //Calentómetro
+              echo $response[0]->sidebar_calentometro;
+
+            if($ts_page_id ==1689)  //Calentómetro
+              echo $response[0]->sidebar_empelotate;
+
+        }
+
+
+        ?></span>
     </font>
 
      </span>
