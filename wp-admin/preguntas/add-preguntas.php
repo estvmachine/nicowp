@@ -14,7 +14,14 @@ include_once '../../wp-includes/pluggable.php';
     $contenido_pregunta =$_POST['contenido_pregunta'];
     $fecha_inicio =$_POST['fecha_inicio'];
     $fecha_fin =$_POST['fecha_fin'];
-    $sidebar_content =$_POST['descripcion_pregunta'];
+
+    $sidebar_elchat =$_POST['sidebar_elchat'];
+    $sidebar_eldatoduro =$_POST['sidebar_eldatoduro'];
+    $sidebar_lepaso =$_POST['sidebar_lepaso'];
+    $sidebar_calentometro =$_POST['sidebar_calentometro'];
+    $sidebar_empelotate =$_POST['sidebar_empelotate'];
+
+    $links_empelotate =$_POST['links_empelotate'];
 
   //  echo $contenido_pregunta;
   //  echo $fecha_inicio;
@@ -29,10 +36,15 @@ include_once '../../wp-includes/pluggable.php';
     global $wpdb;
     $table = $wpdb -> prefix . 'pregunta_semana';
     $wpdb->insert( $table, array(
-                          'contenido_pregunta' => $contenido_pregunta,
-                          'fecha_inicio' => $fecha_inicio,
-                          'fecha_fin' => $fecha_fin,
-                          'sidebar_content' => $sidebar_content
+                          'contenido_pregunta'   => $contenido_pregunta,
+                          'fecha_inicio'         => $fecha_inicio,
+                          'fecha_fin'            => $fecha_fin,
+                          'sidebar_elchat'       => $sidebar_elchat,
+                          'sidebar_eldatoduro'   =>$sidebar_eldatoduro,
+                          'sidebar_lepaso'       => $sidebar_lepaso,
+                          'sidebar_calentometro' => $sidebar_calentometro,
+                          'sidebar_empelotate'   => $sidebar_empelotate,
+                          'links_empelotate'     => $links_empelotate
                       )
     );
 

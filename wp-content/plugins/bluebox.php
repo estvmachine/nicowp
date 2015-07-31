@@ -35,7 +35,7 @@ class BlueBox extends WP_Widget {
         align="left"
         style="background-color:hsla(202, 89%, 56%, 0.77); <?php if(!$response) echo 'display:none;' ?>" >
      <span>
-     <h2 style="color:white;"> <?php  print_r( $response[0]->contenido_pregunta);  ?></h2>
+     <h3 id="title-pregunta" style="color:white;"> <?php  print_r( $response[0]->contenido_pregunta);  ?></h3>
      <p>
      <font color="white">
 

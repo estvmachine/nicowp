@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2015 at 05:01 AM
+-- Generation Time: Jul 31, 2015 at 03:33 AM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -30,13 +30,14 @@ CREATE TABLE IF NOT EXISTS `wp_pregunta_semana` (
   `id_pregunta` bigint(20) NOT NULL,
   `fecha_inicio` date DEFAULT NULL,
   `fecha_fin` date DEFAULT NULL,
-  `contenido_pregunta` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sidebar_content` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `wp_pregunta_semana`
---
+  `contenido_pregunta` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sidebar_elchat` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sidebar_eldatoduro` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sidebar_lepaso` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sidebar_calentometro` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sidebar_empelotate` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `links_empelotate` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -56,7 +57,7 @@ ALTER TABLE `wp_pregunta_semana`
 -- AUTO_INCREMENT for table `wp_pregunta_semana`
 --
 ALTER TABLE `wp_pregunta_semana`
-  MODIFY `id_pregunta` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+  MODIFY `id_pregunta` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

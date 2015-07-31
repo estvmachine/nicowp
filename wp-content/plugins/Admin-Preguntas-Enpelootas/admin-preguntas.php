@@ -130,7 +130,6 @@ class TT_Preguntas_List_Table extends WP_List_Table {
             case 'contenido_pregunta':
             case 'fecha_fin':
             case 'fecha_inicio':
-            case 'sidebar_content':
                 return $item[$column_name];
             default:
                 return print_r($item,true); //Show the whole array for troubleshooting purposes
@@ -208,8 +207,7 @@ class TT_Preguntas_List_Table extends WP_List_Table {
             'id_pregunta'            => 'ID',
             'contenido_pregunta'     => 'Pregunta',
             'fecha_inicio'           => 'Fecha Inicio',
-            'fecha_fin'              => 'Fecha Fin',
-            'sidebar_content'        => 'Contenido Sidebar'
+            'fecha_fin'              => 'Fecha Fin'
         );
         return $columns;
     }
@@ -234,8 +232,7 @@ class TT_Preguntas_List_Table extends WP_List_Table {
             'id_pregunta'            => array('id_pregunta',true),
             'contenido_pregunta'     => array('contenido_pregunta',false),     //true means it's already sorted
             'fecha_inicio'           => array('fecha_inicio',false),
-            'fecha_fin'              => array('fecha_fin',false),
-            'sidebar_content'        => array('sidebar_content',false)
+            'fecha_fin'              => array('fecha_fin',false)
         );
         return $sortable_columns;
     }
@@ -540,11 +537,38 @@ function tt_add_pregunta(){
           <p>La fecha fin que contempla la pregunta.</p>
         </div>
 
+        <h3>Contenido de la Caja Azul en cada seccion</h3>
         <div class="form-field term-description-wrap">
-          <label for="descripcion_pregunta">Descripción</label>
-          <textarea name="descripcion_pregunta" id="descripcion_pregunta" rows="5" cols="40"></textarea>
-          <p>La descripción de la pregunta, se considera que ira en algun sidebar o en cabecera</p>
+          <label for="sidebar_elchat">Sidebar El Chat</label>
+          <textarea name="sidebar_elchat" id="sidebar_elchat" rows="5" cols="40"></textarea>
         </div>
+
+        <div class="form-field term-description-wrap">
+          <label for="sidebar_eldatoduro">Sidebar El Dato duro</label>
+          <textarea name="sidebar_eldatoduro" id="sidebar_eldatoduro" rows="5" cols="40"></textarea>
+        </div>
+
+        <div class="form-field term-description-wrap">
+          <label for="sidebar_lepaso">Sidebar Le paso a un amig@</label>
+          <textarea name="sidebar_lepaso" id="sidebar_lepaso" rows="5" cols="40"></textarea>
+        </div>
+        <div class="form-field term-description-wrap">
+          <label for="sidebar_calentometro">Sidebar Calentometro</label>
+          <textarea name="sidebar_calentometro" id="sidebar_calentometro" rows="5" cols="40"></textarea>
+        </div>
+        <div class="form-field term-description-wrap">
+          <label for="sidebar_empelotate">Sidebar Empelotate</label>
+          <textarea name="sidebar_empelotate" id="sidebar_empelotate" rows="5" cols="40"></textarea>
+        </div>
+
+        <h3>Links de encuestas para Calentometro</h3>
+        <p>Se deben colocar los IDs separados por coma. Ejemplo: "1,2,4" (sin comillas)</p>
+
+        <div class="form-field form-required">
+          <label for="links_empelotate">Links Empelotate</label>
+          <textarea name="links_empelotate" id="links_empelotate" rows="5" cols="40"></textarea>
+        </div>
+
 
         <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Añadir nueva pregunta"></p>
       </form>

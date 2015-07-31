@@ -22,9 +22,11 @@ global $smof_data, $ts_options;
 
                             <div class="span6">
                                 <a href="http://enpelootas.dreamhosters.com" title="">
-                                  <img src="http://enpelootas.dreamhosters.com/wp-content/uploads/2015/01/Untitled.png"
+                                  <img src="http://enpelootas.dreamhosters.com/wp-content/uploads/2015/07/Logo.png"
                                        alt="Enpelootas"
-                                       class="low-res-logo">
+                                       class="low-res-logo"
+				       style="width:337px;height:118px;"
+					>
                                 </a>
                             </div>
                             <div class="nav mimic-smaller uppercase span6">

@@ -38,3 +38,23 @@ function add_query_vars_filter( $vars ){
   return $vars;
 }
 add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+/****************Limitar cantidad de caracteres en Plugin ContactForm7 ********/
+
+add_filter( 'wpcf7_validate_textarea', 'character_length_validation_filter', 11, 2 );
+add_filter( 'wpcf7_validate_textarea*', 'character_length_validation_filter', 11, 2 );
+
+function character_length_validation_filter( $result, $tag ) {
+	$name = $tag['name'];
+
+	if ( ! $result['valid'] )
+		return $result;
+
+	if ( 400 < strlen( $_POST[$name] ) ) {
+		$result['valid'] = false;
+		$result['reason'][$name] = "Too long.";
+	}
+
+	return $result;
+}

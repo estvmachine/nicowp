@@ -1,4 +1,3 @@
-
 <?php
 //Si se escoge una pregunta desde dropdown guardo esa preferencia en php, y se guarda en session
 $wp_session = WP_Session::get_instance();
@@ -20,7 +19,8 @@ else{
 <div id="dom-target" style="display: none;" >
     <?php
         $output = $wp_session['id_pregunta']; //Again, do some operation, get the output.
-        //echo htmlspecialchars($output); /* You have to escape because the result will not be valid HTML otherwise. */
+        echo htmlspecialchars($output); /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
     ?>
 </div>
 <!-- **************************snip***************************** -->
@@ -128,7 +128,7 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                                                                 border: none;
                                                                                 background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;'>
 
-                                                 <option class="level-0" value="-1"></option>
+                                                 <!--<option class="level-0" value="-1"></option>-->
                                                  <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
 
                                                    $id_;
