@@ -40,7 +40,7 @@ include_once '../../wp-includes/pluggable.php';
                           'fecha_inicio'         => $fecha_inicio,
                           'fecha_fin'            => $fecha_fin,
                           'sidebar_elchat'       => $sidebar_elchat,
-                          'sidebar_eldatoduro'   =>$sidebar_eldatoduro,
+                          'sidebar_eldatoduro'   => $sidebar_eldatoduro,
                           'sidebar_lepaso'       => $sidebar_lepaso,
                           'sidebar_calentometro' => $sidebar_calentometro,
                           'sidebar_empelotate'   => $sidebar_empelotate,

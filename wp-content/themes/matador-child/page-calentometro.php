@@ -1,6 +1,6 @@
 <?php
 /**
-*Template Name: Page con header-explicacion
+*Template Name: Page Calentometro
 **/
 
 global $smof_data, $ts_previous_posts, $ts_page_id, $ts_show_top_ticker;
@@ -55,6 +55,7 @@ endif;
 
                                                 <?php
                                                 the_content();
+                                                
 
                                                 wp_link_pages('before=<div class="page-links">'.__('Pages: ', 'ThemeStockyard').'<span class="wp-link-pages">&after=</span></div>&link_before=<span>&link_after=</span>');
                                                 ?>

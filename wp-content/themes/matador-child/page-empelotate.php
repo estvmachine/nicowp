@@ -1,6 +1,6 @@
 <?php
 /**
-*Template Name: Page con header-explicacion
+*Template Name: Page Empelotate
 **/
 
 global $smof_data, $ts_previous_posts, $ts_page_id, $ts_show_top_ticker;
