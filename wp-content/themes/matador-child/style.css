@@ -11,7 +11,6 @@ Version:        1.0
 /*------------------------------------------
 Do not put any css rules above this point!!!
 ------------------------------------------*/
-
 /* 9d. Sticky Nav */
 #nav.ts-contains-sticky-nav { content: " "; }
 #ts-main-nav-inner-wrap.stickied { z-index: 100; top: 0px; }
@@ -48,14 +47,12 @@ Do not put any css rules above this point!!!
 
 #sidebar .Bluebox p {
   padding: 10px;
-  text-align: justify;
-   text-justify: inter-word;
+  text-align: left;
 }
 
 #title-pregunta {
   padding: 10px;
-  text-align: justify;
-   text-justify: inter-word;
+  text-align: left;
 }
 
 /*Selector Pregunta*/
@@ -105,11 +102,11 @@ Do not put any css rules above this point!!!
   top: 15px;
   width: 120px;
   background-color: #BFDC7A;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
-  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45); 
-  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45); 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
   color: #6a6340;
   -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
   -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
@@ -118,7 +115,7 @@ Do not put any css rules above this point!!!
 
 .ribbon-green:before, .ribbon-green:after {
   content: "";
-  border-top:   3px solid #6e8900;   
+  border-top:   3px solid #6e8900;
   border-left:  3px solid transparent;
   border-right: 3px solid transparent;
   position:absolute;
@@ -134,16 +131,16 @@ Do not put any css rules above this point!!!
 
 /**Estilo para los formularios*/
 .wpcf7 {
- 
+
 border: 5px solid #666666;
- 
+
 }
 
 .wpcf7-form{
- 
+
 margin-left: 25px;
- 
+
 margin-right: 25px;
- 
+
 margin-top: 25px;
  }

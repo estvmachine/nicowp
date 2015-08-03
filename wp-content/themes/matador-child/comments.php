@@ -64,7 +64,7 @@ else :
         'fields' => apply_filters('comment_form_default_fields', array(
 
             'author' => '<fieldset class="comment-form-author ts-one-third">' .
-                        '<input id="author" name="author" type="text" placeholder="'.__('Name *', 'ThemeStockyard') .'" value="' .
+                        '<input id="author" name="author" type="text" placeholder="'.__('Nombre *', 'ThemeStockyard') .'" value="' .
                         esc_attr($commenter['comment_author']) . '" size="30" tabindex="1" />' .
                         '</fieldset>',
 
@@ -73,10 +73,10 @@ else :
                         esc_attr($commenter['comment_author_email']) . '" size="30" tabindex="2" />' .
                         '</fieldset>',
 
-            'url'    => '<fieldset class="comment-form-url ts-one-third ts-column-last">' .
+            /*'url'    => '<fieldset class="comment-form-url ts-one-third ts-column-last">' .
                         '<input id="url" name="url" type="text" placeholder="'.__('Website', 'ThemeStockyard') .'" value="' .
                         esc_attr($commenter['comment_author_url']) . '" size="30" tabindex="3" />' .
-                        '</fieldset>' )),
+											'</fieldset>' */)),
 
             'comment_field' => '<div class="clear"></div><fieldset class="comment_form_message">'.'<textarea id="comment" name="comment"></textarea>'.'</fieldset>',
 

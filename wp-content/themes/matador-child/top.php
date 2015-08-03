@@ -128,7 +128,6 @@ global $smof_data, $ts_top_ad, $woocommerce, $ts_page_id;
                                                                                 border: none;
                                                                                 background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat left center;'>
 
-                                                 <!--<option class="level-0" value="-1"></option>-->
                                                  <?php $results = $GLOBALS['wpdb']->get_results( 'SELECT * FROM `wp_pregunta_semana`', ARRAY_A   );
 
                                                    $id_;

@@ -58,3 +58,17 @@ function character_length_validation_filter( $result, $tag ) {
 
 	return $result;
 }
+
+
+/**
+ * Remove the text - 'You may use these <abbr title="HyperText Markup
+ * Language">HTML</abbr> tags ...'
+ * from below the comment entry box.
+ */
+
+add_filter('comment_form_defaults', 'remove_comment_styling_prompt');
+
+function remove_comment_styling_prompt($defaults) {
+	$defaults['comment_notes_after'] = '';
+	return $defaults;
+}
