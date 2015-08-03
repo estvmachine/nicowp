@@ -22,8 +22,8 @@ class BlueBox extends WP_Widget {
 
           function widget($args, $instance) { // widget sidebar output
                     global $wpdb;
-                    $categorys = wp_get_post_categories( $post_id, $args );
-                    $ts_page_id = (is_single()) ? $post->ID : get_queried_object_id();
+                    //$categorys = wp_get_post_categories( $post_id, $args );
+                    //$ts_page_id = (is_single()) ? $post->ID : get_queried_object_id();
 
                     $wp_session = WP_Session::get_instance();
                     $id_pregunta= $wp_session['id_pregunta'];
@@ -43,19 +43,22 @@ class BlueBox extends WP_Widget {
      <font color="white">
 
        <span>
-        <?php $categories = get_the_category();
+        <?php
+            $post= new stdClass();
+            $post->ID=$_GET['p'];
+            $categories = get_the_category($post->ID);
             foreach($categories as $category) {
                $cat_name = $category->name;
-               if($cat_name != 'featured')
-               echo get_cat_ID($cat_name);
-               echo $cat_name;
-               if(get_cat_ID($cat_name) == 104  ||  $cat_name=='El Chat')
+               $cat_id = $category->cat_ID;
+               echo $cat_id;
+
+               if( $cat_id == 104  ||  $cat_name=='El Chat')
                 echo $response[0]->sidebar_elchat;
 
-               if(get_cat_ID($cat_name) == 105  ||  $cat_name=='El Dato Duro')
+               if( $cat_id == 105  ||  $cat_name=='El Dato Duro')
                 echo $response[0]->sidebar_eldatoduro;
 
-               if(get_cat_ID($cat_name) == 100  ||  $cat_name=='Le pasó a un@ amig@')
+               if( $cat_id == 100  ||  $cat_name=='Le pasó a un@ amig@')
                  echo $response[0]->sidebar_lepaso;
             }
         ?>

@@ -2,7 +2,7 @@
 if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
 	die ('Please do not load this page directly. Thanks!');
 if (post_password_required()){ ?>
-	<p class="nopassword"><?php _e('This post is password protected. Enter the password to view comments.', 'ThemeStockyard');?></p>
+	<p class="nopassword"><?php _e('Este post tiene protección de contrasena. Ingresar su password para ver comentarios.', 'ThemeStockyard');?></p>
 	<?php
 	return;
 } ?>
@@ -35,7 +35,7 @@ else :
                 ?>
                 <div id="comments-content">
                     <div class="page-title clearfix">
-                        <h6 class="uppercase small"><?php comments_number(__('No Comment', 'ThemeStockyard'), __('One Comment', 'ThemeStockyard'), __('% Comments', 'ThemeStockyard') );?></h6>
+                        <h6 class="uppercase small"><?php comments_number(__('Sin comentarios', 'ThemeStockyard'), __('One Comment', 'ThemeStockyard'), __('% Comments', 'ThemeStockyard') );?></h6>
                         <?php echo do_shortcode('[divider height="10"]');?>
                     </div>
 
@@ -45,14 +45,14 @@ else :
 
                     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
                     <div id="comment-nav" class="comment-nav" role="navigation">
-                        <div class="comm-prev"><?php previous_comments_link( __( '<i class="icon-chevron-left"></i> Older Comments', 'ThemeStockyard' ) ); ?></div>
-                        <div class="comm-next"><?php next_comments_link( __( 'Newer Comments <i class="icon-chevron-right"></i>', 'ThemeStockyard' ) ); ?></div>
+                        <div class="comm-prev"><?php previous_comments_link( __( '<i class="icon-chevron-left"></i> Comentarios antiguos', 'ThemeStockyard' ) ); ?></div>
+                        <div class="comm-next"><?php next_comments_link( __( 'Comentarios nuevos <i class="icon-chevron-right"></i>', 'ThemeStockyard' ) ); ?></div>
                     </div>
                     <?php endif; ?>
 
                     <?php
                     if (!comments_open() && get_comments_number()) : ?>
-                    <p class="nocomments"><?php _e('Comments are closed.', 'ThemeStockyard'); ?></p>
+                    <p class="nocomments"><?php _e('Comentarios estan cerrados.', 'ThemeStockyard'); ?></p>
                     <?php endif; ?>
                 </div>
                 <?php endif; ?>
@@ -73,19 +73,19 @@ else :
                         esc_attr($commenter['comment_author_email']) . '" size="30" tabindex="2" />' .
                         '</fieldset>',
 
-            /*'url'    => '<fieldset class="comment-form-url ts-one-third ts-column-last">' .
+            'url'    => '<fieldset class="comment-form-url ts-one-third ts-column-last">' .
                         '<input id="url" name="url" type="text" placeholder="'.__('Website', 'ThemeStockyard') .'" value="' .
                         esc_attr($commenter['comment_author_url']) . '" size="30" tabindex="3" />' .
-                        '</fieldset>' )),*/
+                        '</fieldset>' )),
 
             'comment_field' => '<div class="clear"></div><fieldset class="comment_form_message">'.'<textarea id="comment" name="comment"></textarea>'.'</fieldset>',
 
             'comment_notes_before' => '',
             'logged_in_as' => '',
-            'title_reply' => '<span class="smaller uppercase">' . __('Leave a Reply', 'ThemeStockyard') . '</span>',
-            'title_reply_to' => '<span class="smaller uppercase">' . __('Leave a reply to:', 'ThemeStockyard') . '</span> <strong>%s</strong>',
-            'cancel_reply_link' => '('.__('Cancel Reply', 'ThemeStockyard').')',
-            'label_submit'=> __('Post Comment', 'ThemeStockyard'),
+            'title_reply' => '<span class="smaller uppercase">' . __('Deja un comentario', 'ThemeStockyard') . '</span>',
+            'title_reply_to' => '<span class="smaller uppercase">' . __('Dejar un comentario:', 'ThemeStockyard') . '</span> <strong>%s</strong>',
+            'cancel_reply_link' => '('.__('Cancelar comentario', 'ThemeStockyard').')',
+            'label_submit'=> __('Publicar comentario', 'ThemeStockyard'),
             'id_submit' => 'button',
 
     );
